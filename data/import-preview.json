@@ -1,0 +1,1925 @@
+{
+  "resume": {
+    "modeles": 26,
+    "variantes": 88,
+    "photos": 303
+  },
+  "anomalies": {
+    "sansModele": [],
+    "sansCouleur": [],
+    "photosManquantes": [],
+    "typesInconnus": [
+      "Sac en cuir suède souple “Mina” taupe foncé",
+      "Sac en cuir suède souple “Mina” camel foncé",
+      "Sac en cuir suède souple “Mina” vert sapin",
+      "Sac en cuir suède souple “Mina” chocolat",
+      "Sac en cuir suède souple “Mina” prune"
+    ]
+  },
+  "modeles": [
+    {
+      "nom": "Rita",
+      "slug": "rita",
+      "type": "Sac à main",
+      "description_courte": "Sac à main noir en cuir brossé italien. Élégant et polyvalent avec bandoulière amovible. Parfait bureau et ville. Fabrication italienne.",
+      "description_html": "<p>Le <strong>sac à main \"Rita\" noir</strong> incarne l'élégance intemporelle à l'italienne dans sa forme la plus pure. Confectionné en Italie à partir de <stro",
+      "variantes": [
+        {
+          "couleur": "Noir",
+          "matiere": "Cuir brossé",
+          "prix": 109.9,
+          "stock": 9,
+          "reappro": false,
+          "photos": [
+            "Sac-a-main-cuir-brosse-rita-noir-1-scaled.jpg",
+            "sac-a-main-cuir-brosse-rita-noir-2-scaled.jpg",
+            "sac-a-main-cuir-brosse-rita-noir-4-scaled.jpg",
+            "sac-a-main-cuir-brosse-rita-noir-5-scaled.jpg",
+            "sac-a-main-cuir-brosse-rita-noir-6-scaled.jpg"
+          ],
+          "sku": "SAC-RITA-NOIR",
+          "poids": 1,
+          "dimensions": {
+            "longueur": 42,
+            "largeur": 16,
+            "hauteur": 27
+          }
+        },
+        {
+          "couleur": "Camel",
+          "matiere": "Cuir brossé",
+          "prix": 109.9,
+          "stock": 3,
+          "reappro": false,
+          "photos": [
+            "sac-a-main-cuir-brosse-rita-camel-1.png",
+            "sac-a-main-cuir-brosse-rita-camel-2.png",
+            "Sac-Rita-Camel-3-scaled.jpg",
+            "Sac-Rita-Camel-4-scaled.jpg",
+            "Sac-Rita-Camel-5-scaled.jpg",
+            "Sac-Rita-Camel-6-scaled.jpg"
+          ],
+          "sku": "SAC-RITA-CAMEL",
+          "poids": 1,
+          "dimensions": {
+            "longueur": 42,
+            "largeur": 16,
+            "hauteur": 27
+          }
+        },
+        {
+          "couleur": "Bleu marine",
+          "matiere": "Cuir brossé",
+          "prix": 109.9,
+          "stock": 5,
+          "reappro": false,
+          "photos": [
+            "sac-a-main-cuir-brosse-rita-marine-4.png",
+            "sac-a-main-cuir-brosse-rita-marine-3.png",
+            "anse-sac-a-main-cuir-brosse-rita-marine.1.png",
+            "sac-a-main-cuir-brosse-rita-noir-4.png",
+            "sac-a-main-cuir-brosse-rita-noir-5.png",
+            "sac-a-main-cuir-brosse-rita-noir-8.png"
+          ],
+          "sku": "SAC-RITA-MARINE",
+          "poids": 1,
+          "dimensions": {
+            "longueur": 42,
+            "largeur": 16,
+            "hauteur": 27
+          }
+        },
+        {
+          "couleur": "Chocolat",
+          "matiere": "Cuir brossé",
+          "prix": 109.9,
+          "stock": 3,
+          "reappro": false,
+          "photos": [
+            "sac-a-main-cuir-brosse-rita-chocolat-1.png",
+            "sac-a-main-cuir-brosse-rita-chocolat-2.png",
+            "sac-a-main-cuir-brosse-rita-chocolat-interieur.png",
+            "sac-a-main-cuir-brosse-rita-noir-5.png",
+            "sac-a-main-cuir-brosse-rita-noir-6.png",
+            "sac-a-main-cuir-brosse-rita-noir-8.png"
+          ],
+          "sku": "SAC-RITA-CHOCOLAT",
+          "poids": 1,
+          "dimensions": {
+            "longueur": 42,
+            "largeur": 16,
+            "hauteur": 27
+          }
+        },
+        {
+          "couleur": "Taupe",
+          "matiere": "Cuir brossé",
+          "prix": 109.9,
+          "stock": 5,
+          "reappro": false,
+          "photos": [
+            "sac-a-main-cuir-brosse-rita-taupe-1.png",
+            "sac-a-main-cuir-brosse-rita-taupe-2.png",
+            "anse-sac-a-main-cuir-brosse-rita-taupe-1.png",
+            "sac-a-main-cuir-brosse-rita-noir-4.png",
+            "sac-a-main-cuir-brosse-rita-noir-5.png",
+            "sac-a-main-cuir-brosse-rita-noir-6.png",
+            "sac-a-main-cuir-brosse-rita-noir-8.png"
+          ],
+          "sku": "SAC-RITA-TAUPE",
+          "poids": 1,
+          "dimensions": {
+            "longueur": 42,
+            "largeur": 16,
+            "hauteur": 27
+          }
+        }
+      ],
+      "est_page_gamme": true
+    },
+    {
+      "nom": "Grazia",
+      "slug": "grazia",
+      "type": "Sac à main",
+      "description_courte": "Sac à main noir en cuir suède italien. Spacieux avec 2 compartiments, idéal ordinateur 14\". Texture veloutée élégante. Fabrication italienne.",
+      "description_html": "<p>Le <strong>sac à main \"Grazia\" moka en cuir grainé</strong> marie la sophistication d'une teinte profonde et moderne à l'élégance de la texture grainée. Fabr",
+      "variantes": [
+        {
+          "couleur": "Noir",
+          "matiere": "Cuir suède",
+          "prix": 109.9,
+          "stock": 6,
+          "reappro": false,
+          "photos": [
+            "sac-a-main-cuir-suede-grazia-noir-1.png",
+            "sac-a-main-cuir-suede-grazia-noir-2.jpg",
+            "sac-a-main-cuir-suede-grazia-noir-interieur.jpg",
+            "sac-a-main-cuir-suede-grazia-noir-interieur-3.jpg",
+            "sac-a-main-cuir-suede-grazia-noir-interieur-4.jpg",
+            "sac-a-main-cuir-suede-grazia-noir-interieur-1.png"
+          ],
+          "sku": "SAC-GRAZIA-SUEDE-NOIR",
+          "poids": 1,
+          "dimensions": {
+            "longueur": 43,
+            "largeur": 13,
+            "hauteur": 28
+          }
+        },
+        {
+          "couleur": "Taupe",
+          "matiere": "Cuir suède",
+          "prix": 109.9,
+          "stock": 4,
+          "reappro": false,
+          "photos": [
+            "sac-a-main-cuir-suede-grazia-taupe-5.png",
+            "sac-a-main-cuir-suede-grazia-taupe-6.png",
+            "sac-a-main-cuir-suede-grazia-noir-interieur-3.jpg",
+            "sac-a-main-cuir-suede-grazia-noir-interieur-4.jpg",
+            "sac-a-main-cuir-suede-grazia-noir-interieur-1.png"
+          ],
+          "sku": "SAC-GRAZIA-SUEDE-TAUPE",
+          "poids": 1,
+          "dimensions": {
+            "longueur": 43,
+            "largeur": 13,
+            "hauteur": 28
+          }
+        },
+        {
+          "couleur": "Chocolat",
+          "matiere": "Cuir suède",
+          "prix": 109.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "sac-a-main-cuir-suede-grazia-chocolat-3.png",
+            "sac-a-main-cuir-suede-grazia-chocolat-6.png",
+            "sac-a-main-cuir-suede-grazia-noir-interieur-3.jpg",
+            "sac-a-main-cuir-suede-grazia-noir-interieur-4.jpg",
+            "sac-a-main-cuir-suede-grazia-noir-interieur-1.png"
+          ],
+          "sku": "SAC-GRAZIA-SUEDE-CHOCOLAT",
+          "poids": 1,
+          "dimensions": {
+            "longueur": 43,
+            "largeur": 13,
+            "hauteur": 28
+          }
+        },
+        {
+          "couleur": "Camel",
+          "matiere": "Cuir suède",
+          "prix": 109.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "sac-a-main-cuir-suede-grazia-camel-3.png",
+            "sac-a-main-cuir-suede-grazia-camel-5.png",
+            "sac-a-main-cuir-suede-grazia-noir-interieur-3.jpg",
+            "sac-a-main-cuir-suede-grazia-noir-interieur-4.jpg",
+            "sac-a-main-cuir-suede-grazia-noir-interieur-1.png"
+          ],
+          "sku": "SAC-GRAZIA-SUEDE-CAMEL",
+          "poids": 1,
+          "dimensions": {
+            "longueur": 43,
+            "largeur": 13,
+            "hauteur": 28
+          }
+        },
+        {
+          "couleur": "Beige",
+          "matiere": "Cuir suède",
+          "prix": 109.9,
+          "stock": 7,
+          "reappro": false,
+          "photos": [
+            "sac-a-main-cuir-suede-grazia-beige-3.jpg",
+            "sac-a-main-cuir-suede-grazia-beige-4.png",
+            "sac-a-main-cuir-suede-grazia-noir-interieur-3.jpg",
+            "sac-a-main-cuir-suede-grazia-noir-interieur-4.jpg",
+            "sac-a-main-cuir-suede-grazia-noir-interieur-1.png"
+          ],
+          "sku": "SAC-GRAZIA-SUEDE-BEIGE",
+          "poids": 1,
+          "dimensions": {
+            "longueur": 43,
+            "largeur": 13,
+            "hauteur": 28
+          }
+        },
+        {
+          "couleur": "Bordeaux",
+          "matiere": "Cuir suède",
+          "prix": 109.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "PXL_20250831_152816121-Photoroom.png",
+            "PXL_20250831_152839751-Photoroom.jpg",
+            "PXL_20250824_181743949-Photoroom.jpg",
+            "PXL_20250824_181848790-Photoroom.jpg",
+            "PXL_20250824_181704857-scaled.jpg"
+          ],
+          "sku": "SAC-GRAZIA-SUEDE-BORDEAUX",
+          "poids": 1,
+          "dimensions": {
+            "longueur": 43,
+            "largeur": 13,
+            "hauteur": 28
+          }
+        },
+        {
+          "couleur": "Noir",
+          "matiere": "Cuir grainé",
+          "prix": 109.9,
+          "stock": 4,
+          "reappro": false,
+          "photos": [
+            "Sac-a-main-Grazia-en-cuir-graine-noir-1.png",
+            "Sac-a-main-Grazia-en-cuir-graine-noir-2.png",
+            "Sac-a-main-Grazia-en-cuir-graine-chocolat-3.jpg",
+            "Sac-a-main-Grazia-en-cuir-graine-chocolat-4.png",
+            "Sac-a-main-Grazia-en-cuir-graine-chocolat-5-scaled.jpg"
+          ],
+          "sku": "SAC-GRAZIA-GRAINE-NOIR",
+          "dimensions": {
+            "longueur": 43,
+            "largeur": 13,
+            "hauteur": 28
+          }
+        },
+        {
+          "couleur": "Chocolat",
+          "matiere": "Cuir grainé",
+          "prix": 109.9,
+          "stock": 3,
+          "reappro": false,
+          "photos": [
+            "Sac-a-main-Grazia-en-cuir-graine-chocolat-1.png",
+            "Sac-a-main-Grazia-en-cuir-graine-chocolat-2.jpg",
+            "Sac-a-main-Grazia-en-cuir-graine-chocolat-3.jpg",
+            "Sac-a-main-Grazia-en-cuir-graine-chocolat-4.png",
+            "Sac-a-main-Grazia-en-cuir-graine-chocolat-5-scaled.jpg"
+          ],
+          "sku": "SAC-GRAZIA-GRAINE-CHOCOLAT",
+          "dimensions": {
+            "longueur": 43,
+            "largeur": 13,
+            "hauteur": 28
+          }
+        },
+        {
+          "couleur": "Bordeaux",
+          "matiere": "Cuir grainé",
+          "prix": 109.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "Sac-a-main-Grazia-en-cuir-graine-bordeaux-1.png",
+            "Sac-a-main-Grazia-en-cuir-graine-bordeaux-2.png",
+            "Sac-a-main-Grazia-en-cuir-graine-chocolat-3.jpg",
+            "Sac-a-main-Grazia-en-cuir-graine-chocolat-4.png",
+            "Sac-a-main-Grazia-en-cuir-graine-chocolat-5-scaled.jpg"
+          ],
+          "sku": "SAC-GRAZIA-GRAINE-BORDEAUX",
+          "dimensions": {
+            "longueur": 43,
+            "largeur": 13,
+            "hauteur": 28
+          }
+        },
+        {
+          "couleur": "Kaki",
+          "matiere": "Cuir grainé",
+          "prix": 109.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "Sac-a-main-Grazia-en-cuir-graine-kaki-1.png",
+            "Sac-a-main-Grazia-en-cuir-graine-kaki-2.png",
+            "Sac-a-main-Grazia-en-cuir-graine-chocolat-3.jpg",
+            "Sac-a-main-Grazia-en-cuir-graine-chocolat-4.png",
+            "Sac-a-main-Grazia-en-cuir-graine-chocolat-5-scaled.jpg"
+          ],
+          "sku": "SAC-GRAZIA-GRAINE-KAKI",
+          "dimensions": {
+            "longueur": 43,
+            "largeur": 13,
+            "hauteur": 28
+          }
+        },
+        {
+          "couleur": "Taupe",
+          "matiere": "Cuir grainé",
+          "prix": 109.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [],
+          "sku": "SAC-GRAZIA-GRAINE-TAUPE",
+          "dimensions": {
+            "longueur": 43,
+            "largeur": 13,
+            "hauteur": 28
+          }
+        },
+        {
+          "couleur": "Moka",
+          "matiere": "Cuir grainé",
+          "prix": 109.9,
+          "stock": 5,
+          "reappro": false,
+          "photos": [
+            "sac-a-main-cuir-graine-grazia-moka-1-scaled.jpg",
+            "sac-a-main-cuir-graine-grazia-moka-2-scaled.jpg",
+            "sac-a-main-cuir-graine-grazia-noir-interieur.jpg",
+            "sac-a-main-cuir-graine-grazia-noir-interieur-1.png",
+            "sac-a-main-cuir-graine-grazia-noir-interieur-2-scaled.jpg"
+          ],
+          "sku": "SAC-GRAZIA-GRAINE-MOKA",
+          "dimensions": {
+            "longueur": 43,
+            "largeur": 13,
+            "hauteur": 28
+          }
+        },
+        {
+          "couleur": "Camel",
+          "matiere": "Cuir grainé",
+          "prix": 109.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "sac-a-main-cuir-graine-grazia-camel-1-scaled.jpg",
+            "sac-a-main-cuir-graine-grazia-noir-interieur.jpg",
+            "sac-a-main-cuir-graine-grazia-noir-interieur-1.png",
+            "sac-a-main-cuir-graine-grazia-noir-interieur-2-scaled.jpg"
+          ],
+          "sku": "SAC-GRAZIA-GRAINE-CAMEL",
+          "dimensions": {
+            "longueur": 43,
+            "largeur": 13,
+            "hauteur": 28
+          }
+        }
+      ],
+      "est_page_gamme": true
+    },
+    {
+      "nom": "Grazita",
+      "slug": "grazita",
+      "type": "Sac à main",
+      "description_courte": "Sac à main noir compact en cuir suède italien. Format A4 avec bandoulière amovible. Texture veloutée élégante. Fabrication italienne.",
+      "description_html": "<p>Le <strong>sac à main \"Grazita\" cognac en cuir suède</strong> marie la richesse d'une teinte chaleureuse à la douceur veloutée du suède dans un format compac",
+      "variantes": [
+        {
+          "couleur": "Noir",
+          "matiere": "Cuir suède",
+          "prix": 89.9,
+          "stock": 10,
+          "reappro": false,
+          "photos": [
+            "sac-a-main-cuir-suede-grazita-noir-1.png",
+            "sac-a-main-cuir-suede-grazita-noir-2.png",
+            "sac-a-main-cuir-suede-grazia-grazita-noir.png",
+            "anse-sac-a-main-cuir-suede-grazita-noir.png"
+          ],
+          "sku": "SAC-GRAZITA-SUEDE-NOIR",
+          "dimensions": {
+            "longueur": 30,
+            "largeur": 10,
+            "hauteur": 22
+          }
+        },
+        {
+          "couleur": "Chocolat",
+          "matiere": "Cuir suède",
+          "prix": 89.9,
+          "stock": 10,
+          "reappro": false,
+          "photos": [
+            "sac-a-main-cuir-suede-grazita-chocolat-1.png",
+            "sac-a-main-cuir-suede-grazita-chocolat-2.png",
+            "anse-sac-a-main-cuir-suede-grazita-chocolat.png"
+          ],
+          "sku": "SAC-GRAZITA-SUEDE-CHOCOLAT",
+          "dimensions": {
+            "longueur": 30,
+            "largeur": 10,
+            "hauteur": 22
+          }
+        },
+        {
+          "couleur": "Bordeaux",
+          "matiere": "Cuir suède",
+          "prix": 89.9,
+          "stock": 10,
+          "reappro": false,
+          "photos": [
+            "sac-a-main-cuir-suede-grazita-bordeaux-1.png",
+            "sac-a-main-cuir-suede-grazita-bordeaux-2.png",
+            "sac-a-main-cuir-graine-grazita-bordeaux-3.png",
+            "sac-a-main-cuir-suede-grazia-grazita-bordeaux.png"
+          ],
+          "sku": "SAC-GRAZITA-SUEDE-BORDEAUX",
+          "dimensions": {
+            "longueur": 30,
+            "largeur": 10,
+            "hauteur": 22
+          }
+        },
+        {
+          "couleur": "Taupe",
+          "matiere": "Cuir suède",
+          "prix": 89.9,
+          "stock": 10,
+          "reappro": false,
+          "photos": [
+            "sac-a-main-cuir-suede-grazita-taupe-1.png",
+            "sac-a-main-cuir-suede-grazita-taupe-2.png",
+            "anse-sac-a-main-cuir-suede-grazita-taupe.png",
+            "sac-a-main-cuir-suede-grazia-grazita-taupe-1.png"
+          ],
+          "sku": "SAC-GRAZITA-SUEDE-TAUPE",
+          "dimensions": {
+            "longueur": 30,
+            "largeur": 10,
+            "hauteur": 22
+          }
+        },
+        {
+          "couleur": "Camel",
+          "matiere": "Cuir suède",
+          "prix": 89.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "sac-a-main-cuir-suede-grazita-camel-1.png",
+            "sac-a-main-cuir-suede-grazita-camel-2.png",
+            "anse-sac-a-main-cuir-suede-grazita-camel.png"
+          ],
+          "sku": "SAC-GRAZITA-SUEDE-CAMEL",
+          "dimensions": {
+            "longueur": 30,
+            "largeur": 10,
+            "hauteur": 22
+          }
+        },
+        {
+          "couleur": "Cognac",
+          "matiere": "Cuir suède",
+          "prix": 89.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "sac-a-main-cuir-suede-grazita-cognac-1.png",
+            "sac-a-main-cuir-suede-grazita-cognac-2.png",
+            "anse-sac-a-main-cuir-suede-grazita-cognac.png"
+          ],
+          "sku": "SAC-GRAZITA-SUEDE-COGNAC",
+          "dimensions": {
+            "longueur": 30,
+            "largeur": 10,
+            "hauteur": 22
+          }
+        }
+      ],
+      "est_page_gamme": false
+    },
+    {
+      "nom": "Laya",
+      "slug": "laya",
+      "type": "Sac sceau",
+      "description_courte": "Sac sceau camel en cuir suède italien avec franges bohème. Grand format spacieux et souple, parfait pour un style authentique et chaleureux au quotidien.",
+      "description_html": "<p>Le sac sceau <strong>Laya bordeaux</strong> incarne le style bohème chic dans toute sa splendeur et son raffinement. Confectionné en cuir suède italien de ha",
+      "variantes": [
+        {
+          "couleur": "Camel",
+          "matiere": "Cuir suède",
+          "prix": 59.9,
+          "stock": 3,
+          "reappro": false,
+          "photos": [
+            "sac-sceau-cuir-suede-franges-laya-camel-1.jpg",
+            "sac-sceau-cuir-suede-franges-laya-camel-2.jpg",
+            "sac-sceau-cuir-suede-franges-laya-camel-interieur.jpg"
+          ],
+          "sku": "SAC-LAYA-SUEDE-CAMEL",
+          "dimensions": {
+            "longueur": 28,
+            "largeur": 14,
+            "hauteur": 26
+          }
+        },
+        {
+          "couleur": "Bordeaux",
+          "matiere": "Cuir suède",
+          "prix": 59.9,
+          "stock": 3,
+          "reappro": false,
+          "photos": [
+            "sac-sceau-cuir-suede-franges-laya-bordeaux-1-scaled.jpg",
+            "sac-sceau-cuir-suede-franges-laya-camel-2.jpg",
+            "sac-sceau-cuir-suede-franges-laya-camel-interieur.jpg"
+          ],
+          "sku": "SAC-LAYA-SUEDE-BORDEAUX",
+          "dimensions": {
+            "longueur": 28,
+            "largeur": 14,
+            "hauteur": 26
+          }
+        }
+      ],
+      "est_page_gamme": false
+    },
+    {
+      "nom": "Daria",
+      "slug": "daria",
+      "type": "Sac à bandoulière",
+      "description_courte": "Sac bandoulière kaki en cuir suède italien avec franges bohème. Léger, tendance et pratique, idéal pour un style bohème élégant au quotidien.",
+      "description_html": "<p>Le sac bandoulière <strong>Daria chocolat</strong> incarne l'élégance naturelle et la sophistication bohème dans un format léger et pratique. Confectionné en",
+      "variantes": [
+        {
+          "couleur": "Kaki",
+          "matiere": "Cuir suède",
+          "prix": 44.9,
+          "stock": 3,
+          "reappro": false,
+          "photos": [
+            "sac-bandouliere-cuir-suede-franges-daria-kaki-1.jpeg",
+            "MS_1762272689573-1.jpg"
+          ],
+          "sku": "SAC-DARIA-SUEDE-KAKI",
+          "dimensions": {
+            "longueur": 23,
+            "largeur": 8,
+            "hauteur": 24
+          }
+        },
+        {
+          "couleur": "Bordeaux",
+          "matiere": "Cuir suède",
+          "prix": 44.9,
+          "stock": 3,
+          "reappro": false,
+          "photos": [
+            "sac-bandouliere-cuir-suede-franges-daria-bordeaux-1-scaled.jpg",
+            "MS_1762272689573-1.jpg"
+          ],
+          "sku": "SAC-DARIA-SUEDE-BORDEAUX",
+          "dimensions": {
+            "longueur": 23,
+            "largeur": 8,
+            "hauteur": 24
+          }
+        },
+        {
+          "couleur": "Camel",
+          "matiere": "Cuir suède",
+          "prix": 44.9,
+          "stock": 3,
+          "reappro": false,
+          "photos": [
+            "sac-bandouliere-cuir-suede-franges-daria-camel-1.jpeg",
+            "MS_1762272689573-1.jpg"
+          ],
+          "sku": "SAC-DARIA-SUEDE-CAMEL",
+          "dimensions": {
+            "longueur": 23,
+            "largeur": 8,
+            "hauteur": 24
+          }
+        },
+        {
+          "couleur": "Chocolat",
+          "matiere": "Cuir suède",
+          "prix": 44.9,
+          "stock": 3,
+          "reappro": false,
+          "photos": [
+            "sac-bandouliere-cuir-suede-franges-daria-chocolat-1-scaled.jpg",
+            "MS_1762272689573-1.jpg"
+          ],
+          "sku": "SAC-DARIA-SUEDE-CHOCOLAT",
+          "dimensions": {
+            "longueur": 23,
+            "largeur": 8,
+            "hauteur": 24
+          }
+        }
+      ],
+      "est_page_gamme": false
+    },
+    {
+      "nom": "Xena",
+      "slug": "xena",
+      "type": "Sac à bandoulière",
+      "description_courte": "Sac bandoulière bordeaux en cuir suède italien avec franges et chaîne tressée dorée. Bohème chic au caractère affirmé, parfait pour un style unique.",
+      "description_html": "<p>Le sac bandoulière <strong>Xena bordeaux</strong> séduit par son mélange audacieux de douceur bohème et de caractère rock affirmé. Confectionné en cuir suède",
+      "variantes": [
+        {
+          "couleur": "Bordeaux",
+          "matiere": "Cuir suède",
+          "prix": 59.9,
+          "stock": 3,
+          "reappro": false,
+          "photos": [
+            "sac-bandouliere-cuir-suede-franges-xena-bordeaux-1-scaled.jpg",
+            "sac-bandouliere-cuir-suede-franges-xena-bordeaux-2-scaled.jpg",
+            "sac-bandouliere-cuir-suede-franges-xena-bordeaux-3-scaled.jpg"
+          ],
+          "sku": "SAC-XENA-SUEDE-BORDEAUX",
+          "dimensions": {
+            "longueur": 27,
+            "largeur": 3,
+            "hauteur": 16
+          }
+        }
+      ],
+      "est_page_gamme": false
+    },
+    {
+      "nom": "Léola",
+      "slug": "leola",
+      "type": "Sac à bandoulière",
+      "description_courte": "Sac bandoulière en cuir italien imprimé léopard, fabriqué en Italie. Original et élégant, il apporte une touche sauvage chic à toutes vos tenues.",
+      "description_html": "<p>Le sac bandoulière <strong>Léola léopard</strong> séduit par son caractère audacieux et son style résolument chic qui ne passe jamais inaperçu. Fabriqué en I",
+      "variantes": [
+        {
+          "couleur": "Léopard",
+          "matiere": "Cuir suède",
+          "prix": 59.9,
+          "stock": 3,
+          "reappro": false,
+          "photos": [
+            "PXL_20251024_154005540.RAW-01.COVER-1-1-scaled.jpg",
+            "sac-bandouliere-cuir-suede-leopard-leola-2-scaled.jpg",
+            "sac-bandouliere-cuir-suede-leopard-leola-3-scaled.jpg"
+          ],
+          "sku": "SAC-LEOLA-SUEDE-LEOPARD",
+          "poids": 0,
+          "dimensions": {
+            "longueur": 23,
+            "largeur": 6,
+            "hauteur": 15
+          }
+        }
+      ],
+      "est_page_gamme": false
+    },
+    {
+      "nom": "Klara",
+      "slug": "klara",
+      "type": "Sac à bandoulière",
+      "description_courte": "Sac multipoche \"Klara\" en cuir suède italien noir, chic et ultra-fonctionnel. Organisation optimale et élégance pour accompagner toutes vos journées.",
+      "description_html": "<p>Le sac bandoulière <strong>Klara noir</strong> allie style élégant, confort optimal et organisation exceptionnelle dans un format pensé pour les femmes activ",
+      "variantes": [
+        {
+          "couleur": "Noir",
+          "matiere": "Cuir suède",
+          "prix": 74.9,
+          "stock": 2,
+          "reappro": false,
+          "photos": [
+            "sac-bandouliere-cuir-suede-klara-noir-1-scaled.jpg",
+            "sac-bandouliere-cuir-suede-klara-camel-1.webp",
+            "sac-bandouliere-cuir-suede-klara-camel-2.webp",
+            "sac-bandouliere-cuir-suede-klara-camel-3.webp"
+          ],
+          "sku": "SAC-KLARA-SUEDE-NOIR",
+          "dimensions": {
+            "longueur": 30,
+            "largeur": 11,
+            "hauteur": 13
+          }
+        }
+      ],
+      "est_page_gamme": false
+    },
+    {
+      "nom": "Elisa",
+      "slug": "elisa",
+      "type": "Sac à bandoulière",
+      "description_courte": "Sac bandoulière noir en cuir grainé italien avec fermeture nœud élégante. Classique intemporel, chic et pratique, parfait du bureau aux soirées.",
+      "description_html": "<p>Le sac bandoulière <strong>Elisa noir</strong> est l'incarnation parfaite du classique intemporel et de l'élégance discrète. Confectionné en cuir grainé ital",
+      "variantes": [
+        {
+          "couleur": "Noir",
+          "matiere": "Cuir grainé",
+          "prix": 44.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "sac-bandouliere-cuir-graine-elisa-noir-1-scaled.jpg",
+            "sac-bandouliere-cuir-graine-elisa-noir-2.jpg",
+            "sac-bandouliere-cuir-graine-elisa-noir-3.jpg",
+            "sac-bandouliere-cuir-graine-elisa-noir-interieur.jpg"
+          ],
+          "sku": "SAC-ELISA-GRAINE-NOIR",
+          "dimensions": {
+            "longueur": 25,
+            "largeur": 5,
+            "hauteur": 18
+          }
+        },
+        {
+          "couleur": "Turquoise",
+          "matiere": "Cuir grainé",
+          "prix": 44.9,
+          "stock": 3,
+          "reappro": false,
+          "photos": [
+            "sac-bandouliere-cuir-graine-elisa-turquoise-4-scaled.jpg",
+            "sac-bandouliere-cuir-graine-elisa-noir-2.jpg",
+            "sac-bandouliere-cuir-graine-elisa-noir-3.jpg",
+            "sac-bandouliere-cuir-graine-elisa-noir-interieur.jpg"
+          ],
+          "sku": "SAC-ELISA-GRAINE-TURQUOISE",
+          "dimensions": {
+            "longueur": 25,
+            "largeur": 5,
+            "hauteur": 18
+          }
+        },
+        {
+          "couleur": "Kaki",
+          "matiere": "Cuir grainé",
+          "prix": 44.9,
+          "stock": 3,
+          "reappro": false,
+          "photos": [
+            "MS_1762895361796-scaled.jpg",
+            "MS_1762895987402-1.jpg",
+            "MS_1762895428194-Photoroom.jpg",
+            "MS_1762428978746-1.jpg"
+          ],
+          "sku": "SAC-ELISA-GRAINE-KAKI",
+          "dimensions": {
+            "longueur": 25,
+            "largeur": 5,
+            "hauteur": 18
+          }
+        },
+        {
+          "couleur": "Bleu marine",
+          "matiere": "Cuir grainé",
+          "prix": 44.9,
+          "stock": 3,
+          "reappro": false,
+          "photos": [
+            "sac-bandouliere-cuir-graine-elisa-marine-4-scaled.jpg",
+            "sac-bandouliere-cuir-graine-elisa-noir-2.jpg",
+            "sac-bandouliere-cuir-graine-elisa-noir-3.jpg",
+            "sac-bandouliere-cuir-graine-elisa-noir-interieur.jpg"
+          ],
+          "sku": "SAC-ELISA-GRAINE-MARINE",
+          "dimensions": {
+            "longueur": 25,
+            "largeur": 5,
+            "hauteur": 18
+          }
+        }
+      ],
+      "est_page_gamme": false
+    },
+    {
+      "nom": "Toscana",
+      "slug": "toscana",
+      "type": "Sac convertible",
+      "description_courte": "Sac convertible \"Toscana\" noir en cuir grainé italien — se porte en sac à dos ou bandoulière. Chic, pratique et polyvalent pour toutes vos journées.",
+      "description_html": "<p>Le sac convertible <strong>Toscana bordeaux</strong> apporte une touche sophistiquée et féminine tout en restant extrêmement fonctionnel grâce à son système ",
+      "variantes": [
+        {
+          "couleur": "Noir",
+          "matiere": "Cuir grainé",
+          "prix": 69.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "sac-a-dos-cuir-graine-noir-1-scaled.jpg",
+            "sac-a-dos-cuir-graine-noir-2.jpg",
+            "sac-a-dos-cuir-graine-noir-3-scaled.jpg",
+            "sac-a-dos-cuir-graine-noir-4-scaled.jpg"
+          ],
+          "sku": "SAC-TOSCANA-GRAINE-NOIR",
+          "poids": 0,
+          "dimensions": {
+            "longueur": 23,
+            "largeur": 8,
+            "hauteur": 28
+          }
+        },
+        {
+          "couleur": "Chocolat",
+          "matiere": "Cuir grainé",
+          "prix": 69.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "sac-a-dos-cuir-graine-chocolat-1-scaled.jpg",
+            "sac-a-dos-cuir-graine-noir-2.jpg",
+            "sac-a-dos-cuir-graine-noir-3-scaled.jpg",
+            "sac-a-dos-cuir-graine-noir-4-scaled.jpg"
+          ],
+          "sku": "SAC-TOSCANA-GRAINE-CHOCOLAT",
+          "poids": 0,
+          "dimensions": {
+            "longueur": 23,
+            "largeur": 8,
+            "hauteur": 28
+          }
+        },
+        {
+          "couleur": "Bordeaux",
+          "matiere": "Cuir grainé",
+          "prix": 69.9,
+          "stock": 0,
+          "reappro": false,
+          "photos": [
+            "sac-a-dos-cuir-graine-bordeaux-1-scaled.jpg",
+            "sac-a-dos-cuir-graine-noir-2.jpg",
+            "sac-a-dos-cuir-graine-noir-3-scaled.jpg",
+            "sac-a-dos-cuir-graine-noir-4-scaled.jpg"
+          ],
+          "sku": "SAC-TOSCANA-GRAINE-BORDEAUX",
+          "poids": 0,
+          "dimensions": {
+            "longueur": 23,
+            "largeur": 8,
+            "hauteur": 28
+          }
+        }
+      ],
+      "est_page_gamme": false
+    },
+    {
+      "nom": "Jiada",
+      "slug": "jiada",
+      "type": "Sac à bandoulière",
+      "description_courte": "Sac bandoulière kaki en cuir suède italien avec franges et boucle dorée. Léger, élégant et bohème chic, il complète parfaitement vos looks au quotidien.",
+      "description_html": "<p>Le sac bandoulière <strong>Jiada noir</strong> conjugue style intemporel et praticité bohème dans un format léger et raffiné. Réalisé en cuir suède italien a",
+      "variantes": [
+        {
+          "couleur": "Kaki",
+          "matiere": "Cuir suède",
+          "prix": 39.9,
+          "stock": 0,
+          "reappro": true,
+          "photos": [
+            "sac-bandouliere-cuir-suede-franges-jiada-vert-1-scaled.jpg",
+            "sac-bandouliere-cuir-suede-franges-jiada-vert-2-scaled.jpg",
+            "sac-bandouliere-cuir-suede-franges-jiada-vert-3-scaled.jpg",
+            "sac-bandouliere-cuir-suede-franges-jiada-vert-4-scaled.jpg",
+            "sac-bandouliere-cuir-suede-franges-jiada-vert-5-scaled.jpg"
+          ],
+          "sku": "SAC-JIADA-SUEDE-KAKI",
+          "dimensions": {
+            "longueur": 26,
+            "largeur": 4,
+            "hauteur": 20
+          }
+        },
+        {
+          "couleur": "Noir",
+          "matiere": "Cuir suède",
+          "prix": 39.9,
+          "stock": 0,
+          "reappro": false,
+          "photos": [
+            "sac-bandouliere-cuir-suede-franges-jiada-noir-1-scaled.jpg",
+            "sac-bandouliere-cuir-suede-franges-jiada-vert-2-scaled.jpg",
+            "sac-bandouliere-cuir-suede-franges-jiada-vert-3-scaled.jpg",
+            "sac-bandouliere-cuir-suede-franges-jiada-vert-4-scaled.jpg",
+            "sac-bandouliere-cuir-suede-franges-jiada-vert-5-scaled.jpg"
+          ],
+          "sku": "SAC-JIADA-SUEDE-NOIR",
+          "dimensions": {
+            "longueur": 26,
+            "largeur": 4,
+            "hauteur": 20
+          }
+        }
+      ],
+      "est_page_gamme": false
+    },
+    {
+      "nom": "Lila",
+      "slug": "lila",
+      "type": "Banane",
+      "description_courte": "Banane double Lila en cuir suède léopard italien. Deux compartiments zippés pour une organisation optimale. Portée taille ou crossbody. Fabrication artisanale.",
+      "description_html": "<p>La <strong>banane Lila en cuir suède camel</strong> respire la douceur et la luminosité. Cette teinte chaleureuse, entre beige doré et brun clair, évoque l'a",
+      "variantes": [
+        {
+          "couleur": "Léopard",
+          "matiere": "Cuir suède",
+          "prix": 44.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "banane-cuir-suede-daim-leopard-lila-1.jpg-scaled.jpg",
+            "banane-cuir-suede-daim-bordeaux-lila-2-scaled.jpg",
+            "banane-cuir-suede-daim-bordeaux-lila-3-scaled.jpg",
+            "banane-cuir-suede-daim-bordeaux-lila-4-scaled.jpg"
+          ],
+          "sku": "BANANE-LILA-SUEDE-LEOPARD",
+          "dimensions": {
+            "longueur": 28,
+            "largeur": 7,
+            "hauteur": 15
+          }
+        },
+        {
+          "couleur": "Bordeaux",
+          "prix": 44.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "banane-cuir-suede-daim-bordeaux-lila-1-scaled.jpg",
+            "banane-cuir-suede-daim-bordeaux-lila-2-scaled.jpg",
+            "banane-cuir-suede-daim-bordeaux-lila-3-scaled.jpg",
+            "banane-cuir-suede-daim-bordeaux-lila-4-scaled.jpg"
+          ],
+          "sku": "BANANE-LILA-SUEDE-BORDEAUX",
+          "dimensions": {
+            "longueur": 28,
+            "largeur": 7,
+            "hauteur": 15
+          }
+        },
+        {
+          "couleur": "Noir",
+          "prix": 44.9,
+          "stock": 0,
+          "reappro": false,
+          "photos": [
+            "banane-cuir-suede-daim-noire-lila-1.jpg-scaled.jpg",
+            "banane-cuir-suede-daim-bordeaux-lila-2-scaled.jpg",
+            "banane-cuir-suede-daim-bordeaux-lila-3-scaled.jpg",
+            "banane-cuir-suede-daim-bordeaux-lila-4-scaled.jpg"
+          ],
+          "sku": "BANANE-LILA-SUEDE-NOIR",
+          "dimensions": {
+            "longueur": 28,
+            "largeur": 7,
+            "hauteur": 15
+          }
+        },
+        {
+          "couleur": "Camel",
+          "prix": 44.9,
+          "stock": 0,
+          "reappro": false,
+          "photos": [
+            "banane-cuir-suede-daim-bordeaux-camel-1-scaled.jpg",
+            "banane-cuir-suede-daim-bordeaux-lila-2-scaled.jpg",
+            "banane-cuir-suede-daim-bordeaux-lila-3-scaled.jpg",
+            "banane-cuir-suede-daim-bordeaux-lila-4-scaled.jpg"
+          ],
+          "sku": "BANANE-LILA-SUEDE-CAMEL",
+          "dimensions": {
+            "longueur": 28,
+            "largeur": 7,
+            "hauteur": 15
+          }
+        }
+      ],
+      "est_page_gamme": false
+    },
+    {
+      "nom": "Ava",
+      "slug": "ava",
+      "type": "Sac à bandoulière",
+      "description_courte": "Sac Ava en cuir grainé italien noir avec franges bohèmes. Format idéal pour le quotidien, bandoulière ajustable. Fabrication artisanale Made in Italy.",
+      "description_html": "<p>Le <strong>sac Ava en cuir grainé noir</strong> marie avec brio l'élégance structurée du cuir travaillé et l'esprit libre des franges décoratives. Conçu pour",
+      "variantes": [
+        {
+          "couleur": "Noir",
+          "prix": 44.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "sac-cuir-graine-a-franges-bandouliere-ava-noir-1-scaled.jpg",
+            "sac-cuir-graine-a-franges-bandouliere-ava-noir-2-scaled.jpg",
+            "sac-cuir-graine-a-franges-bandouliere-ava-noir-3-scaled.jpg",
+            "sac-cuir-graine-a-franges-bandouliere-ava-noir-4-scaled.jpg"
+          ],
+          "sku": "SAC-AVA-GRAINE-FRANGES-NOIR",
+          "dimensions": {
+            "longueur": 26,
+            "largeur": 9,
+            "hauteur": 22
+          }
+        }
+      ],
+      "est_page_gamme": false
+    },
+    {
+      "nom": "Boha",
+      "slug": "boha",
+      "type": "Sac à bandoulière",
+      "description_courte": "Sac Boha en cuir suède bordeaux avec rabat rond. Design vintage-chic au toucher velouté. Bandoulière ajustable pour un porté crossbody. Fabrication italienne artisanale.",
+      "description_html": "<p>Le <strong>sac Boha en cuir suède bordeaux</strong> réinvente le classique sac à rabat avec une touche contemporaine et chaleureuse. Sa silhouette arrondie e",
+      "variantes": [
+        {
+          "couleur": "Bordeaux",
+          "prix": 49.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "sac-cuir-suede-bandouliere-boha-bordeaux-1-scaled.jpg",
+            "sac-cuir-suede-bandouliere-boha-bordeaux-2-scaled.jpg",
+            "sac-cuir-suede-bandouliere-boha-bordeaux-3-scaled.jpg",
+            "sac-cuir-suede-bandouliere-boha-bordeaux-4-scaled.jpg",
+            "sac-cuir-suede-bandouliere-boha-bordeaux-interieur-scaled.jpg"
+          ],
+          "sku": "SAC-BOHA-SUEDE-RABAT-BORDEAUX",
+          "dimensions": {
+            "longueur": 27,
+            "largeur": 3,
+            "hauteur": 24
+          }
+        }
+      ],
+      "est_page_gamme": false
+    },
+    {
+      "nom": "Elya",
+      "slug": "elya",
+      "type": "Sac à bandoulière",
+      "description_courte": "Grand sac Elya en cuir grainé chocolat italien avec franges bohèmes. Espace généreux pour le quotidien, bandoulière ajustable et multiples rangements. Fabrication artisanale Made in Italy.",
+      "description_html": "<p>Le <strong>grand sac Elya en cuir grainé chocolat</strong> célèbre l'alliance parfaite entre capacité généreuse et élégance bohème. Avec ses franges dynamiqu",
+      "variantes": [
+        {
+          "couleur": "Chocolat",
+          "prix": 49.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "sac-bandouliere-cuir-graine-elya-chocolat-1-scaled.jpg",
+            "sac-bandouliere-cuir-graine-elya-chocolat-2-scaled.jpg",
+            "sac-bandouliere-cuir-graine-elya-chocolat-3-scaled.jpg"
+          ],
+          "sku": "SAC-ELYA-GRAINE-FRANGES-CHOCOLAT",
+          "dimensions": {
+            "longueur": 31,
+            "largeur": 10,
+            "hauteur": 22
+          }
+        }
+      ],
+      "est_page_gamme": false
+    },
+    {
+      "nom": "Paloma",
+      "slug": "paloma",
+      "type": "Sac à bandoulière",
+      "description_courte": "Sac Paloma noir en cuir grainé à franges. Allure bohème chic et élégance urbaine réunies. L'accessoire italien de caractère pour affirmer votre style.",
+      "description_html": "<p>Le <strong>sac Paloma en cuir grainé noir</strong> incarne l'équilibre parfait entre sophistication urbaine et esprit bohème décomplexé. Ses franges généreus",
+      "variantes": [
+        {
+          "couleur": "Noir",
+          "matiere": "Cuir grainé",
+          "prix": 49.9,
+          "stock": 0,
+          "reappro": false,
+          "photos": [],
+          "sku": "SAC-PALOMA-FRANGES-GRAINE-NOIR",
+          "dimensions": {
+            "longueur": 24,
+            "largeur": 6,
+            "hauteur": 17
+          }
+        }
+      ],
+      "est_page_gamme": false
+    },
+    {
+      "nom": "Talia",
+      "slug": "talia",
+      "type": "Sac à bandoulière",
+      "description_courte": "Sac bandoulière Talia marine en cuir suède souple avec anneau doré signature. Compact, élégant et parfait pour les sorties et le quotidien chic.",
+      "description_html": "<p>Le sac bandoulière <strong>Talia camel</strong> incarne l'élégance bohème et la chaleur intemporelle dans un format compact et raffiné. Confectionné en cuir ",
+      "variantes": [
+        {
+          "couleur": "Bleu marine",
+          "matiere": "Cuir suède",
+          "prix": 44.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "sac-bandouliere-cuir-suede-daim-talia-marine-1-scaled.jpg",
+            "sac-bandouliere-cuir-suede-daim-talia-marine-2-scaled.jpg",
+            "sac-bandouliere-cuir-suede-daim-talia-marine-3-scaled.jpg"
+          ],
+          "sku": "SAC-TALIA-BANDOULIERE-SUEDE-MARINE",
+          "dimensions": {
+            "longueur": 21,
+            "largeur": 8,
+            "hauteur": 16
+          }
+        },
+        {
+          "couleur": "Camel",
+          "matiere": "Cuir suède",
+          "prix": 44.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "sac-cuir-suede-bandouliere-camel-talia-1-scaled.jpg",
+            "sac-cuir-suede-bandouliere-camel-talia-2-scaled.jpg",
+            "sac-cuir-suede-bandouliere-camel-talia-3-scaled.jpg"
+          ],
+          "sku": "SAC-TALIA-BANDOULIERE-SUEDE-CAMEL",
+          "dimensions": {
+            "longueur": 21,
+            "largeur": 8,
+            "hauteur": 16
+          }
+        },
+        {
+          "couleur": "Noir léopard",
+          "matiere": "Cuir suède",
+          "prix": 44.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "sac-bandouliere-cuir-suede-daim-talia-noir-leopard-1-scaled.jpg",
+            "sac-bandouliere-cuir-suede-daim-talia-noir-leopard-2-scaled.jpg",
+            "sac-bandouliere-cuir-suede-daim-talia-noir-leopard-3-scaled.jpg"
+          ],
+          "sku": "SAC-TALIA-BANDOULIERE-SUEDE-NOIR-LEOPARD",
+          "dimensions": {
+            "longueur": 21,
+            "largeur": 8,
+            "hauteur": 16
+          }
+        }
+      ],
+      "est_page_gamme": false
+    },
+    {
+      "nom": "Serena",
+      "slug": "serena",
+      "type": "Sac à bandoulière",
+      "description_courte": "Sac bandoulière noir en cuir suède italien avec fermeture métallique dorée. Chic, compact et élégant pour toutes vos occasions du quotidien aux soirées.",
+      "description_html": "<p>Le sac bandoulière <strong>Serena taupe</strong> incarne l'élégance discrète et le raffinement minimaliste dans un format parfaitement calibré. Confectionné ",
+      "variantes": [
+        {
+          "couleur": "Noir",
+          "matiere": "Cuir suède",
+          "prix": 44.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "sac-bandouliere-cuir-suede-serena-noir-verouillage-1-scaled.jpg",
+            "sac-bandouliere-cuir-suede-serena-noir-verouillage-2-scaled.jpg",
+            "sac-bandouliere-cuir-suede-serena-noir-verouillage-3-scaled.jpg",
+            "sac-bandouliere-cuir-suede-serena-kaki-verouillage-7-scaled.jpg"
+          ],
+          "sku": "SAC-SERENA-BANDOULIERE-SUEDE-NOIR",
+          "dimensions": {
+            "longueur": 27,
+            "largeur": 7,
+            "hauteur": 17
+          }
+        },
+        {
+          "couleur": "Camel",
+          "matiere": "Cuir suède",
+          "prix": 44.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "sac-bandouliere-cuir-suede-serena-camel-verouillage-1-scaled.jpg",
+            "sac-bandouliere-cuir-suede-serena-camel-verouillage-2-scaled.jpg",
+            "sac-bandouliere-cuir-suede-serena-camel-verouillage-3-scaled.jpg",
+            "sac-bandouliere-cuir-suede-serena-kaki-verouillage-7-scaled.jpg"
+          ],
+          "sku": "SAC-SERENA-BANDOULIERE-SUEDE-CAMEL",
+          "dimensions": {
+            "longueur": 27,
+            "largeur": 7,
+            "hauteur": 17
+          }
+        },
+        {
+          "couleur": "Kaki",
+          "matiere": "Cuir suède",
+          "prix": 44.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "sac-bandouliere-cuir-suede-serena-kaki-verouillage-1-scaled.jpg",
+            "sac-bandouliere-cuir-suede-serena-kaki-verouillage-5-scaled.jpg",
+            "sac-bandouliere-cuir-suede-serena-kaki-verouillage-6-scaled.jpg",
+            "sac-bandouliere-cuir-suede-serena-kaki-verouillage-3-scaled.jpg",
+            "sac-bandouliere-cuir-suede-serena-kaki-verouillage-7-scaled.jpg"
+          ],
+          "sku": "SAC-SERENA-BANDOULIERE-SUEDE-KAKI",
+          "dimensions": {
+            "longueur": 27,
+            "largeur": 7,
+            "hauteur": 17
+          }
+        },
+        {
+          "couleur": "Taupe",
+          "matiere": "Cuir suède",
+          "prix": 44.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "sac-bandouliere-cuir-suede-serena-taupe-verouillage-1-scaled.jpg",
+            "sac-bandouliere-cuir-suede-serena-taupe-verouillage-4-scaled.jpg",
+            "sac-bandouliere-cuir-suede-serena-taupe-verouillage-3-scaled.jpg",
+            "sac-bandouliere-cuir-suede-serena-kaki-verouillage-7-scaled.jpg"
+          ],
+          "sku": "SAC-SERENA-BANDOULIERE-SUEDE-TAUPE",
+          "dimensions": {
+            "longueur": 27,
+            "largeur": 7,
+            "hauteur": 17
+          }
+        }
+      ],
+      "est_page_gamme": false
+    },
+    {
+      "nom": "Teresa",
+      "slug": "teresa",
+      "type": "Sacoche",
+      "description_courte": "Sacoche Teresa en cuir grainé noir italien. Design compact à bandoulière, format pratique et finitions artisanales. L'essentiel élégant au quotidien.",
+      "description_html": "<p>La <strong>sacoche Teresa en cuir grainé taupe</strong> célèbre la douceur des tons naturels avec une élégance discrète et raffinée. Sa teinte beige-gris lum",
+      "variantes": [
+        {
+          "couleur": "Noir",
+          "matiere": "Cuir grainé",
+          "prix": 29.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "sacoche-bandouliere-cuir-graine-teresa-noir-1-scaled.jpg",
+            "sacoche-bandouliere-cuir-graine-teresa-marine-2-scaled.jpg",
+            "sacoche-bandouliere-cuir-graine-teresa-marine-3-scaled.jpg",
+            "sacoche-bandouliere-cuir-graine-teresa-marine-4-scaled.jpg"
+          ],
+          "sku": "SACOCHE-TERESA-BANDOULIERE-GRAINE-NOIR",
+          "dimensions": {
+            "longueur": 18,
+            "largeur": 5,
+            "hauteur": 17
+          }
+        },
+        {
+          "couleur": "Bleu marine",
+          "matiere": "Cuir grainé",
+          "prix": 29.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "sacoche-bandouliere-cuir-graine-teresa-marine-1-scaled.jpg",
+            "sacoche-bandouliere-cuir-graine-teresa-marine-2-scaled.jpg",
+            "sacoche-bandouliere-cuir-graine-teresa-marine-3-scaled.jpg",
+            "sacoche-bandouliere-cuir-graine-teresa-marine-4-scaled.jpg"
+          ],
+          "sku": "SACOCHE-TERESA-BANDOULIERE-GRAINE-MARINE",
+          "dimensions": {
+            "longueur": 18,
+            "largeur": 5,
+            "hauteur": 17
+          }
+        },
+        {
+          "couleur": "Taupe",
+          "matiere": "Cuir grainé",
+          "prix": 29.9,
+          "stock": 0,
+          "reappro": false,
+          "photos": [
+            "sacoche-bandouliere-cuir-graine-teresa-taupe-1-scaled.jpg",
+            "sacoche-bandouliere-cuir-graine-teresa-marine-2-scaled.jpg",
+            "sacoche-bandouliere-cuir-graine-teresa-marine-3-scaled.jpg",
+            "sacoche-bandouliere-cuir-graine-teresa-marine-4-scaled.jpg"
+          ],
+          "sku": "SACOCHE-TERESA-BANDOULIERE-GRAINE-TAUPE",
+          "dimensions": {
+            "longueur": 18,
+            "largeur": 5,
+            "hauteur": 17
+          }
+        }
+      ],
+      "est_page_gamme": false
+    },
+    {
+      "nom": "Lola",
+      "slug": "lola",
+      "type": "Banane",
+      "description_courte": "Banane Lola double compartiment en cuir grainé noir italien. Design fonctionnel, portage mains libres et finitions artisanales. L'essentiel libéré.",
+      "description_html": "<p>La <strong>banane Lola double compartiment en cuir grainé bordeaux</strong> affirme votre style avec caractère tout en libérant vos mains. Sa couleur profond",
+      "variantes": [
+        {
+          "couleur": "Noir",
+          "matiere": "Cuir grainé",
+          "prix": 39.9,
+          "stock": 2,
+          "reappro": false,
+          "photos": [
+            "MS_1759846851422-scaled.jpg"
+          ],
+          "sku": "BANANE-LOLA-GRAINE-NOIRE",
+          "dimensions": {
+            "longueur": 30,
+            "largeur": 7,
+            "hauteur": 19
+          }
+        },
+        {
+          "couleur": "Bordeaux",
+          "matiere": "Cuir grainé",
+          "prix": 39.9,
+          "stock": 2,
+          "reappro": false,
+          "photos": [
+            "MS_1759846856854-scaled.jpg"
+          ],
+          "sku": "BANANE-LOLA-GRAINE-BORDEAUX",
+          "dimensions": {
+            "longueur": 30,
+            "largeur": 7,
+            "hauteur": 19
+          }
+        }
+      ],
+      "est_page_gamme": false
+    },
+    {
+      "nom": "Lolita",
+      "slug": "lolita",
+      "type": "Banane",
+      "description_courte": "Banane Lolita simple en cuir grainé noir italien. Design compact minimaliste, portage léger et finitions artisanales. L'essentiel en toute liberté.",
+      "description_html": "<p>La <strong>banane Lolita simple en cuir irisé argenté</strong> affirme un style résolument moderne et sophistiqué. Son effet métallisé argenté capte la lumiè",
+      "variantes": [
+        {
+          "couleur": "Noir",
+          "matiere": "Cuir grainé",
+          "prix": 29.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "banane-cuir-graine-noire-lolita-1-scaled.jpg"
+          ],
+          "sku": "BANANE-LOLITA-GRAINE-NOIRE",
+          "dimensions": {
+            "longueur": 25,
+            "largeur": 6,
+            "hauteur": 14
+          }
+        },
+        {
+          "couleur": "Ocre",
+          "matiere": "Cuir grainé",
+          "prix": 29.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "banane-cuir-graine-ocre-lolita-1-scaled.jpg"
+          ],
+          "sku": "BANANE-LOLITA-GRAINE-OCRE",
+          "dimensions": {
+            "longueur": 25,
+            "largeur": 6,
+            "hauteur": 14
+          }
+        },
+        {
+          "couleur": "Bleu marine",
+          "matiere": "Cuir grainé",
+          "prix": 29.9,
+          "stock": 3,
+          "reappro": false,
+          "photos": [
+            "banane-cuir-irise-dore-lolita-1-scaled.jpg",
+            "banane-cuir-irise-dore-lolita-2-scaled.jpg",
+            "banane-cuir-irise-dore-lolita-3-scaled.jpg",
+            "banane-cuir-irise-dore-lolita-4-scaled.jpg"
+          ],
+          "sku": "BANANE-LOLITA-IRISE-DOREE",
+          "dimensions": {
+            "longueur": 25,
+            "largeur": 6,
+            "hauteur": 14
+          }
+        },
+        {
+          "couleur": "Doré",
+          "matiere": "Cuir irisé",
+          "prix": 29.9,
+          "stock": 3,
+          "reappro": false,
+          "photos": [
+            "banane-cuir-irise-argente-lolita-1-scaled.jpg"
+          ],
+          "sku": "BANANE-LOLITA-IRISE-ARGENTE",
+          "dimensions": {
+            "longueur": 25,
+            "largeur": 6,
+            "hauteur": 14
+          }
+        }
+      ],
+      "est_page_gamme": false
+    },
+    {
+      "nom": "Luana",
+      "slug": "luana",
+      "type": "Sac à bandoulière",
+      "description_courte": "Sac Luana noir en cuir grainé avec multiples poches. Élégant et ultra pratique pour organiser votre quotidien. Le compagnon idéal des femmes actives.",
+      "description_html": "<p>Le <strong>sac à bandoulière Luana en cuir grainé bordeaux</strong> marie sophistication chromatique et praticité intelligente. Imaginé pour les femmes qui c",
+      "variantes": [
+        {
+          "couleur": "Noir",
+          "matiere": "Cuir grainé",
+          "prix": 54.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "sac-cuir-graine-bandouliere-multipoche-luana-noir-1-scaled.jpg",
+            "sac-cuir-graine-bandouliere-multipoche-luana-bordeaux-2-scaled.jpg",
+            "sac-cuir-graine-bandouliere-multipoche-luana-bordeaux-3-scaled.jpg",
+            "sac-cuir-graine-bandouliere-multipoche-luana-bordeaux-4-scaled.jpg"
+          ],
+          "sku": "SAC-LUANA-BATEAU-GRAINE-NOIR",
+          "dimensions": {
+            "longueur": 29,
+            "largeur": 13,
+            "hauteur": 20
+          }
+        },
+        {
+          "couleur": "Bordeaux",
+          "matiere": "Cuir grainé",
+          "prix": 54.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "sac-cuir-graine-bandouliere-multipoche-luana-bordeaux-1-scaled.jpg",
+            "sac-cuir-graine-bandouliere-multipoche-luana-bordeaux-2-scaled.jpg",
+            "sac-cuir-graine-bandouliere-multipoche-luana-bordeaux-3-scaled.jpg",
+            "sac-cuir-graine-bandouliere-multipoche-luana-bordeaux-4-scaled.jpg"
+          ],
+          "sku": "SAC-LUANA-BATEAU-GRAINE-BORDEAUX",
+          "dimensions": {
+            "longueur": 29,
+            "largeur": 13,
+            "hauteur": 20
+          }
+        }
+      ],
+      "est_page_gamme": false
+    },
+    {
+      "nom": "Gabriella",
+      "slug": "gabriella",
+      "type": "Sac à bandoulière",
+      "description_courte": "Sac Gabriella bordeaux en cuir grainé avec rabat élégant. Allure classique et sophistiquée pour sublimer vos tenues. L'élégance italienne au quotidien.",
+      "description_html": "<p>Le <strong>sac à bandoulière Gabriella en cuir grainé marine</strong> marie élégance intemporelle et polyvalence absolue. Imaginé pour les femmes qui cultive",
+      "variantes": [
+        {
+          "couleur": "Bordeaux",
+          "matiere": "Cuir grainé",
+          "prix": 44.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "sac-bandouliere-cuir-graine-rabat-gabriella-bordeaux-1-scaled.jpg",
+            "sac-bandouliere-cuir-graine-rabat-gabriella-bordeaux-2-scaled.jpg",
+            "sac-bandouliere-cuir-graine-rabat-gabriella-bordeaux-3-scaled.jpg",
+            "sac-bandouliere-cuir-graine-rabat-gabriella-bordeaux-4-scaled.jpg"
+          ],
+          "sku": "SAC-GABRIELLA-RABAT-GRAINE-BORDEAUX",
+          "dimensions": {
+            "longueur": 25,
+            "largeur": 3,
+            "hauteur": 26
+          }
+        },
+        {
+          "couleur": "Bleu marine",
+          "matiere": "Cuir grainé",
+          "prix": 44.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "sac-bandouliere-cuir-graine-rabat-gabriella-marine-1-scaled.jpg",
+            "sac-bandouliere-cuir-graine-rabat-gabriella-bordeaux-2-scaled.jpg",
+            "sac-bandouliere-cuir-graine-rabat-gabriella-bordeaux-3-scaled.jpg",
+            "sac-bandouliere-cuir-graine-rabat-gabriella-bordeaux-4-scaled.jpg"
+          ],
+          "sku": "SAC-GABRIELLA-RABAT-GRAINE-MARINE",
+          "dimensions": {
+            "longueur": 25,
+            "largeur": 3,
+            "hauteur": 26
+          }
+        }
+      ],
+      "est_page_gamme": false
+    },
+    {
+      "nom": "Camila",
+      "slug": "camila",
+      "type": "Sac à bandoulière",
+      "description_courte": "Sac à bandoulière Camila en cuir grainé noir italien. Design épuré à rabat, bandoulière ajustable et finitions artisanales. L'essentiel avec élégance.",
+      "description_html": "<p>Le <strong>sac Camila à rabat en cuir grainé bordeaux</strong> affirme une élégance intense et sophistiquée. Sa couleur profonde et chaleureuse apporte une t",
+      "variantes": [
+        {
+          "couleur": "Noir",
+          "matiere": "Cuir grainé",
+          "prix": 34.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "sac-bandouliere-cuir-graine-camila-noir-1-scaled.jpg",
+            "sac-bandouliere-cuir-graine-camila-bordeaux-2-scaled.jpg",
+            "sac-bandouliere-cuir-graine-camila-bordeaux-3-scaled.jpg",
+            "sac-bandouliere-cuir-graine-camila-bordeaux-4-scaled.jpg"
+          ],
+          "sku": "SAC-CAMILA-RABAT-GRAINE-NOIR",
+          "dimensions": {
+            "longueur": 25,
+            "largeur": 2,
+            "hauteur": 20
+          }
+        },
+        {
+          "couleur": "Camel",
+          "matiere": "Cuir grainé",
+          "prix": 34.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "sac-bandouliere-cuir-graine-camila-camel-1-scaled.jpg",
+            "sac-bandouliere-cuir-graine-camila-bordeaux-2-scaled.jpg",
+            "sac-bandouliere-cuir-graine-camila-bordeaux-3-scaled.jpg",
+            "sac-bandouliere-cuir-graine-camila-bordeaux-4-scaled.jpg"
+          ],
+          "sku": "SAC-CAMILA-RABAT-GRAINE-CAMEL",
+          "dimensions": {
+            "longueur": 25,
+            "largeur": 2,
+            "hauteur": 20
+          }
+        },
+        {
+          "couleur": "Taupe Foncé",
+          "matiere": "Cuir grainé",
+          "prix": 34.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "sac-bandouliere-cuir-graine-camila-taupe-fonce-1.jpg",
+            "sac-bandouliere-cuir-graine-camila-bordeaux-2-scaled.jpg",
+            "sac-bandouliere-cuir-graine-camila-bordeaux-3-scaled.jpg",
+            "sac-bandouliere-cuir-graine-camila-bordeaux-4-scaled.jpg"
+          ],
+          "sku": "SAC-CAMILA-RABAT-GRAINE-TAUPE-FONCE",
+          "dimensions": {
+            "longueur": 25,
+            "largeur": 2,
+            "hauteur": 20
+          }
+        },
+        {
+          "couleur": "Bordeaux",
+          "matiere": "Cuir grainé",
+          "prix": 34.9,
+          "stock": 2,
+          "reappro": false,
+          "photos": [
+            "sac-bandouliere-cuir-graine-camila-bordeaux-1-scaled.jpg",
+            "sac-bandouliere-cuir-graine-camila-bordeaux-2-scaled.jpg",
+            "sac-bandouliere-cuir-graine-camila-bordeaux-3-scaled.jpg",
+            "sac-bandouliere-cuir-graine-camila-bordeaux-4-scaled.jpg"
+          ],
+          "sku": "SAC-CAMILA-RABAT-GRAINE-BORDEAUX",
+          "dimensions": {
+            "longueur": 25,
+            "largeur": 2,
+            "hauteur": 20
+          }
+        }
+      ],
+      "est_page_gamme": false
+    },
+    {
+      "nom": "Mina",
+      "slug": "mina",
+      "type": null,
+      "description_courte": "Sac porté épaule \"Mina\" taupe foncé en cuir suède souple. Grand format spacieux, texture veloutée et couleur raffinée. Parfait pour le quotidien élégant.",
+      "description_html": "<p>Le sac <strong>Mina prune</strong> conjugue audace chromatique raffinée et praticité généreuse dans un format pensé pour les femmes qui osent la couleur. Con",
+      "variantes": [
+        {
+          "couleur": "Taupe Foncé",
+          "matiere": "Cuir suède",
+          "prix": 59.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "sac-cuir-suede-daim-nubuck-mina-taupe-fonce-1-scaled.jpg"
+          ],
+          "sku": "SAC-MINA-SUEDE-TAUPE-FONCE",
+          "poids": 0,
+          "dimensions": {
+            "longueur": 43,
+            "largeur": 16,
+            "hauteur": 33
+          }
+        },
+        {
+          "couleur": "Camel Foncé",
+          "matiere": "Cuir suède",
+          "prix": 59.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "sac-cuir-suede-daim-nubuck-mina-camel-1-scaled.jpg"
+          ],
+          "sku": "SAC-MINA-SUEDE-CAMEL-FONCE",
+          "poids": 0,
+          "dimensions": {
+            "longueur": 43,
+            "largeur": 16,
+            "hauteur": 33
+          }
+        },
+        {
+          "couleur": "Vert Sapin",
+          "matiere": "Cuir suède",
+          "prix": 59.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "sac-cuir-suede-daim-nubuck-mina-kaki-1-1-scaled.jpg",
+            "sac-cuir-suede-daim-nubuck-mina-kaki-2-1-scaled.jpg",
+            "sac-cuir-suede-daim-nubuck-mina-kaki-3-1-scaled.jpg",
+            "sac-cuir-suede-daim-nubuck-mina-kaki-4-1-scaled.jpg"
+          ],
+          "sku": "SAC-MINA-SUEDE-VERT-SAPIN",
+          "poids": 0,
+          "dimensions": {
+            "longueur": 43,
+            "largeur": 16,
+            "hauteur": 33
+          }
+        },
+        {
+          "couleur": "Chocolat",
+          "matiere": "Cuir suède",
+          "prix": 59.9,
+          "stock": 3,
+          "reappro": false,
+          "photos": [
+            "sac-cuir-suede-daim-nubuck-mina-chocolat-1-scaled.jpg"
+          ],
+          "sku": "SAC-MINA-SUEDE-CHOCOLAT",
+          "poids": 0,
+          "dimensions": {
+            "longueur": 43,
+            "largeur": 16,
+            "hauteur": 33
+          }
+        },
+        {
+          "couleur": "Bordeaux prune",
+          "matiere": "Cuir suède",
+          "prix": 59.9,
+          "stock": 3,
+          "reappro": false,
+          "photos": [
+            "sac-cuir-suede-daim-nubuck-mina-prune-1-scaled.jpg"
+          ],
+          "sku": "SAC-MINA-SUEDE-PRUNE",
+          "poids": 0,
+          "dimensions": {
+            "longueur": 43,
+            "largeur": 16,
+            "hauteur": 33
+          }
+        }
+      ],
+      "est_page_gamme": false
+    },
+    {
+      "nom": "Elia",
+      "slug": "elia",
+      "type": "Porte-monnaie",
+      "description_courte": "Porte-monnaie Elia en cuir suédé léopard italien. Texture velours sauvage, motif intemporel et finitions artisanales. La douceur féline au quotidien.",
+      "description_html": "<p>Le <strong>porte-monnaie Elia en cuir grainé bordeaux</strong> affirme une élégance intense avec une texture naturellement résistante. Sa couleur profonde et",
+      "variantes": [
+        {
+          "couleur": "Léopard",
+          "matiere": "Cuir suède",
+          "prix": 19.9,
+          "stock": 5,
+          "reappro": false,
+          "photos": [
+            "porte-monnaie-cuir-suede-leopard-scaled.jpg",
+            "porte-monnaie-cuir-suede-camel-2-scaled.jpg"
+          ],
+          "sku": "PORTE-MONNAIE-ELIA-SUEDE-LEOPARD",
+          "poids": 0,
+          "dimensions": {
+            "longueur": 15,
+            "largeur": 2,
+            "hauteur": 8
+          }
+        },
+        {
+          "couleur": "Noir",
+          "matiere": "Cuir suède",
+          "prix": 19.9,
+          "stock": 5,
+          "reappro": false,
+          "photos": [
+            "porte-monnaie-cuir-suede-noir-scaled.jpg",
+            "porte-monnaie-cuir-suede-camel-2-scaled.jpg"
+          ],
+          "sku": "PORTE-MONNAIE-ELIA-SUEDE-NOIR",
+          "poids": 0,
+          "dimensions": {
+            "longueur": 15,
+            "largeur": 2,
+            "hauteur": 8
+          }
+        },
+        {
+          "couleur": "Kaki",
+          "matiere": "Cuir suède",
+          "prix": 19.9,
+          "stock": 5,
+          "reappro": false,
+          "photos": [
+            "298d47802ac8c747fbcf6bc7173839adead8b5669631fb9a35a8ce61f99e6b03-scaled.jpg",
+            "porte-monnaie-cuir-suede-camel-2-scaled.jpg"
+          ],
+          "sku": "PORTE-MONNAIE-ELIA-SUEDE-KAKI",
+          "poids": 0,
+          "dimensions": {
+            "longueur": 15,
+            "largeur": 2,
+            "hauteur": 8
+          }
+        },
+        {
+          "couleur": "Camel",
+          "matiere": "Cuir suède",
+          "prix": 19.9,
+          "stock": 5,
+          "reappro": false,
+          "photos": [
+            "porte-monnaie-cuir-suede-camel-scaled.jpg",
+            "porte-monnaie-cuir-suede-camel-2-scaled.jpg"
+          ],
+          "sku": "PORTE-MONNAIE-ELIA-SUEDE-CAMEL",
+          "poids": 0,
+          "dimensions": {
+            "longueur": 15,
+            "largeur": 2,
+            "hauteur": 8
+          }
+        },
+        {
+          "couleur": "Chocolat",
+          "matiere": "Cuir suède",
+          "prix": 19.9,
+          "stock": 4,
+          "reappro": false,
+          "photos": [
+            "porte-monnaie-cuir-suede-chocolat-scaled.jpg",
+            "porte-monnaie-cuir-suede-camel-2-scaled.jpg"
+          ],
+          "sku": "PORTE-MONNAIE-ELIA-SUEDE-CHOCOLAT",
+          "poids": 0,
+          "dimensions": {
+            "longueur": 15,
+            "largeur": 2,
+            "hauteur": 8
+          }
+        },
+        {
+          "couleur": "Taupe",
+          "matiere": "Cuir suède",
+          "prix": 19.9,
+          "stock": 5,
+          "reappro": false,
+          "photos": [
+            "porte-monnaie-cuir-suede-taupe-scaled.jpg",
+            "porte-monnaie-cuir-suede-camel-2-scaled.jpg"
+          ],
+          "sku": "PORTE-MONNAIE-ELIA-SUEDE-TAUPE",
+          "poids": 0,
+          "dimensions": {
+            "longueur": 15,
+            "largeur": 2,
+            "hauteur": 8
+          }
+        },
+        {
+          "couleur": "Noir",
+          "matiere": "Cuir grainé",
+          "prix": 19.9,
+          "stock": 5,
+          "reappro": false,
+          "photos": [
+            "porte-monnaie-cuir-graine-noir-scaled.jpg"
+          ],
+          "sku": "PORTE-MONNAIE-ELIA-GRAINE-NOIR",
+          "poids": 0,
+          "dimensions": {
+            "longueur": 15,
+            "largeur": 2,
+            "hauteur": 8
+          }
+        },
+        {
+          "couleur": "Bordeaux",
+          "matiere": "Cuir grainé",
+          "prix": 19.9,
+          "stock": 5,
+          "reappro": false,
+          "photos": [
+            "porte-monnaie-cuir-graine-bordeaux-scaled.jpg"
+          ],
+          "sku": "PORTE-MONNAIE-ELIA-GRAINE-BORDEAUX",
+          "poids": 0,
+          "dimensions": {
+            "longueur": 15,
+            "largeur": 2,
+            "hauteur": 8
+          }
+        },
+        {
+          "couleur": "Chocolat",
+          "matiere": "Cuir grainé",
+          "prix": 19.9,
+          "stock": 5,
+          "reappro": false,
+          "photos": [
+            "porte-monnaie-cuir-graine-chocolat-scaled.jpg"
+          ],
+          "sku": "PORTE-MONNAIE-ELIA-GRAINE-CHOCOLAT",
+          "poids": 0,
+          "dimensions": {
+            "longueur": 15,
+            "largeur": 2,
+            "hauteur": 8
+          }
+        }
+      ],
+      "est_page_gamme": false
+    }
+  ]
+}
