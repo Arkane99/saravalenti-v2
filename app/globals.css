@@ -1,0 +1,31 @@
+@import 'tailwindcss';
+
+/*
+ * Design system Sara Valenti (charte V1).
+ * Tailwind v4 : chaque --color-sv-* genere les classes bg-sv-*, text-sv-*, border-sv-*...
+ */
+@theme {
+  --color-sv-black: #0a0a0a;
+  --color-sv-cream: #f5f0ea;
+  --color-sv-warm-white: #faf8f5;
+  --color-sv-gold: #b8935a;
+  --color-sv-gold-light: #d4b07a;
+  --color-sv-mid: #6b6460;
+  --color-sv-border: #e0d9d0;
+
+  /* Typo : Cormorant Garamond (titres, signatures) + DM Sans (corps, UI) */
+  --font-serif: var(--font-cormorant);
+  --font-sans: var(--font-dm-sans);
+}
+
+body {
+  background-color: var(--color-sv-cream);
+  color: var(--color-sv-black);
+  font-family: var(--font-dm-sans), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-cormorant), serif;
+  font-weight: 500;
+}

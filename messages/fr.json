@@ -1,0 +1,26 @@
+{
+  "nav": {
+    "catalogue": "Catalogue",
+    "gammeRita": "La gamme Rita",
+    "gammeGrazia": "La gamme Grazia",
+    "aPropos": "À propos",
+    "compte": "Compte",
+    "panier": "Panier"
+  },
+  "footer": {
+    "baseline": "Sacs en cuir italien, fabrication italienne.",
+    "boutique": "Boutique",
+    "informations": "Informations",
+    "livraison": "Livraison",
+    "retours": "Retours",
+    "cgv": "CGV",
+    "mentionsLegales": "Mentions légales",
+    "contact": "Contact",
+    "copyright": "Sara Valenti. Tous droits réservés."
+  },
+  "home": {
+    "heroTitre": "L'élégance du cuir italien",
+    "heroAccroche": "Des sacs intemporels, fabriqués en Italie. Cuir brossé, suède et grainé, choisis avec soin.",
+    "heroCta": "Découvrir la collection"
+  }
+}
