@@ -23,7 +23,7 @@ Next.js 15 (App Router) + Tailwind v4 + next-intl (FR defaut, EN/NL/DE) | Sanity
 - 88 sacs WooCommerce type "simple" (1 couleur par produit) a regrouper en ~25 modeles avec variantes couleur dans Sanity (Rita 5 couleurs 109,90 ; Grazia 13 couleurs 109,90 ; Grazita, Elia, Daria, Lila, Mina, Serena, Toscana, Lola, Lolita, Talia, Camila, Teresa, Elisa, Luana, Gabriella, Laya ; + 8 produits uniques). Detail complet dans le brief.
 - Photos : 278 jpg deja dans `public/images/produits/` ; NE PAS renommer.
 - Stock initial : 81 en stock, 6 rupture, 1 reappro. Dimensions/poids par produit (pour Boxtal).
-- **CSV source A CONFIRMER avec Valentin** : les exports Woo trouves (`~/Downloads/wc-product-export-20-7-2025*.csv` = 18 produits, `wc-product-export-14-8-2025*.csv` = 31) ne contiennent pas les 88 sacs. Candidat probable : `~/Desktop/Stock Sara Valenti - Tout 2 (5).csv` (443 lignes, tous produits). Trancher avant d'ecrire le script d'import.
+- **CSV source : `data/wc-product-export-8-6-2026.csv`** (export Woo valide : 136 produits dont exactement 88 en categorie "Sacs en cuir", stock 81/6/1 conforme au brief). Filtrer sur `Catégories` contenant "Sacs en cuir" (le CSV contient aussi les bijoux). PIEGE : la colonne stock s'appelle `En stock\xa0?` avec un espace insecable ; en-tetes a matcher en normalisant les nbsp.
 
 ## Ordre des phases
 
