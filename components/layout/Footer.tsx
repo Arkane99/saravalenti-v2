@@ -14,21 +14,21 @@ export async function Footer() {
         </div>
 
         <div>
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-sv-gold">{t('boutique')}</p>
+          <p className="text-xs font-medium uppercase tracking-[0.18em] text-sv-gold-dark">{t('boutique')}</p>
           <ul className="mt-4 space-y-2 text-sm text-sv-mid">
-            <li><Link href="/catalogue" className="transition-colors hover:text-sv-gold">{tNav('catalogue')}</Link></li>
-            <li><Link href="/gamme/rita" className="transition-colors hover:text-sv-gold">{tNav('gammeRita')}</Link></li>
-            <li><Link href="/gamme/grazia" className="transition-colors hover:text-sv-gold">{tNav('gammeGrazia')}</Link></li>
+            <li><Link href="/catalogue" className="transition-colors hover:text-sv-gold-dark">{tNav('catalogue')}</Link></li>
+            <li><Link href="/gamme/rita" className="transition-colors hover:text-sv-gold-dark">{tNav('gammeRita')}</Link></li>
+            <li><Link href="/gamme/grazia" className="transition-colors hover:text-sv-gold-dark">{tNav('gammeGrazia')}</Link></li>
           </ul>
         </div>
 
         <div>
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-sv-gold">{t('informations')}</p>
+          <p className="text-xs font-medium uppercase tracking-[0.18em] text-sv-gold-dark">{t('informations')}</p>
           <ul className="mt-4 space-y-2 text-sm text-sv-mid">
-            <li><Link href="/livraison" className="transition-colors hover:text-sv-gold">{t('livraison')}</Link></li>
-            <li><Link href="/retours" className="transition-colors hover:text-sv-gold">{t('retours')}</Link></li>
-            <li><Link href="/cgv" className="transition-colors hover:text-sv-gold">{t('cgv')}</Link></li>
-            <li><Link href="/mentions-legales" className="transition-colors hover:text-sv-gold">{t('mentionsLegales')}</Link></li>
+            <li><Link href="/livraison" className="transition-colors hover:text-sv-gold-dark">{t('livraison')}</Link></li>
+            <li><Link href="/retours" className="transition-colors hover:text-sv-gold-dark">{t('retours')}</Link></li>
+            <li><Link href="/cgv" className="transition-colors hover:text-sv-gold-dark">{t('cgv')}</Link></li>
+            <li><Link href="/mentions-legales" className="transition-colors hover:text-sv-gold-dark">{t('mentionsLegales')}</Link></li>
           </ul>
         </div>
       </div>

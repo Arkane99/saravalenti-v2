@@ -30,7 +30,7 @@ export function FicheProduit({ produit, couleurInitiale }: { produit: ProduitDet
       : v.stock <= 3
         ? `Dernières pièces (${v.stock})`
         : 'En stock'
-  const stockClasse = v?.reappro ? 'text-sv-gold' : epuise ? 'text-sv-mid' : 'text-green-700'
+  const stockClasse = v?.reappro ? 'text-sv-gold-dark' : epuise ? 'text-sv-mid' : 'text-green-700'
 
   function choisirVariante(i: number) {
     setIVar(i)
@@ -63,6 +63,7 @@ export function FicheProduit({ produit, couleurInitiale }: { produit: ProduitDet
                 type="button"
                 onClick={() => setIPhoto(idx)}
                 aria-label={`Photo ${idx + 1}`}
+                aria-pressed={idx === iPhoto}
                 className={`relative h-24 w-20 shrink-0 overflow-hidden border ${idx === iPhoto ? 'border-sv-gold' : 'border-transparent'}`}
               >
                 {p.asset && (
@@ -76,12 +77,12 @@ export function FicheProduit({ produit, couleurInitiale }: { produit: ProduitDet
 
       {/* Infos */}
       <div>
-        {produit.type && <p className="text-xs uppercase tracking-[0.18em] text-sv-gold">{produit.type}</p>}
+        {produit.type && <p className="text-xs uppercase tracking-[0.18em] text-sv-gold-dark">{produit.type}</p>}
         <h1 className="mt-2 font-serif text-4xl">{produit.nom}</h1>
 
         <p className="mt-3 text-xl">
           {enPromo && <span className="mr-2 text-sv-mid line-through">{formatPrix(v.prix)}</span>}
-          <span className={enPromo ? 'text-sv-gold' : ''}>{formatPrix(v?.promo ?? v?.prix)}</span>
+          <span className={enPromo ? 'text-sv-gold-dark' : ''}>{formatPrix(v?.promo ?? v?.prix)}</span>
         </p>
 
         {produit.description_courte && <p className="mt-4 leading-relaxed text-sv-mid">{produit.description_courte}</p>}
@@ -135,13 +136,14 @@ export function FicheProduit({ produit, couleurInitiale }: { produit: ProduitDet
               type="button"
               onClick={() => setDescOuverte((o) => !o)}
               aria-expanded={descOuverte}
+              aria-controls="desc-panneau"
               className="flex w-full items-center justify-between text-sm uppercase tracking-[0.12em]"
             >
               Description
-              <span className="text-sv-gold">{descOuverte ? '–' : '+'}</span>
+              <span className="text-sv-gold-dark" aria-hidden="true">{descOuverte ? '–' : '+'}</span>
             </button>
             {descOuverte && (
-              <div className="mt-4 space-y-3 text-sm leading-relaxed text-sv-mid [&_ul]:list-disc [&_ul]:pl-5">
+              <div id="desc-panneau" className="mt-4 space-y-3 text-sm leading-relaxed text-sv-mid [&_ul]:list-disc [&_ul]:pl-5">
                 <PortableText value={produit.description} />
               </div>
             )}

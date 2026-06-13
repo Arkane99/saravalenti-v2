@@ -29,7 +29,7 @@ export async function Header() {
             <Link
               key={l.href}
               href={l.href}
-              className="text-sm tracking-[0.08em] text-sv-mid transition-colors hover:text-sv-gold"
+              className="text-sm tracking-[0.08em] text-sv-mid transition-colors hover:text-sv-gold-dark"
             >
               {l.label}
             </Link>
@@ -38,13 +38,13 @@ export async function Header() {
 
         {/* Actions : compte + panier (placeholders fonctionnels en 5d) */}
         <div className="flex items-center gap-5">
-          <Link href="/compte" aria-label={t('compte')} className="text-sv-black transition-colors hover:text-sv-gold">
+          <Link href="/compte" aria-label={t('compte')} className="text-sv-black transition-colors hover:text-sv-gold-dark">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
               <circle cx="12" cy="8" r="4" />
               <path d="M4 21c0-4 3.6-7 8-7s8 3 8 7" />
             </svg>
           </Link>
-          <Link href="/panier" aria-label={t('panier')} className="text-sv-black transition-colors hover:text-sv-gold">
+          <Link href="/panier" aria-label={t('panier')} className="text-sv-black transition-colors hover:text-sv-gold-dark">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
               <path d="M6 7h12l1 14H5L6 7z" />
               <path d="M9 7a3 3 0 0 1 6 0" />

@@ -9,7 +9,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
   return (
     <section className="mx-auto flex max-w-4xl flex-col items-center px-6 py-32 text-center">
-      <p className="text-xs font-medium uppercase tracking-[0.3em] text-sv-gold">Fabrication italienne</p>
+      <p className="text-xs font-medium uppercase tracking-[0.3em] text-sv-gold-dark">Fabrication italienne</p>
       <h1 className="mt-6 text-5xl leading-tight md:text-6xl">{t('heroTitre')}</h1>
       <p className="mt-6 max-w-xl text-base leading-relaxed text-sv-mid">{t('heroAccroche')}</p>
       <Bouton href="/catalogue" className="mt-10">{t('heroCta')}</Bouton>

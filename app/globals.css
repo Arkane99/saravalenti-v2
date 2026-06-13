@@ -10,6 +10,8 @@
   --color-sv-warm-white: #faf8f5;
   --color-sv-gold: #b8935a;
   --color-sv-gold-light: #d4b07a;
+  /* Or fonce pour le TEXTE sur fond clair (AA >= 4.5:1 sur creme) ; le gold clair reste pour fonds/bordures/accents. */
+  --color-sv-gold-dark: #7e5e2c;
   --color-sv-mid: #6b6460;
   --color-sv-border: #e0d9d0;
 
@@ -28,4 +30,10 @@ body {
 h1, h2, h3, h4 {
   font-family: var(--font-cormorant), serif;
   font-weight: 500;
+}
+
+/* Focus clavier visible et distinct de l'etat selectionne (ring gold). Contraste >= 3:1 sur creme et sur noir. */
+:focus-visible {
+  outline: 2px solid var(--color-sv-gold-dark);
+  outline-offset: 2px;
 }
