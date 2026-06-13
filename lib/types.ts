@@ -32,4 +32,15 @@ export interface ProduitCarte {
 export interface ProduitDetail extends ProduitCarte {
   description?: PortableTextBlock[]
   produits_suggeres?: ProduitCarte[]
+  gamme?: string
+}
+
+export interface AvisClient {
+  _id: string
+  texte: string
+  auteur: string
+  note: number
+  verifie?: boolean
+  date?: string
+  produit?: { nom: string; slug: string }
 }

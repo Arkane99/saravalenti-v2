@@ -265,6 +265,7 @@ interface Modele {
   description_html: string
   variantes: Variante[]
   est_page_gamme: boolean
+  gamme?: string
 }
 
 function slugifier(s: string): string {
@@ -348,6 +349,38 @@ function regrouper(lignes: Ligne[]): { modeles: Modele[]; anomalies: Anomalies }
   return { modeles: [...parModele.values()], anomalies }
 }
 
+/**
+ * Ajustements de gamme (demande cliente) :
+ * - Grazia mele cuir suede et cuir graine -> deux produits distincts au catalogue.
+ *   "Grazia" (suede) garde le slug grazia + la page gamme ; "Grazia graine" -> grazia-graine,
+ *   rattache a la gamme grazia.
+ * - Grazita (petits Grazia en suede) reste un produit a part, rattache a la gamme grazia.
+ */
+function postTraiterGammes(modeles: Modele[]): Modele[] {
+  const grazia = modeles.find((m) => m.slug === 'grazia')
+  if (grazia) {
+    const estGraine = (v: Variante) => (v.matiere || '').toLowerCase().includes('grain')
+    const graine = grazia.variantes.filter(estGraine)
+    const suede = grazia.variantes.filter((v) => !estGraine(v))
+    if (graine.length && suede.length) {
+      grazia.variantes = suede
+      modeles.push({
+        nom: 'Grazia grainé',
+        slug: 'grazia-graine',
+        type: grazia.type,
+        description_courte: grazia.description_courte,
+        description_html: grazia.description_html,
+        variantes: graine,
+        est_page_gamme: false,
+        gamme: 'grazia',
+      })
+    }
+  }
+  const grazita = modeles.find((m) => m.slug === 'grazita')
+  if (grazita) grazita.gamme = 'grazia'
+  return modeles
+}
+
 // ---------------------------------------------------------------------------
 // Import Sanity (mode reel)
 // ---------------------------------------------------------------------------
@@ -383,6 +416,15 @@ async function importerDansSanity(modeles: Modele[]) {
   async function uploader(fichier: string): Promise<string> {
     const connu = assets.get(fichier)
     if (connu) return connu
+    // Reutiliser un asset deja present (re-import idempotent : pas de doublons de photos)
+    const existant: string | null = await client.fetch(
+      '*[_type=="sanity.imageAsset" && originalFilename==$f][0]._id',
+      { f: fichier },
+    )
+    if (existant) {
+      assets.set(fichier, existant)
+      return existant
+    }
     const asset = await client.assets.upload('image', fs.createReadStream(path.join(DOSSIER_PHOTOS, fichier)), {
       filename: fichier,
     })
@@ -410,6 +452,7 @@ async function importerDansSanity(modeles: Modele[]) {
       description: htmlVersPortableText(m.description_html),
       variantes,
       est_page_gamme: m.est_page_gamme,
+      ...(m.gamme ? { gamme: m.gamme } : {}),
       date_creation: new Date().toISOString(),
     })
     console.log(`produit: ${m.nom} (${m.variantes.length} variante(s))`)
@@ -424,6 +467,7 @@ async function importerDansSanity(modeles: Modele[]) {
 async function main() {
   const lignes = lireCsv()
   const { modeles, anomalies } = regrouper(lignes)
+  postTraiterGammes(modeles)
 
   const totalVariantes = modeles.reduce((n, m) => n + m.variantes.length, 0)
   const totalPhotos = modeles.reduce((n, m) => n + m.variantes.reduce((p, v) => p + v.photos.length, 0), 0)

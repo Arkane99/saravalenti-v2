@@ -1,6 +1,6 @@
 {
   "resume": {
-    "modeles": 26,
+    "modeles": 27,
     "variantes": 88,
     "photos": 303
   },
@@ -264,139 +264,6 @@
             "largeur": 13,
             "hauteur": 28
           }
-        },
-        {
-          "couleur": "Noir",
-          "matiere": "Cuir grainé",
-          "prix": 109.9,
-          "stock": 4,
-          "reappro": false,
-          "photos": [
-            "Sac-a-main-Grazia-en-cuir-graine-noir-1.png",
-            "Sac-a-main-Grazia-en-cuir-graine-noir-2.png",
-            "Sac-a-main-Grazia-en-cuir-graine-chocolat-3.jpg",
-            "Sac-a-main-Grazia-en-cuir-graine-chocolat-4.png",
-            "Sac-a-main-Grazia-en-cuir-graine-chocolat-5-scaled.jpg"
-          ],
-          "sku": "SAC-GRAZIA-GRAINE-NOIR",
-          "dimensions": {
-            "longueur": 43,
-            "largeur": 13,
-            "hauteur": 28
-          }
-        },
-        {
-          "couleur": "Chocolat",
-          "matiere": "Cuir grainé",
-          "prix": 109.9,
-          "stock": 3,
-          "reappro": false,
-          "photos": [
-            "Sac-a-main-Grazia-en-cuir-graine-chocolat-1.png",
-            "Sac-a-main-Grazia-en-cuir-graine-chocolat-2.jpg",
-            "Sac-a-main-Grazia-en-cuir-graine-chocolat-3.jpg",
-            "Sac-a-main-Grazia-en-cuir-graine-chocolat-4.png",
-            "Sac-a-main-Grazia-en-cuir-graine-chocolat-5-scaled.jpg"
-          ],
-          "sku": "SAC-GRAZIA-GRAINE-CHOCOLAT",
-          "dimensions": {
-            "longueur": 43,
-            "largeur": 13,
-            "hauteur": 28
-          }
-        },
-        {
-          "couleur": "Bordeaux",
-          "matiere": "Cuir grainé",
-          "prix": 109.9,
-          "stock": 1,
-          "reappro": false,
-          "photos": [
-            "Sac-a-main-Grazia-en-cuir-graine-bordeaux-1.png",
-            "Sac-a-main-Grazia-en-cuir-graine-bordeaux-2.png",
-            "Sac-a-main-Grazia-en-cuir-graine-chocolat-3.jpg",
-            "Sac-a-main-Grazia-en-cuir-graine-chocolat-4.png",
-            "Sac-a-main-Grazia-en-cuir-graine-chocolat-5-scaled.jpg"
-          ],
-          "sku": "SAC-GRAZIA-GRAINE-BORDEAUX",
-          "dimensions": {
-            "longueur": 43,
-            "largeur": 13,
-            "hauteur": 28
-          }
-        },
-        {
-          "couleur": "Kaki",
-          "matiere": "Cuir grainé",
-          "prix": 109.9,
-          "stock": 1,
-          "reappro": false,
-          "photos": [
-            "Sac-a-main-Grazia-en-cuir-graine-kaki-1.png",
-            "Sac-a-main-Grazia-en-cuir-graine-kaki-2.png",
-            "Sac-a-main-Grazia-en-cuir-graine-chocolat-3.jpg",
-            "Sac-a-main-Grazia-en-cuir-graine-chocolat-4.png",
-            "Sac-a-main-Grazia-en-cuir-graine-chocolat-5-scaled.jpg"
-          ],
-          "sku": "SAC-GRAZIA-GRAINE-KAKI",
-          "dimensions": {
-            "longueur": 43,
-            "largeur": 13,
-            "hauteur": 28
-          }
-        },
-        {
-          "couleur": "Taupe",
-          "matiere": "Cuir grainé",
-          "prix": 109.9,
-          "stock": 1,
-          "reappro": false,
-          "photos": [],
-          "sku": "SAC-GRAZIA-GRAINE-TAUPE",
-          "dimensions": {
-            "longueur": 43,
-            "largeur": 13,
-            "hauteur": 28
-          }
-        },
-        {
-          "couleur": "Moka",
-          "matiere": "Cuir grainé",
-          "prix": 109.9,
-          "stock": 5,
-          "reappro": false,
-          "photos": [
-            "sac-a-main-cuir-graine-grazia-moka-1-scaled.jpg",
-            "sac-a-main-cuir-graine-grazia-moka-2-scaled.jpg",
-            "sac-a-main-cuir-graine-grazia-noir-interieur.jpg",
-            "sac-a-main-cuir-graine-grazia-noir-interieur-1.png",
-            "sac-a-main-cuir-graine-grazia-noir-interieur-2-scaled.jpg"
-          ],
-          "sku": "SAC-GRAZIA-GRAINE-MOKA",
-          "dimensions": {
-            "longueur": 43,
-            "largeur": 13,
-            "hauteur": 28
-          }
-        },
-        {
-          "couleur": "Camel",
-          "matiere": "Cuir grainé",
-          "prix": 109.9,
-          "stock": 1,
-          "reappro": false,
-          "photos": [
-            "sac-a-main-cuir-graine-grazia-camel-1-scaled.jpg",
-            "sac-a-main-cuir-graine-grazia-noir-interieur.jpg",
-            "sac-a-main-cuir-graine-grazia-noir-interieur-1.png",
-            "sac-a-main-cuir-graine-grazia-noir-interieur-2-scaled.jpg"
-          ],
-          "sku": "SAC-GRAZIA-GRAINE-CAMEL",
-          "dimensions": {
-            "longueur": 43,
-            "largeur": 13,
-            "hauteur": 28
-          }
         }
       ],
       "est_page_gamme": true
@@ -520,7 +387,8 @@
           }
         }
       ],
-      "est_page_gamme": false
+      "est_page_gamme": false,
+      "gamme": "grazia"
     },
     {
       "nom": "Laya",
@@ -1914,6 +1782,150 @@
         }
       ],
       "est_page_gamme": false
+    },
+    {
+      "nom": "Grazia grainé",
+      "slug": "grazia-graine",
+      "type": "Sac à main",
+      "description_courte": "Sac à main noir en cuir suède italien. Spacieux avec 2 compartiments, idéal ordinateur 14\". Texture veloutée élégante. Fabrication italienne.",
+      "description_html": "<p>Le <strong>sac à main \"Grazia\" moka en cuir grainé</strong> marie la sophistication d'une teinte profonde et moderne à l'élégance de la texture grainée. Fabr",
+      "variantes": [
+        {
+          "couleur": "Noir",
+          "matiere": "Cuir grainé",
+          "prix": 109.9,
+          "stock": 4,
+          "reappro": false,
+          "photos": [
+            "Sac-a-main-Grazia-en-cuir-graine-noir-1.png",
+            "Sac-a-main-Grazia-en-cuir-graine-noir-2.png",
+            "Sac-a-main-Grazia-en-cuir-graine-chocolat-3.jpg",
+            "Sac-a-main-Grazia-en-cuir-graine-chocolat-4.png",
+            "Sac-a-main-Grazia-en-cuir-graine-chocolat-5-scaled.jpg"
+          ],
+          "sku": "SAC-GRAZIA-GRAINE-NOIR",
+          "dimensions": {
+            "longueur": 43,
+            "largeur": 13,
+            "hauteur": 28
+          }
+        },
+        {
+          "couleur": "Chocolat",
+          "matiere": "Cuir grainé",
+          "prix": 109.9,
+          "stock": 3,
+          "reappro": false,
+          "photos": [
+            "Sac-a-main-Grazia-en-cuir-graine-chocolat-1.png",
+            "Sac-a-main-Grazia-en-cuir-graine-chocolat-2.jpg",
+            "Sac-a-main-Grazia-en-cuir-graine-chocolat-3.jpg",
+            "Sac-a-main-Grazia-en-cuir-graine-chocolat-4.png",
+            "Sac-a-main-Grazia-en-cuir-graine-chocolat-5-scaled.jpg"
+          ],
+          "sku": "SAC-GRAZIA-GRAINE-CHOCOLAT",
+          "dimensions": {
+            "longueur": 43,
+            "largeur": 13,
+            "hauteur": 28
+          }
+        },
+        {
+          "couleur": "Bordeaux",
+          "matiere": "Cuir grainé",
+          "prix": 109.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "Sac-a-main-Grazia-en-cuir-graine-bordeaux-1.png",
+            "Sac-a-main-Grazia-en-cuir-graine-bordeaux-2.png",
+            "Sac-a-main-Grazia-en-cuir-graine-chocolat-3.jpg",
+            "Sac-a-main-Grazia-en-cuir-graine-chocolat-4.png",
+            "Sac-a-main-Grazia-en-cuir-graine-chocolat-5-scaled.jpg"
+          ],
+          "sku": "SAC-GRAZIA-GRAINE-BORDEAUX",
+          "dimensions": {
+            "longueur": 43,
+            "largeur": 13,
+            "hauteur": 28
+          }
+        },
+        {
+          "couleur": "Kaki",
+          "matiere": "Cuir grainé",
+          "prix": 109.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "Sac-a-main-Grazia-en-cuir-graine-kaki-1.png",
+            "Sac-a-main-Grazia-en-cuir-graine-kaki-2.png",
+            "Sac-a-main-Grazia-en-cuir-graine-chocolat-3.jpg",
+            "Sac-a-main-Grazia-en-cuir-graine-chocolat-4.png",
+            "Sac-a-main-Grazia-en-cuir-graine-chocolat-5-scaled.jpg"
+          ],
+          "sku": "SAC-GRAZIA-GRAINE-KAKI",
+          "dimensions": {
+            "longueur": 43,
+            "largeur": 13,
+            "hauteur": 28
+          }
+        },
+        {
+          "couleur": "Taupe",
+          "matiere": "Cuir grainé",
+          "prix": 109.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [],
+          "sku": "SAC-GRAZIA-GRAINE-TAUPE",
+          "dimensions": {
+            "longueur": 43,
+            "largeur": 13,
+            "hauteur": 28
+          }
+        },
+        {
+          "couleur": "Moka",
+          "matiere": "Cuir grainé",
+          "prix": 109.9,
+          "stock": 5,
+          "reappro": false,
+          "photos": [
+            "sac-a-main-cuir-graine-grazia-moka-1-scaled.jpg",
+            "sac-a-main-cuir-graine-grazia-moka-2-scaled.jpg",
+            "sac-a-main-cuir-graine-grazia-noir-interieur.jpg",
+            "sac-a-main-cuir-graine-grazia-noir-interieur-1.png",
+            "sac-a-main-cuir-graine-grazia-noir-interieur-2-scaled.jpg"
+          ],
+          "sku": "SAC-GRAZIA-GRAINE-MOKA",
+          "dimensions": {
+            "longueur": 43,
+            "largeur": 13,
+            "hauteur": 28
+          }
+        },
+        {
+          "couleur": "Camel",
+          "matiere": "Cuir grainé",
+          "prix": 109.9,
+          "stock": 1,
+          "reappro": false,
+          "photos": [
+            "sac-a-main-cuir-graine-grazia-camel-1-scaled.jpg",
+            "sac-a-main-cuir-graine-grazia-noir-interieur.jpg",
+            "sac-a-main-cuir-graine-grazia-noir-interieur-1.png",
+            "sac-a-main-cuir-graine-grazia-noir-interieur-2-scaled.jpg"
+          ],
+          "sku": "SAC-GRAZIA-GRAINE-CAMEL",
+          "dimensions": {
+            "longueur": 43,
+            "largeur": 13,
+            "hauteur": 28
+          }
+        }
+      ],
+      "est_page_gamme": false,
+      "gamme": "grazia"
     }
   ]
 }

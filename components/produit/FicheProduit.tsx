@@ -7,6 +7,7 @@ import { urlFor } from '@/sanity/lib/client'
 import { formatPrix } from '@/lib/format'
 import { hexCouleur } from '@/lib/couleurs'
 import { BoutonAction } from '@/components/ui/Bouton'
+import { Link } from '@/i18n/navigation'
 import type { ProduitDetail } from '@/lib/types'
 
 export function FicheProduit({ produit, couleurInitiale }: { produit: ProduitDetail; couleurInitiale?: string }) {
@@ -128,6 +129,11 @@ export function FicheProduit({ produit, couleurInitiale }: { produit: ProduitDet
           <BoutonAction variante="contour">Favoris</BoutonAction>
         </div>
         <p className="mt-2 text-xs text-sv-mid">Panier et favoris seront actifs en phase e-commerce.</p>
+        <p className="mt-4 text-xs text-sv-mid">
+          <Link href="/entretien-cuir" className="underline underline-offset-2 hover:text-sv-gold-dark">
+            Guide d'entretien du cuir
+          </Link>
+        </p>
 
         {/* Description longue en accordeon */}
         {produit.description && produit.description.length > 0 && (

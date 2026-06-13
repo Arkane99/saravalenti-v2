@@ -95,6 +95,12 @@ export const produit = defineType({
       type: 'boolean',
       initialValue: false,
     }),
+    defineField({
+      name: 'gamme',
+      title: 'Rattaché à la gamme (slug)',
+      type: 'string',
+      description: 'Slug du modèle gamme parent (ex. "grazia"). Regroupe ce produit sur la page /gamme/[slug].',
+    }),
     defineField({ name: 'seo', title: 'SEO', type: 'seo' }),
     defineField({ name: 'date_creation', title: 'Date de création', type: 'datetime' }),
   ],

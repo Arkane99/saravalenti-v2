@@ -25,6 +25,8 @@ export async function Footer() {
         <div>
           <p className="text-xs font-medium uppercase tracking-[0.18em] text-sv-gold-dark">{t('informations')}</p>
           <ul className="mt-4 space-y-2 text-sm text-sv-mid">
+            <li><Link href="/a-propos" className="transition-colors hover:text-sv-gold-dark">{t('aPropos')}</Link></li>
+            <li><Link href="/entretien-cuir" className="transition-colors hover:text-sv-gold-dark">{t('entretienCuir')}</Link></li>
             <li><Link href="/livraison" className="transition-colors hover:text-sv-gold-dark">{t('livraison')}</Link></li>
             <li><Link href="/retours" className="transition-colors hover:text-sv-gold-dark">{t('retours')}</Link></li>
             <li><Link href="/cgv" className="transition-colors hover:text-sv-gold-dark">{t('cgv')}</Link></li>

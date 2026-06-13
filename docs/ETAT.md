@@ -48,10 +48,24 @@ Le SITE public (home, catalogue, fetch CDN) n'a PAS besoin de CORS ; seul le Stu
 - Perf LCP : priority sur les 6 premieres cartes du catalogue (verifie : eager vs lazy).
 - Note : design token --color-sv-gold (clair) reste pour fonds/bordures/accents ; --color-sv-gold-dark uniquement pour le texte sur clair.
 
+## Fait (Phase 5c, juin 2026)
+
+- CLAUDE.md : regle model/mode/tokens ajoutee.
+- Sanity queries : REQUETE_PRODUITS_GAMME (slug + gamme field), REQUETE_MODELES_PHARES, REQUETE_AVIS.
+- lib/types.ts : AvisClient type, gamme field sur ProduitDetail.
+- /gamme/[slug] : pages statiques Rita/Grazia/Mina avec contenu editorial hardcode, grille produits Sanity, FAQ, Schema.org ProductGroup + FAQPage.
+- / (homepage) : H1 "Sacs en cuir italien", section matieres (3 blocs GEO), carousel modeles phares, avis clients, arguments. Schema.org Organization + WebSite.
+- /a-propos : contenu valide verbatim, Schema.org Organization.
+- /entretien-cuir : guide par type de cuir (brosse/suede/graine/irise), FAQ 6 questions, Schema.org HowTo + FAQPage. Lie depuis FicheProduit et toutes les pages gamme.
+- Pages statiques : /livraison, /retours, /cgv, /mentions-legales. /livraison avec Schema.org FAQPage.
+- Footer : liens a-propos + entretien-cuir ajoutes.
+- Build vert : 16 routes SSG generees.
+
 ## En cours
 
-- Phase 5b terminee et revue. Prochaine : phase 5c (pages editoriales : gammes Rita/Grazia/Mina via schema pageGamme, home, about, statiques CGV/livraison/retours).
+- Phase 5c terminee. Prochaine : phase 5d (panier localStorage + Supabase, auth, checkout Stripe, Boxtal, emails Brevo).
 - Reste l'action CORS Studio (voir plus haut) ; n'impacte pas le site public.
+- Avis clients (schema avisClient) : aucun document en production actuellement. La section homepage s'affiche seulement s'il y a des avis (condition avis.length > 0). A peupler via le Studio.
 
 ## Blocages / questions ouvertes
 
