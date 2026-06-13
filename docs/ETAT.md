@@ -17,13 +17,26 @@ Mettre a jour ce fichier en fin de chaque session (fait / en cours / blocages). 
 - Sanity : schemas produit (variantes couleur), pageGamme, pageCatalog, pageStatique, avisClient, typeDeSac, objet seo. Studio embarque /studio. Client + urlFor dans sanity/lib.
 - Import : scripts/import-produits.ts. Dry-run valide : 88 sacs -> 26 modeles, 303 photos toutes appariees en local, Rita 5 / Grazia 13 conformes. Apercu : data/import-preview.json. npm run import:dry / import:run.
 
+## Import Sanity fait (projet r949oibi, dataset production)
+
+- npm run import:run execute : 26 produits, 8 typeDeSac, 88 variantes, 206 image assets. Verifie par requete GROQ. Rita = 5 variantes + photo + type "Sac a main".
+- Mina : type "Sac porte epaule" + page gamme (override TYPE_PAR_MODELE dans le script). Pages gamme = Rita, Grazia, Mina.
+- .env.local rempli (projectId + token), gitignored. Cles aussi a mettre dans Vercel au deploiement.
+
+## A FAIRE PAR VALENTIN (bloque cote token) : autoriser le CORS du Studio
+
+Le Studio /studio plante en CORS tant que l'origine n'est pas autorisee (le token de contenu n'a pas le grant sanity.project.cors/create). Deux options :
+- Dashboard : https://www.sanity.io/manage/project/r949oibi/api -> CORS origins -> Add -> http://localhost:3000 + cocher "Allow credentials". (Ajouter aussi l'URL Vercel au deploiement.)
+- CLI : `cd ~/Documents/saravalenti-v2 && npx sanity cors add http://localhost:3000 --credentials` (login navigateur avec le compte Sanity). sanity.cli.ts est en place.
+
+Le SITE public (home, catalogue, fetch CDN) n'a PAS besoin de CORS ; seul le Studio navigateur en a besoin.
+
 ## En cours
 
-- Reste de 5a : creer le projet Sanity (compte) puis lancer npm run import:run. Ensuite phase 5b (catalogue).
+- Phase 5a terminee cote code + data. Reste l'action CORS ci-dessus, puis phase 5b (catalogue : page /catalogue + filtres, cards, fiche produit, galerie par couleur).
 
 ## Blocages / questions ouvertes
 
-1. Creer le projet Sanity (sanity.io, compte a definir) -> renseigner NEXT_PUBLIC_SANITY_PROJECT_ID + SANITY_API_TOKEN dans .env.local, puis npm run import:run.
-2. Type du modele Mina inconnu (categorie Woo vide, nom "Sac en cuir suede souple") : laisse vide, a classer dans le Studio.
-3. Email du compte Vercel dedie Sara Valenti : a confirmer.
-4. Cles API restantes : Supabase, Stripe, Boxtal, Brevo (phase 5d).
+1. CORS Studio a autoriser (voir ci-dessus).
+2. Email du compte Vercel dedie Sara Valenti : a confirmer.
+3. Cles API restantes : Supabase, Stripe, Boxtal, Brevo (phase 5d).

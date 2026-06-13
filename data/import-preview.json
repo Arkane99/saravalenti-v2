@@ -8,13 +8,7 @@
     "sansModele": [],
     "sansCouleur": [],
     "photosManquantes": [],
-    "typesInconnus": [
-      "Sac en cuir suède souple “Mina” taupe foncé",
-      "Sac en cuir suède souple “Mina” camel foncé",
-      "Sac en cuir suède souple “Mina” vert sapin",
-      "Sac en cuir suède souple “Mina” chocolat",
-      "Sac en cuir suède souple “Mina” prune"
-    ]
+    "typesInconnus": []
   },
   "modeles": [
     {
@@ -1657,7 +1651,7 @@
     {
       "nom": "Mina",
       "slug": "mina",
-      "type": null,
+      "type": "Sac porté épaule",
       "description_courte": "Sac porté épaule \"Mina\" taupe foncé en cuir suède souple. Grand format spacieux, texture veloutée et couleur raffinée. Parfait pour le quotidien élégant.",
       "description_html": "<p>Le sac <strong>Mina prune</strong> conjugue audace chromatique raffinée et praticité généreuse dans un format pensé pour les femmes qui osent la couleur. Con",
       "variantes": [
@@ -1750,7 +1744,7 @@
           }
         }
       ],
-      "est_page_gamme": false
+      "est_page_gamme": true
     },
     {
       "nom": "Elia",

@@ -21,7 +21,12 @@ const PREVIEW = path.join(RACINE, 'data', 'import-preview.json')
 const DRY_RUN = process.argv.includes('--dry-run')
 
 // Modeles qui ont une page Gamme dediee
-const PAGES_GAMME = new Set(['rita', 'grazia'])
+const PAGES_GAMME = new Set(['rita', 'grazia', 'mina'])
+
+// Types decides a la main quand le CSV ne permet pas de les deduire
+const TYPE_PAR_MODELE: Record<string, string> = {
+  mina: 'Sac porté épaule',
+}
 
 // Sous-categorie Woo -> type de sac (libelles du brief)
 const TYPES: Record<string, string> = {
@@ -297,8 +302,8 @@ function regrouper(lignes: Ligne[]): { modeles: Modele[]; anomalies: Anomalies }
       if (!attrs.couleur) anomalies.sansCouleur.push(nomComplet)
     }
 
-    // Type : d'abord le debut du nom (fiable), sinon la sous-categorie Woo
-    const type = typeDepuisNom(nomComplet) ?? extraireType(r['Catégories'] || '')
+    // Type : override manuel, sinon le debut du nom (fiable), sinon la sous-categorie Woo
+    const type = TYPE_PAR_MODELE[slugifier(modele)] ?? typeDepuisNom(nomComplet) ?? extraireType(r['Catégories'] || '')
     if (!type) anomalies.typesInconnus.push(nomComplet)
 
     const enStock = (r['En stock ?'] || '').trim()
