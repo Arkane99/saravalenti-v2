@@ -31,9 +31,27 @@ Le Studio /studio plante en CORS tant que l'origine n'est pas autorisee (le toke
 
 Le SITE public (home, catalogue, fetch CDN) n'a PAS besoin de CORS ; seul le Studio navigateur en a besoin.
 
+## Fait (Phase 5b, juin 2026)
+
+- Couche donnees : sanity/lib/queries.ts (REQUETE_CATALOGUE, REQUETE_PRODUIT, REQUETE_SLUGS), lib/types.ts, lib/format.ts (prix EUR), lib/couleurs.ts (nom -> hex pour swatches).
+- /catalogue : fetch serveur (revalidate 60) + CatalogueClient (filtrage client). Filtres couleur/matiere/type/prix-max/stock + tri (nouveautes/prix), etat synchronise a l'URL (partageable). useSearchParams sous <Suspense>.
+- CarteProduit : image qui change au survol/clic des swatches, badge gamme/epuise, prix + promo.
+- /catalogue/[slug] : FicheProduit (galerie par couleur + miniatures, selecteur couleur, stock, dimensions, accordeon description PortableText, CTA panier/favoris placeholders), suggeres, generateStaticParams (26 pages), metadata + canonical.
+- @portabletext/react ajoute. Build vert (26 fiches generees). Verifie au navigateur : filtre type 26->3 + URL ?type=Banane, fiche Rita changement couleur/image + accordeon.
+- Limitations notees : tri "populaires" omis (pas de donnees de vente) ; filtre prix = max seul (pas min/max).
+
+## Revue 5b (workflow multi-agents) : 11 constats confirmes, tous corriges (commit 2bfc9c4)
+
+- Bug filtre prix : les variantes sans prix etaient exclues du catalogue (Infinity), et le filtre s'appliquait meme curseur au plafond. Corrige (filtrePrixActif + on garde les sans-prix). prixMax depuis l'URL borne a [0, plafond].
+- A11y : focus clavier visible global (:focus-visible, or fonce) ; aria-pressed sur swatches carte + miniatures fiche ; aria-controls/id sur accordeon ; aria-valuetext sur slider prix ; aria-label swatches sidebar.
+- Contraste AA : boutons gold passent en texte sombre (blanc echouait a 2.85:1) ; nouveau token --color-sv-gold-dark #7e5e2c pour le TEXTE or sur fond clair (prix promo, labels, hover) applique partout (5b + Header/Footer/home).
+- Perf LCP : priority sur les 6 premieres cartes du catalogue (verifie : eager vs lazy).
+- Note : design token --color-sv-gold (clair) reste pour fonds/bordures/accents ; --color-sv-gold-dark uniquement pour le texte sur clair.
+
 ## En cours
 
-- Phase 5a terminee cote code + data. Reste l'action CORS ci-dessus, puis phase 5b (catalogue : page /catalogue + filtres, cards, fiche produit, galerie par couleur).
+- Phase 5b terminee et revue. Prochaine : phase 5c (pages editoriales : gammes Rita/Grazia/Mina via schema pageGamme, home, about, statiques CGV/livraison/retours).
+- Reste l'action CORS Studio (voir plus haut) ; n'impacte pas le site public.
 
 ## Blocages / questions ouvertes
 
