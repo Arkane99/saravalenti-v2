@@ -101,9 +101,42 @@ Strategie mock : tout fonctionne avec placeholders. Plugger les vraies cles → 
 
 Build vert : 30 routes generees. Sonnet 4.6 standard, environ 110k tokens.
 
+## Fait (Phase 5e, juin 2026)
+
+SEO technique et marketing.
+
+Sitemap et robots :
+- app/sitemap.ts : sitemap dynamique (produits Sanity + gammes + pages statiques). Genere /sitemap.xml au build.
+- app/robots.ts : autorisation /, interdiction /studio et /api/. Pointe vers /sitemap.xml.
+
+Schema.org enrichi :
+- /catalogue/[slug] : JSON-LD Product (AggregateOffer par variante, image, disponibilite, prix promo) + BreadcrumbList. Genere cote serveur avec urlFor pour les images Sanity.
+
+Flux marketplaces (ISR 1 heure) :
+- /api/google-feed : XML RSS Google Merchant Center (g:id/title/description/link/image_link/price/availability/brand/item_group_id).
+- /api/meta-feed : JSON flat Meta Commerce Manager (memes champs + item_group_id pour grouper les variantes couleur).
+- /api/tiktok-feed : CSV TikTok Shop (sku_id, title, description, price, currency, availability, image_url, brand, category, item_group_id). Encodage CSV correct (guillemets, echappement).
+- Tous les flux : une ligne/objet/item par variante (couleur x produit). Images via urlFor().width(800).height(1000).fit('crop'). Donne le slug produit comme item_group_id pour grouper dans l'interface marketplace.
+
+Security headers (next.config.ts) :
+- Appliques a toutes les routes sauf /studio (qui a besoin de unsafe-eval).
+- X-Frame-Options: DENY
+- X-Content-Type-Options: nosniff
+- Referrer-Policy: strict-origin-when-cross-origin
+- Permissions-Policy: camera, microphone, geolocation bloques ; payment autorise pour Stripe.
+- Strict-Transport-Security: max-age=63072000 includeSubDomains preload.
+- Content-Security-Policy : self + unsafe-inline (Next.js) + js.stripe.com (scripts/frames) + fonts.googleapis.com/gstatic.com + cdn.sanity.io (images) + *.sanity.io (connect).
+
+Newsletter RGPD :
+- components/layout/NewsletterBandeau.tsx : bandeau bas de page (client), appait 4 s apres le chargement, jamais reaffiche apres rejet (localStorage). Email + case RGPD obligatoire. Lien /mentions-legales.
+- /api/newsletter : POST email -> Brevo API si BREVO_API_KEY configure, sinon log console mock.
+- Integre dans app/(site)/[locale]/layout.tsx.
+
+Build vert : 33 routes generees. Sonnet 4.6 standard, environ 25k tokens.
+
 ## En cours
 
-- Phase 5d terminee. Prochaine : phase 5e (SEO complet : sitemap, metadata Schema.org, hreflang, flux marketplaces Google/Meta/TikTok, security headers).
+- Phase 5e terminee. Prochaine : phase 5f (mise en production : cles Supabase/Stripe/Brevo/Boxtal, deploiement Vercel).
 - Brevo : stub en place (log console). Brancher apres avoir la cle BREVO_API_KEY.
 
 ## Actions requises (Valentin)

@@ -1,13 +1,15 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { setRequestLocale } from 'next-intl/server'
-import { client } from '@/sanity/lib/client'
+import { client, urlFor } from '@/sanity/lib/client'
 import { REQUETE_PRODUIT, REQUETE_SLUGS } from '@/sanity/lib/queries'
 import { routing } from '@/i18n/routing'
 import { FicheProduit } from '@/components/produit/FicheProduit'
 import { CarteProduit } from '@/components/produit/CarteProduit'
 import { Link } from '@/i18n/navigation'
 import type { ProduitDetail } from '@/lib/types'
+
+const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.saravalenti.fr'
 
 export const revalidate = 60
 
@@ -43,8 +45,78 @@ export default async function ProduitPage({
 
   const couleurInitiale = typeof sp.couleur === 'string' ? sp.couleur : undefined
 
+  const variantesAvecPrix = produit.variantes.filter((v) => v.prix)
+  const prixMin = variantesAvecPrix.length
+    ? Math.min(...variantesAvecPrix.map((v) => v.promo ?? v.prix!))
+    : null
+  const prixMax = variantesAvecPrix.length
+    ? Math.max(...variantesAvecPrix.map((v) => v.prix!))
+    : null
+
+  const photos = produit.variantes
+    .flatMap((v) => v.photos ?? [])
+    .slice(0, 8)
+    .filter((p) => p.asset)
+    .map((p) => urlFor(p).width(800).height(1000).fit('crop').url())
+
+  const schemaProduct = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: produit.nom,
+    description:
+      produit.description_courte ?? `${produit.nom}, sac en cuir italien Sara Valenti.`,
+    brand: { '@type': 'Brand', name: 'Sara Valenti' },
+    ...(photos.length > 0 ? { image: photos } : {}),
+    ...(prixMin !== null
+      ? {
+          offers: {
+            '@type': 'AggregateOffer',
+            priceCurrency: 'EUR',
+            lowPrice: prixMin,
+            highPrice: prixMax,
+            offerCount: variantesAvecPrix.length,
+            offers: variantesAvecPrix.map((v) => ({
+              '@type': 'Offer',
+              name: v.couleur,
+              price: v.promo ?? v.prix,
+              priceCurrency: 'EUR',
+              availability:
+                (v.stock ?? 0) > 0 || v.reappro
+                  ? 'https://schema.org/InStock'
+                  : 'https://schema.org/OutOfStock',
+              url: `${BASE}/catalogue/${produit.slug}?couleur=${encodeURIComponent(v.couleur)}`,
+            })),
+          },
+        }
+      : {}),
+  }
+
+  const schemaBreadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: BASE },
+      { '@type': 'ListItem', position: 2, name: 'Catalogue', item: `${BASE}/catalogue` },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: produit.nom,
+        item: `${BASE}/catalogue/${produit.slug}`,
+      },
+    ],
+  }
+
   return (
-    <div className="mx-auto max-w-6xl px-6 py-10">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaProduct) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaBreadcrumb) }}
+      />
+      <div className="mx-auto max-w-6xl px-6 py-10">
       <nav className="mb-8 text-xs uppercase tracking-[0.12em] text-sv-mid">
         <Link href="/catalogue" className="hover:text-sv-gold">
           Catalogue
@@ -65,6 +137,7 @@ export default async function ProduitPage({
           </div>
         </section>
       )}
-    </div>
+      </div>
+    </>
   )
 }

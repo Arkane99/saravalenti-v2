@@ -46,3 +46,13 @@ export const REQUETE_AVIS = groq`*[_type == "avisClient"] | order(date desc)[0..
   _id, texte, auteur, note, verifie, date,
   "produit": produit->{ nom, "slug": slug.current }
 }`
+
+/** Tous les produits avec variantes pour les flux marketplaces (Google/Meta/TikTok). */
+export const REQUETE_FEED = groq`*[_type == "produit"] | order(nom asc){
+  _id, nom, "slug": slug.current, description_courte,
+  "type": type->nom,
+  "variantes": variantes[]{
+    couleur, prix, promo, stock, reappro, sku,
+    "premierPhoto": photos[0]{ asset }
+  }
+}`

@@ -7,6 +7,7 @@ import { routing } from '@/i18n/routing'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { CartDrawer } from '@/components/panier/CartDrawer'
+import { NewsletterBandeau } from '@/components/layout/NewsletterBandeau'
 import '@/app/globals.css'
 
 const cormorant = Cormorant_Garamond({
@@ -61,6 +62,7 @@ export default async function SiteLayout({
           <main className="flex-1">{children}</main>
           <Footer />
           <CartDrawer />
+          <NewsletterBandeau />
         </NextIntlClientProvider>
       </body>
     </html>
