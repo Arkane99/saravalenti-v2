@@ -126,7 +126,7 @@ export function FicheProduit({ produit, couleurInitiale }: { produit: ProduitDet
         )}
 
         {/* CTA panier + favoris */}
-        <div className="mt-6 flex flex-wrap gap-3">
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
           <BoutonAction
             variante="noir"
             disabled={epuise}

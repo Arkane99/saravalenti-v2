@@ -20,6 +20,10 @@
   --font-sans: var(--font-dm-sans);
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   background-color: var(--color-sv-cream);
   color: var(--color-sv-black);
