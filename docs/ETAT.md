@@ -61,14 +61,55 @@ Le SITE public (home, catalogue, fetch CDN) n'a PAS besoin de CORS ; seul le Stu
 - Footer : liens a-propos + entretien-cuir ajoutes.
 - Build vert : 16 routes SSG generees.
 
+## Fait (Phase 5d, juin 2026)
+
+Packages ajoutes : zustand, @supabase/supabase-js, @supabase/ssr, stripe, @stripe/stripe-js.
+
+Infrastructure :
+- lib/supabase/client.ts (browser), lib/supabase/server.ts (RSC/routes), lib/supabase/helpers.ts (isSupabaseConfigured, isStripeConfigured).
+- lib/stripe.ts (instance Stripe serveur, apiVersion 2026-05-27.dahlia).
+- lib/store/panier.ts (Zustand + localStorage, ajouterAuPanier / retirer / changerQuantite / vider).
+- lib/store/favoris.ts (Zustand + localStorage, toggle / estFavori).
+- supabase/migrations/001_ecommerce.sql : tables commandes + adresses + favoris avec RLS. A executer sur Supabase Dashboard.
+- .env.local : placeholders Supabase, Stripe, Boxtal, Brevo ajoutes.
+
+Composants :
+- components/panier/CartDrawer.tsx : panneau lateral (slide-in droite), lignes quantifiees, CTA checkout.
+- components/layout/BoutonPanier.tsx : icone panier avec badge count dans le Header.
+- Header + layout site mis a jour (CartDrawer injecte dans layout).
+- FicheProduit : boutons Ajouter au panier + Favoris fonctionnels (Zustand).
+- BoutonAction : props aria-pressed + aria-label ajoutes.
+
+Pages :
+- /panier : vue complete panier client, quantites, total, CTA checkout.
+- /compte/connexion, /compte/inscription : formulaires Supabase Auth (fallback message si non configure).
+- /compte/layout.tsx : guard auth (redirect vers connexion si non authentifie, mode demo si Supabase absent).
+- /compte : dashboard email + liens.
+- /compte/commandes : historique depuis Supabase (mode demo si absent).
+- /compte/favoris : grille produits depuis slugs Zustand → fetch /api/produits.
+- /checkout : 3 etapes (adresse → livraison → paiement), recapitulatif commande.
+- /checkout/confirmation : succes apres Stripe ou mock.
+
+API routes :
+- /api/livraison : mock Boxtal (3 options fixes : Colissimo 5.49/6.99, Mondial Relay 3.99, Chronopost 9.99).
+- /api/checkout : mock si STRIPE_SECRET_KEY=PLACEHOLDER sinon vraie Stripe Checkout Session.
+- /api/webhook : verifie signature Stripe, met a jour commandes Supabase, TODO Brevo.
+- /api/auth/deconnexion : signOut Supabase + redirect accueil.
+- /api/produits : fetch Sanity par slugs (pour page favoris).
+
+Strategie mock : tout fonctionne avec placeholders. Plugger les vraies cles → production ready sans toucher au code.
+
+Build vert : 30 routes generees. Sonnet 4.6 standard, environ 110k tokens.
+
 ## En cours
 
-- Phase 5c terminee. Prochaine : phase 5d (panier localStorage + Supabase, auth, checkout Stripe, Boxtal, emails Brevo).
-- Reste l'action CORS Studio (voir plus haut) ; n'impacte pas le site public.
-- Avis clients (schema avisClient) : aucun document en production actuellement. La section homepage s'affiche seulement s'il y a des avis (condition avis.length > 0). A peupler via le Studio.
+- Phase 5d terminee. Prochaine : phase 5e (SEO complet : sitemap, metadata Schema.org, hreflang, flux marketplaces Google/Meta/TikTok, security headers).
+- Brevo : stub en place (log console). Brancher apres avoir la cle BREVO_API_KEY.
 
-## Blocages / questions ouvertes
+## Actions requises (Valentin)
 
-1. CORS Studio a autoriser (voir ci-dessus).
-2. Email du compte Vercel dedie Sara Valenti : a confirmer.
-3. Cles API restantes : Supabase, Stripe, Boxtal, Brevo (phase 5d).
+1. CORS Studio a autoriser (voir plus haut) : n'impacte pas le site public.
+2. Creer le projet Supabase → copier URL + ANON_KEY + SERVICE_ROLE_KEY dans .env.local → executer supabase/migrations/001_ecommerce.sql.
+3. Creer le compte Stripe → copier les cles dans .env.local → configurer le webhook (endpoint /api/webhook, event checkout.session.completed).
+4. Email du compte Vercel dedie Sara Valenti : a confirmer.
+5. Brevo + Boxtal : cles a brancher quand disponibles.

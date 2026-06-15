@@ -6,6 +6,7 @@ import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
+import { CartDrawer } from '@/components/panier/CartDrawer'
 import '@/app/globals.css'
 
 const cormorant = Cormorant_Garamond({
@@ -59,6 +60,7 @@ export default async function SiteLayout({
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
+          <CartDrawer />
         </NextIntlClientProvider>
       </body>
     </html>

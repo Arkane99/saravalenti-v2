@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
+import { BoutonPanier } from './BoutonPanier'
 
 /**
  * Header global : logo, navigation, compte + panier.
@@ -44,12 +45,7 @@ export async function Header() {
               <path d="M4 21c0-4 3.6-7 8-7s8 3 8 7" />
             </svg>
           </Link>
-          <Link href="/panier" aria-label={t('panier')} className="text-sv-black transition-colors hover:text-sv-gold-dark">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
-              <path d="M6 7h12l1 14H5L6 7z" />
-              <path d="M9 7a3 3 0 0 1 6 0" />
-            </svg>
-          </Link>
+          <BoutonPanier />
         </div>
       </div>
     </header>

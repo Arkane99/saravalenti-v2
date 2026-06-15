@@ -8,11 +8,15 @@ import { formatPrix } from '@/lib/format'
 import { hexCouleur } from '@/lib/couleurs'
 import { BoutonAction } from '@/components/ui/Bouton'
 import { Link } from '@/i18n/navigation'
+import { usePanier } from '@/lib/store/panier'
+import { useFavoris, cléFavori } from '@/lib/store/favoris'
 import type { ProduitDetail } from '@/lib/types'
 
 export function FicheProduit({ produit, couleurInitiale }: { produit: ProduitDetail; couleurInitiale?: string }) {
   const idxInit = couleurInitiale ? produit.variantes.findIndex((v) => v.couleur === couleurInitiale) : 0
   const [iVar, setIVar] = useState(idxInit < 0 ? 0 : idxInit)
+  const { ajouterAuPanier } = usePanier()
+  const { toggleFavori, estFavori } = useFavoris()
   const [iPhoto, setIPhoto] = useState(0)
   const [descOuverte, setDescOuverte] = useState(false)
 
@@ -121,14 +125,36 @@ export function FicheProduit({ produit, couleurInitiale }: { produit: ProduitDet
           </p>
         )}
 
-        {/* CTA (panier/favoris reels en phase 5d) */}
+        {/* CTA panier + favoris */}
         <div className="mt-6 flex flex-wrap gap-3">
-          <BoutonAction variante="noir" disabled={epuise} className="flex-1">
-            {epuise ? 'Épuisé' : 'Ajouter au panier'}
+          <BoutonAction
+            variante="noir"
+            disabled={epuise}
+            className="flex-1"
+            onClick={() => {
+              if (epuise || !v?.sku) return
+              const photo = photos[0]
+              ajouterAuPanier({
+                slug: produit.slug,
+                nom: produit.nom,
+                couleur: v.couleur,
+                sku: v.sku,
+                prix: v.promo ?? v.prix ?? 0,
+                photoUrl: photo?.asset ? urlFor(photo).width(200).height(250).fit('crop').url() : undefined,
+              })
+            }}
+          >
+            {epuise ? 'Epuise' : 'Ajouter au panier'}
           </BoutonAction>
-          <BoutonAction variante="contour">Favoris</BoutonAction>
+          <BoutonAction
+            variante="contour"
+            onClick={() => toggleFavori(cléFavori(produit.slug, v?.couleur ?? ''))}
+            aria-pressed={estFavori(cléFavori(produit.slug, v?.couleur ?? ''))}
+            aria-label={estFavori(cléFavori(produit.slug, v?.couleur ?? '')) ? 'Retirer des favoris' : 'Ajouter aux favoris'}
+          >
+            {estFavori(cléFavori(produit.slug, v?.couleur ?? '')) ? 'Favori' : 'Favoris'}
+          </BoutonAction>
         </div>
-        <p className="mt-2 text-xs text-sv-mid">Panier et favoris seront actifs en phase e-commerce.</p>
         <p className="mt-4 text-xs text-sv-mid">
           <Link href="/entretien-cuir" className="underline underline-offset-2 hover:text-sv-gold-dark">
             Guide d'entretien du cuir

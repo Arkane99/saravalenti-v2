@@ -34,6 +34,8 @@ interface ActionProps {
   variante?: Variante
   disabled?: boolean
   className?: string
+  'aria-pressed'?: boolean
+  'aria-label'?: string
   children: React.ReactNode
 }
 
@@ -43,6 +45,8 @@ export function BoutonAction({
   variante = 'or',
   disabled = false,
   className = '',
+  'aria-pressed': ariapressed,
+  'aria-label': arialabel,
   children,
 }: ActionProps) {
   return (
@@ -50,6 +54,8 @@ export function BoutonAction({
       type={type}
       onClick={onClick}
       disabled={disabled}
+      aria-pressed={ariapressed}
+      aria-label={arialabel}
       className={`${BASE} ${STYLES[variante]} disabled:cursor-not-allowed disabled:opacity-40 ${className}`}
     >
       {children}
