@@ -134,9 +134,45 @@ Newsletter RGPD :
 
 Build vert : 33 routes generees. Sonnet 4.6 standard, environ 25k tokens.
 
+## Fait (revue visuelle + corrections, juin 2026)
+
+Six groupes de corrections apres review visuelle desktop/mobile 390px. Build vert a chaque commit.
+
+Fix 1 (commit 0143ba9) — Overflow horizontal mobile :
+- html { overflow-x: hidden } dans globals.css.
+- FicheProduit : boutons CTA flex-col sm:flex-row (empiles sur mobile, cote a cote sur sm+).
+
+Fix 2 (commit 1db37b6) — 15 accents manquants :
+- NewsletterBandeau : nouveautes → nouveautes, premiere → premiere, donnees → donnees, Confidentialite → Confidentialite, Reessayez/ecrivez → corriges.
+- /panier : ajoute → ajoute, Recapitulatif, Calculee, aria-labels quantite.
+- /compte : Connecte, modeles, sauvegardes, deconnecter, demonstration, configure.
+
+Fix 3 (commit 463cd46) — Gamme Mina :
+- messages/fr.json : cle "gammeMina" ajoutee.
+- Header : lien /gamme/mina dans le tableau liens.
+- Footer : lien /gamme/mina dans la colonne BOUTIQUE.
+
+Fix 4 (commit 8f88875) — Navigation mobile hamburger :
+- components/layout/NavMobile.tsx cree (client) : icone 3 barres md:hidden, drawer slide-in depuis la gauche (w-72), overlay semi-transparent, fermeture automatique au changement de pathname (usePathname), scroll body bloque.
+- Header.tsx : import + <NavMobile liens={liens} /> dans la zone actions.
+
+Fix 5 (commit 5b39f91) — Filtres catalogue drawer mobile :
+- CatalogueClient.tsx refactorise : panneauFiltres extrait en variable JSX (pas de duplication).
+- Sidebar aside : hidden md:block (invisible sur mobile).
+- Bouton "Filtres (N)" : visible md:hidden dans la barre de tri.
+- Drawer : fixed inset-0 z-50 depuis la droite (w-80), overlay, scroll interne, bouton "Voir les resultats (N)" en bas.
+- State drawerOuvert + overflow body bloque.
+
+Fix 6 (commit 665fa93) — og:image :
+- layout.tsx : openGraph.images par defaut → /images/produits/Sac-Rita-Camel-3-scaled.jpg (1200x900).
+- catalogue/[slug]/page.tsx : generateMetadata enrichi avec urlFor(premiere_photo).width(1200).height(900).fit('crop').
+- gamme/[slug]/page.tsx : OG_IMAGES map (rita/grazia/mina → photos locales).
+
+Build final : 33 routes. Tous les commits sur main.
+
 ## En cours
 
-- Phase 5e terminee. Prochaine : phase 5f (mise en production : cles Supabase/Stripe/Brevo/Boxtal, deploiement Vercel).
+- Phase 5e + revue visuelle terminees. Prochaine : phase 5f (mise en production).
 - Brevo : stub en place (log console). Brancher apres avoir la cle BREVO_API_KEY.
 
 ## Actions requises (Valentin)
