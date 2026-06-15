@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { BoutonPanier } from './BoutonPanier'
+import { NavMobile } from './NavMobile'
 
 /**
  * Header global : logo, navigation, compte + panier.
@@ -38,8 +39,9 @@ export async function Header() {
           ))}
         </nav>
 
-        {/* Actions : compte + panier (placeholders fonctionnels en 5d) */}
+        {/* Actions : compte + panier + hamburger mobile */}
         <div className="flex items-center gap-5">
+          <NavMobile liens={liens} />
           <Link href="/compte" aria-label={t('compte')} className="text-sv-black transition-colors hover:text-sv-gold-dark">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
               <circle cx="12" cy="8" r="4" />
