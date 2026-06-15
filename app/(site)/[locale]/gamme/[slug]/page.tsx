@@ -147,6 +147,12 @@ export async function generateStaticParams() {
   return Object.keys(GAMMES).map((slug) => ({ slug }))
 }
 
+const OG_IMAGES: Record<string, string> = {
+  rita: '/images/produits/Sac-Rita-Camel-3-scaled.jpg',
+  grazia: '/images/produits/Sac-a-main-Grazia-en-cuir-graine-bordeaux-1.png',
+  mina: '/images/produits/sac-cuir-suede-daim-nubuck-mina-camel-1-scaled.jpg',
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -155,10 +161,14 @@ export async function generateMetadata({
   const { slug } = await params
   const g = GAMMES[slug]
   if (!g) return {}
+  const ogImg = OG_IMAGES[slug]
   return {
     title: g.metaTitle,
     description: g.metaDescription,
     alternates: { canonical: `/gamme/${slug}` },
+    openGraph: {
+      ...(ogImg ? { images: [{ url: ogImg, width: 1200, height: 900, alt: g.metaTitle }] } : {}),
+    },
   }
 }
 

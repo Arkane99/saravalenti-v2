@@ -22,10 +22,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params
   const p = await client.fetch<ProduitDetail | null>(REQUETE_PRODUIT, { slug })
   if (!p) return {}
+  const premierePhoto = p.variantes.flatMap((v) => v.photos ?? []).find((ph) => ph.asset)
+  const ogImage = premierePhoto ? urlFor(premierePhoto).width(1200).height(900).fit('crop').url() : undefined
   return {
     title: p.nom,
     description: p.description_courte || `${p.nom}, sac en cuir italien Sara Valenti.`,
     alternates: { canonical: `/catalogue/${slug}` },
+    openGraph: {
+      ...(ogImage ? { images: [{ url: ogImage, width: 1200, height: 900, alt: p.nom }] } : {}),
+    },
   }
 }
 

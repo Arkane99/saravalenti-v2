@@ -36,6 +36,14 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'fr_FR',
     siteName: 'Sara Valenti',
+    images: [
+      {
+        url: '/images/produits/Sac-Rita-Camel-3-scaled.jpg',
+        width: 1200,
+        height: 900,
+        alt: 'Sac à main Rita en cuir brossé camel - Sara Valenti',
+      },
+    ],
   },
 }
 
