@@ -44,7 +44,7 @@ export function NewsletterBandeau() {
   return (
     <div
       role="dialog"
-      aria-label="Offres et nouveautes Sara Valenti"
+      aria-label="Offres et nouveautés Sara Valenti"
       aria-modal="false"
       className="fixed bottom-0 left-0 right-0 z-40 border-t border-sv-border bg-sv-cream px-6 py-5 shadow-xl md:bottom-6 md:left-auto md:right-6 md:max-w-sm md:rounded-lg md:border"
     >
@@ -66,9 +66,9 @@ export function NewsletterBandeau() {
         </svg>
       </button>
 
-      <p className="font-serif text-lg leading-tight">Offres et nouveautes</p>
+      <p className="font-serif text-lg leading-tight">Offres et nouveautés</p>
       <p className="mt-1.5 text-xs text-sv-mid">
-        Inscrivez-vous et recevez <strong>10&nbsp;% de remise</strong> sur votre premiere commande.
+        Inscrivez-vous et recevez <strong>10&nbsp;% de remise</strong> sur votre première commande.
       </p>
 
       {statut === 'succes' ? (
@@ -95,17 +95,17 @@ export function NewsletterBandeau() {
               className="mt-0.5 shrink-0 accent-sv-black"
             />
             <span>
-              J'accepte de recevoir des emails de Sara Valenti. Mes donnees ne sont jamais
+              J'accepte de recevoir des emails de Sara Valenti. Mes données ne sont jamais
               revendues.{' '}
               <a href="/mentions-legales" className="underline underline-offset-2 hover:text-sv-black">
-                Confidentialite
+                Confidentialité
               </a>
               .
             </span>
           </label>
           {statut === 'erreur' && (
             <p role="alert" className="text-xs text-red-700">
-              Une erreur est survenue. Reessayez ou ecrivez-nous.
+              Une erreur est survenue. Réessayez ou écrivez-nous.
             </p>
           )}
           <button

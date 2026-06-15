@@ -27,7 +27,7 @@ export default async function ComptePage({ params }: { params: Promise<{ locale:
       <h1 className="mb-8 font-serif text-3xl">Mon compte</h1>
 
       <div className="rounded border border-sv-border bg-sv-warm-white p-6">
-        <p className="text-sm text-sv-mid">Connecte en tant que</p>
+        <p className="text-sm text-sv-mid">Connecté en tant que</p>
         <p className="mt-1 font-medium">{email}</p>
         {createdAt && (
           <p className="mt-1 text-xs text-sv-mid">
@@ -40,7 +40,7 @@ export default async function ComptePage({ params }: { params: Promise<{ locale:
           </p>
         )}
         {!isSupabaseConfigured() && (
-          <p className="mt-2 text-xs text-amber-700">Mode demonstration -- Supabase non configure.</p>
+          <p className="mt-2 text-xs text-amber-700">Mode démonstration -- Supabase non configuré.</p>
         )}
       </div>
 
@@ -57,7 +57,7 @@ export default async function ComptePage({ params }: { params: Promise<{ locale:
           className="rounded border border-sv-border p-5 transition-colors hover:border-sv-gold hover:bg-sv-warm-white"
         >
           <p className="font-medium">Mes favoris</p>
-          <p className="mt-1 text-sm text-sv-mid">Les modeles que vous avez sauvegardes</p>
+          <p className="mt-1 text-sm text-sv-mid">Les modèles que vous avez sauvegardés</p>
         </Link>
       </div>
 
@@ -67,7 +67,7 @@ export default async function ComptePage({ params }: { params: Promise<{ locale:
             type="submit"
             className="text-sm text-sv-mid underline-offset-2 hover:text-sv-black hover:underline"
           >
-            Se deconnecter
+            Se déconnecter
           </button>
         </form>
       )}

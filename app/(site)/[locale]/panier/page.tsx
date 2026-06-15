@@ -14,7 +14,7 @@ export default function PanierPage() {
     return (
       <div className="mx-auto flex max-w-3xl flex-col items-center px-6 py-32 text-center">
         <p className="font-serif text-2xl">Votre panier est vide</p>
-        <p className="mt-4 text-sv-mid">Vous n'avez pas encore ajoute d'articles.</p>
+        <p className="mt-4 text-sv-mid">Vous n'avez pas encore ajouté d'articles.</p>
         <Link
           href="/catalogue"
           className="mt-8 inline-block rounded bg-sv-black px-8 py-3 text-sm font-medium text-sv-cream transition-colors hover:bg-sv-gold hover:text-sv-black"
@@ -54,7 +54,7 @@ export default function PanierPage() {
 
         {/* Recapitulatif */}
         <aside className="rounded border border-sv-border bg-sv-warm-white p-6">
-          <h2 className="mb-6 font-serif text-xl">Recapitulatif</h2>
+          <h2 className="mb-6 font-serif text-xl">Récapitulatif</h2>
 
           <div className="space-y-2 text-sm">
             <div className="flex justify-between">
@@ -63,7 +63,7 @@ export default function PanierPage() {
             </div>
             <div className="flex justify-between">
               <span className="text-sv-mid">Livraison</span>
-              <span className="text-sv-mid">Calculee au paiement</span>
+              <span className="text-sv-mid">Calculée au paiement</span>
             </div>
           </div>
 
@@ -135,7 +135,7 @@ function LignePanierPageRow({
             <button
               type="button"
               onClick={() => onChanger(ligne.quantite - 1)}
-              aria-label="Diminuer la quantite"
+              aria-label="Diminuer la quantité"
               className="flex h-7 w-7 items-center justify-center border border-sv-border hover:border-sv-black"
             >
               <span aria-hidden>-</span>
@@ -144,7 +144,7 @@ function LignePanierPageRow({
             <button
               type="button"
               onClick={() => onChanger(ligne.quantite + 1)}
-              aria-label="Augmenter la quantite"
+              aria-label="Augmenter la quantité"
               className="flex h-7 w-7 items-center justify-center border border-sv-border hover:border-sv-black"
             >
               <span aria-hidden>+</span>
