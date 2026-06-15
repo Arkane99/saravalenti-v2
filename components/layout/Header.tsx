@@ -13,6 +13,7 @@ export async function Header() {
     { href: '/catalogue', label: t('catalogue') },
     { href: '/gamme/rita', label: t('gammeRita') },
     { href: '/gamme/grazia', label: t('gammeGrazia') },
+    { href: '/gamme/mina', label: t('gammeMina') },
     { href: '/a-propos', label: t('aPropos') },
   ]
 

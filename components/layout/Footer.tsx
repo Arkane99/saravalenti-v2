@@ -19,6 +19,7 @@ export async function Footer() {
             <li><Link href="/catalogue" className="transition-colors hover:text-sv-gold-dark">{tNav('catalogue')}</Link></li>
             <li><Link href="/gamme/rita" className="transition-colors hover:text-sv-gold-dark">{tNav('gammeRita')}</Link></li>
             <li><Link href="/gamme/grazia" className="transition-colors hover:text-sv-gold-dark">{tNav('gammeGrazia')}</Link></li>
+            <li><Link href="/gamme/mina" className="transition-colors hover:text-sv-gold-dark">{tNav('gammeMina')}</Link></li>
           </ul>
         </div>
 
