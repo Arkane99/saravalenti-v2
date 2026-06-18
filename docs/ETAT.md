@@ -259,6 +259,17 @@ Commits : c80a060 (import) d402fc3 (FicheProduit) b8fa91d (gamme) 413619d (hero 
 - catalogue/[slug]/page.tsx generateMetadata : titre couleur enrichi "Sac Rita Camel en cuir brossé" (~45 chars) au lieu de "Rita Camel" (~10 chars). Utilise p.type (résolu via Sanity ref) et v.matiere.
 - Résolution boucle redirect /compte/connexion : route group (auth-guard) isole les pages protégées. /compte/connexion n'a plus de layout guard.
 
+## Fait (contenu editorial + UI, juin 2026, commit 842e4ad)
+
+- AnnouncementBar : bandeau defilant marquee CSS pure au-dessus du Header. Fond sv-black, texte xs tracking-widest uppercase. Animation 20s, 3 repetitions DOM. CSS dans globals.css (@keyframes marquee + .animate-marquee).
+- FicheProduit : pictos rassurants (Truck / ShieldCheck / RotateCcw) sous les boutons CTA. flex-wrap sur mobile.
+- /a-propos : contenu editorial complet (intro "née en 2025", selection modeles, cuir italien, marque FR). 4 sections H2 + citation finale.
+- Gammes : textes reformules. Rita : patine unique. Grazia : suede mal compris mais resistant. Mina : intro journees chargees.
+- FAQ homepage : passe de 4 a 8 questions. Ajouts : livraison gratuite 45 EUR, diff Rita/Grazia/Mina, brossé vs suède, hiver, boutique. Schema FAQPage mis a jour.
+- Footer : lien Instagram @saravalenti.fr avec SVG inline (lucide-react ne l'exporte plus en v1+).
+- /livraison : encart "Livraison offerte a partir de 45 EUR" en tete de page.
+- scripts/update-descriptions-rita.ts : script pret pour patcher les 5 variantes Rita dans Sanity. BLOQUE : token Sanity est read-only. A faire par Valentin : creer un token Editor dans dashboard.sanity.io → project r949oibi → API → Tokens, puis npm run tsx --env-file=.env.local scripts/update-descriptions-rita.ts
+
 ## En attente (go prod)
 
 1. Valentin : valider visuellement ces corrections en local (npm run dev) ou sur la prochaine preview.
