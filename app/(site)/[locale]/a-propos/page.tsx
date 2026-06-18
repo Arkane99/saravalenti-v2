@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { setRequestLocale } from 'next-intl/server'
 
 export const metadata: Metadata = {
@@ -28,15 +29,30 @@ export default async function AProposPage({ params }: { params: Promise<{ locale
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrganisation) }}
       />
 
+      {/* Hero image */}
+      <div className="relative h-64 overflow-hidden md:h-96">
+        <Image
+          src="/images/produits/Sac-Rita-Camel-4-scaled.jpg"
+          alt="Sac Rita camel en cuir brossé Sara Valenti"
+          fill
+          sizes="100vw"
+          className="object-cover object-center"
+          priority
+        />
+        <div className="absolute inset-0 bg-sv-black/25" />
+        <div className="absolute inset-0 flex items-end px-8 pb-8">
+          <p className="text-xs font-medium uppercase tracking-[0.3em] text-sv-cream/80">À propos de Sara Valenti</p>
+        </div>
+      </div>
+
       <div className="mx-auto max-w-3xl px-6 py-20">
         <header className="mb-14">
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.3em] text-sv-gold-dark">À propos</p>
-          <h1 className="font-serif text-4xl leading-tight md:text-5xl">
+          <h1 className="font-serif text-4xl leading-tight text-balance md:text-5xl">
             Sara Valenti : l'élégance du cuir italien, sans compromis
           </h1>
         </header>
 
-        <div className="prose prose-sm max-w-none space-y-10 text-sv-mid [&_p]:leading-relaxed">
+        <div className="space-y-8 text-sv-mid [&_p]:leading-relaxed">
           <p>
             Sara Valenti est née d'une conviction simple : une belle pièce en cuir ne devrait pas coûter une
             fortune, mais elle devrait durer toute une vie.
@@ -71,12 +87,17 @@ export default async function AProposPage({ params }: { params: Promise<{ locale
           </p>
         </section>
 
-        <section className="mt-16 rounded border border-sv-border bg-sv-warm-white p-8">
-          <h2 className="mb-4 font-serif text-2xl">Notre promesse</h2>
-          <p className="leading-relaxed text-sv-mid">
-            Un sac Sara Valenti n'est pas un achat impulsif. C'est un choix réfléchi, une pièce que vous
-            porterez des années et que vous ne voudrez pas remplacer.
-          </p>
+        {/* Notre promesse — citation éditoriale */}
+        <section className="mt-20 border-t border-sv-border pt-16">
+          <blockquote className="mx-auto text-center">
+            <p className="font-serif text-xl italic leading-relaxed text-sv-black md:text-2xl">
+              "Un sac Sara Valenti n'est pas un achat impulsif. C'est un choix réfléchi, une pièce que vous
+              porterez des années et que vous ne voudrez pas remplacer."
+            </p>
+            <footer className="mt-6 text-xs font-medium uppercase tracking-[0.2em] text-sv-gold-dark">
+              Notre promesse
+            </footer>
+          </blockquote>
         </section>
       </div>
     </>
