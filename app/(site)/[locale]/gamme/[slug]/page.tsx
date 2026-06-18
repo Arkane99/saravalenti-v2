@@ -40,7 +40,7 @@ const GAMMES: Record<string, GammeConfig> = {
       {
         titre: 'Comment porter le Rita',
         texte:
-          'Le Rita se porte à la main grâce à ses poignées courtes, ou à l\'épaule avec la bandoulière amovible fournie. Son format compact (environ 30 x 22 cm) convient à une utilisation quotidienne : portefeuille, téléphone, clés, et petits accessoires trouvent leur place. Il n\'est pas prévu pour un ordinateur portable.',
+          'Le Rita se porte à la main grâce à ses poignées courtes, ou à l\'épaule avec la bandoulière amovible incluse. Son format (environ 30 x 22 cm) convient à une utilisation quotidienne : portefeuille, téléphone, clés et petits accessoires. Il n\'est pas adapté au transport d\'un ordinateur portable.',
       },
       {
         titre: 'Entretien du cuir brossé',

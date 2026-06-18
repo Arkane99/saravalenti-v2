@@ -12,9 +12,9 @@ import type { ProduitCarte, AvisClient } from '@/lib/types'
 export const revalidate = 60
 
 export const metadata: Metadata = {
-  title: 'Sacs en cuir italien - Collection Sara Valenti',
+  title: 'Sacs en cuir italien Sara Valenti - Rita, Grazia, Mina',
   description:
-    'Sacs en cuir italien, fabriqués par des artisans maroquiniers. Cuir brossé, suède et grainé : des modèles intemporels qui durent. Livraison France.',
+    'Sacs en cuir italien fabriqués en Italie : cuir brossé, suède et grainé. Modèles Rita, Grazia, Mina, Grazita. Prix à partir de 109,90 EUR. Livraison France.',
   alternates: { canonical: '/' },
 }
 
@@ -42,7 +42,7 @@ const MATIERES = [
 const ARGUMENTS = [
   {
     titre: 'Fabrication italienne',
-    texte: 'Chaque sac est fabriqué en Italie, dans des ateliers maroquiniers qui travaillent le cuir depuis des générations.',
+    texte: 'Chaque sac est fabriqué en Italie dans des ateliers maroquiniers spécialisés dans le travail du cuir naturel.',
   },
   {
     titre: 'Cuir véritable',
@@ -57,6 +57,35 @@ const ARGUMENTS = [
     texte: 'Vous avez 14 jours pour changer d\'avis. Retour simple, remboursement rapide. Pas de questions inutiles.',
   },
 ]
+
+const FAQ_HOME = [
+  {
+    q: 'Les sacs Sara Valenti sont-ils en cuir véritable ?',
+    r: 'Oui. Tous les sacs Sara Valenti sont fabriqués en cuir naturel d\'origine italienne : cuir brossé, cuir suède ou cuir grainé selon le modèle. Aucun cuir reconstitué ni matière synthétique n\'est utilisé dans la collection.',
+  },
+  {
+    q: 'Où sont fabriqués les sacs Sara Valenti ?',
+    r: 'Les sacs Sara Valenti sont fabriqués en Italie dans des ateliers maroquiniers spécialisés. La sélection des peaux est réalisée dans des tanneries italiennes. La marque est basée en France.',
+  },
+  {
+    q: 'Quel est le prix des sacs Sara Valenti ?',
+    r: 'Les sacs Sara Valenti sont proposés à partir de 109,90 EUR. Ce prix est identique pour tous les modèles de la collection, quelle que soit la couleur choisie. Aucun frais supplémentaire n\'est appliqué selon la variante.',
+  },
+  {
+    q: 'Quelles gammes de sacs propose Sara Valenti ?',
+    r: 'Sara Valenti propose trois gammes principales : le Rita (sac à main en cuir brossé, 5 couleurs), le Grazia (cuir suède ou grainé, 13 couleurs au total) et le Mina (sac porté épaule en cuir suède souple, 5 couleurs). La collection complète comprend une vingtaine de modèles.',
+  },
+]
+
+const schemaFaqHome = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQ_HOME.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.r },
+  })),
+}
 
 const schemaOrganisation = {
   '@context': 'https://schema.org',
@@ -98,6 +127,10 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrganisation) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaFaqHome) }}
       />
 
       {/* Hero */}
@@ -234,6 +267,21 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="border-t border-sv-border bg-sv-warm-white py-20" aria-labelledby="titre-faq-home">
+        <div className="mx-auto max-w-3xl px-6">
+          <h2 id="titre-faq-home" className="mb-10 font-serif text-3xl">Questions fréquentes</h2>
+          <dl className="divide-y divide-sv-border">
+            {FAQ_HOME.map((item) => (
+              <div key={item.q} className="py-6">
+                <dt className="mb-3 font-medium">{item.q}</dt>
+                <dd className="text-sm leading-relaxed text-sv-mid">{item.r}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
     </>

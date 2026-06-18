@@ -71,9 +71,9 @@ export default async function AProposPage({ params }: { params: Promise<{ locale
         <section className="mt-16">
           <h2 className="mb-6 font-serif text-2xl">Pourquoi le cuir italien ?</h2>
           <p className="leading-relaxed text-sv-mid">
-            L'Italie reste la référence mondiale pour la maroquinerie de qualité. Les tanneries italiennes
-            sont reconnues pour leur savoir-faire artisanal et la qualité de leur sélection. Chaque peau est
-            choisie pour sa souplesse, sa résistance et son caractère.
+            L'Italie dispose d'une tradition maroquinière établie. Les tanneries italiennes sélectionnent les
+            peaux pour leur souplesse, leur résistance et leur homogénéité. Chaque peau est choisie
+            individuellement avant la fabrication de chaque modèle.
           </p>
         </section>
 
