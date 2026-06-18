@@ -66,8 +66,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!p) return {}
   const v = p.variantes.find((va) => slugifier(va.couleur) === couleurSlug)
   if (!v) return {}
-  const titre = `${p.nom} ${v.couleur}`
-  const description = v.description_courte || `${titre}, sac en cuir italien Sara Valenti.`
+  const typeSac = p.type ?? 'Sac'
+  const matStr = v.matiere ? ` en ${v.matiere.toLowerCase()}` : ''
+  const titre = `${typeSac} ${p.nom} ${v.couleur}${matStr}`
+  const description = v.description_courte || `${titre} — sac en cuir italien Sara Valenti.`
   const ogPhoto = v.photos?.find((ph) => ph.asset)
   const ogImage = ogPhoto ? urlFor(ogPhoto).width(1200).height(900).fit('crop').url() : undefined
   return {

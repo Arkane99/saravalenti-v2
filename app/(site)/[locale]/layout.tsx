@@ -45,6 +45,13 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Sara Valenti - Sacs en cuir italien',
+    description:
+      'Sacs en cuir italien, fabrication italienne. Cuir brossé, suède et grainé : des modèles intemporels, du sac à main à la banane.',
+    images: ['/images/produits/Sac-Rita-Camel-3-scaled.jpg'],
+  },
 }
 
 export function generateStaticParams() {
