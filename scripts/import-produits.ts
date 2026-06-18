@@ -254,6 +254,23 @@ export function htmlVersPortableText(html: string): Bloc[] {
 }
 
 // ---------------------------------------------------------------------------
+// Génération de description_courte par template (tâche 4)
+// ---------------------------------------------------------------------------
+
+function genererDescriptionCourte(
+  nom: string,
+  couleur: string,
+  type: string | null,
+  matiere?: string,
+): string {
+  const c = couleur.toLowerCase()
+  const typeSac = (type || 'sac').toLowerCase()
+  const matNorm = matiere ? matiere.replace(/^cuir\s+/i, '').toLowerCase() : ''
+  const matStr = matNorm ? ` en cuir ${matNorm}` : ''
+  return `Le ${nom} ${c} est un ${typeSac}${matStr} fabriqué en Italie.`
+}
+
+// ---------------------------------------------------------------------------
 // Regroupement par modele
 // ---------------------------------------------------------------------------
 
@@ -324,7 +341,7 @@ function regrouper(lignes: Ligne[]): { modeles: Modele[]; anomalies: Anomalies }
     const enStock = (r['En stock ?'] || '').trim()
     const variante: Variante = {
       couleur: attrs.couleur || 'Unique',
-      description_courte: (r['Description courte'] || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim() || undefined,
+      description_courte: genererDescriptionCourte(modele, attrs.couleur || 'Unique', type, attrs.matiere),
       matiere: attrs.matiere,
       prix: nombre(r['Tarif régulier']),
       promo: nombre(r['Tarif promo']),
