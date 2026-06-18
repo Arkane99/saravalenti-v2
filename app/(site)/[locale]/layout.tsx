@@ -8,6 +8,7 @@ import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { CartDrawer } from '@/components/panier/CartDrawer'
 import { NewsletterBandeau } from '@/components/layout/NewsletterBandeau'
+import { AnnouncementBar } from '@/components/layout/AnnouncementBar'
 import '@/app/globals.css'
 
 const cormorant = Cormorant_Garamond({
@@ -73,6 +74,7 @@ export default async function SiteLayout({
     <html lang={locale} className={`${cormorant.variable} ${dmSans.variable}`}>
       <body className="flex min-h-screen flex-col">
         <NextIntlClientProvider>
+          <AnnouncementBar />
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />

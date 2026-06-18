@@ -39,6 +39,17 @@ body {
   }
 }
 
+/* Bandeau défilant */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+  display: flex;
+  width: max-content;
+}
+
 /* Focus clavier visible et distinct de l'etat selectionne (ring gold). Contraste >= 3:1 sur creme et sur noir. */
 :focus-visible {
   outline: 2px solid var(--color-sv-gold-dark);

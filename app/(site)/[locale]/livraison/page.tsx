@@ -45,6 +45,15 @@ export default async function LivraisonPage({ params }: { params: Promise<{ loca
           <h1 className="font-serif text-4xl">Livraison et délais</h1>
         </header>
 
+        <section className="mb-10 rounded border border-sv-gold/40 bg-sv-warm-white px-6 py-5">
+          <p className="text-sm font-medium text-sv-black">
+            Livraison offerte à partir de 45 EUR d'achat.
+          </p>
+          <p className="mt-1 text-xs text-sv-mid">
+            En dessous de ce montant, les frais de port sont calculés au moment du paiement selon le transporteur choisi et le poids de la commande.
+          </p>
+        </section>
+
         <section className="mb-10">
           <h2 className="mb-4 font-serif text-2xl">Transporteurs</h2>
           <p className="mb-6 text-sm leading-relaxed text-sv-mid">

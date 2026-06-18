@@ -6,6 +6,7 @@ import { urlFor } from '@/sanity/lib/client'
 import { formatPrix } from '@/lib/format'
 import { hexCouleur } from '@/lib/couleurs'
 import { slugifier } from '@/lib/slugifier'
+import { Truck, ShieldCheck, RotateCcw } from 'lucide-react'
 import { BoutonAction } from '@/components/ui/Bouton'
 import { Link } from '@/i18n/navigation'
 import { usePanier } from '@/lib/store/panier'
@@ -260,6 +261,22 @@ export function FicheProduit({ produit, couleurSlug }: { produit: ProduitDetail;
             {estFavori(cléFavori(produit.slug, v?.couleur ?? '')) ? 'Favori' : 'Favoris'}
           </BoutonAction>
         </div>
+        {/* Pictos rassurants */}
+        <div className="mt-4 flex flex-wrap items-center gap-4 text-xs text-sv-mid">
+          <div className="flex items-center gap-2">
+            <Truck className="h-4 w-4 shrink-0" />
+            <span>Livraison offerte dès 45 EUR</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <ShieldCheck className="h-4 w-4 shrink-0" />
+            <span>100% cuir véritable</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <RotateCcw className="h-4 w-4 shrink-0" />
+            <span>Retours sous 14 jours</span>
+          </div>
+        </div>
+
         {/* Accordéons */}
         <div className="mt-8">
           <Accordeon titre="Description" ouvert={acc1} onToggle={() => setAcc1((o) => !o)} id="acc-desc">

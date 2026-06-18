@@ -5,7 +5,7 @@ import { setRequestLocale } from 'next-intl/server'
 export const metadata: Metadata = {
   title: 'À propos - Sara Valenti',
   description:
-    'Sara Valenti : sacs en cuir italien, fabrication artisanale. Une marque française indépendante, des pièces qui durent.',
+    'Sara Valenti : sacs en cuir italien fabriqués en Italie. Une marque française indépendante, des pièces pensées pour durer.',
   alternates: { canonical: '/a-propos' },
 }
 
@@ -41,58 +41,72 @@ export default async function AProposPage({ params }: { params: Promise<{ locale
         />
         <div className="absolute inset-0 bg-sv-black/25" />
         <div className="absolute inset-0 flex items-end px-8 pb-8">
-          <p className="text-xs font-medium uppercase tracking-[0.3em] text-sv-cream/80">À propos de Sara Valenti</p>
+          <p className="text-xs font-medium uppercase tracking-[0.3em] text-white/80">
+            À propos de Sara Valenti
+          </p>
         </div>
       </div>
 
       <div className="mx-auto max-w-3xl px-6 py-20">
         <header className="mb-14">
-          <h1 className="font-serif text-4xl leading-tight text-balance md:text-5xl">
+          <h1 className="text-balance font-serif text-4xl leading-tight md:text-5xl">
             Sara Valenti : l'élégance du cuir italien, sans compromis
           </h1>
         </header>
 
-        <div className="space-y-8 text-sv-mid [&_p]:leading-relaxed">
+        <div className="space-y-6 text-sv-mid [&_p]:leading-relaxed [&_p]:text-sm md:[&_p]:text-base">
           <p>
-            Sara Valenti est née d'une conviction simple : une belle pièce en cuir ne devrait pas coûter une
-            fortune, mais elle devrait durer toute une vie.
+            Sara Valenti est née en 2025 d'une conviction simple : il est possible de porter du vrai
+            cuir italien, bien fabriqué, sans payer le prix d'une grande maison.
           </p>
           <p>
-            Chaque sac de la collection est fabriqué en Italie, dans des ateliers qui travaillent le cuir
-            depuis des générations. Cuir brossé, suède, grainé : des matières vivantes qui se patinent avec
-            le temps et racontent votre histoire.
+            Chaque sac de la collection est fabriqué dans des ateliers de maroquinerie italiens, dans
+            une tradition artisanale qui privilégie la durabilité sur la rapidité. Cuir brossé, suède,
+            grainé : des matières vivantes qui se patinent avec le temps et racontent votre histoire.
           </p>
           <p>
-            Pas de logo ostentatoire. Pas de tendance éphémère. Des formes pensées pour durer, des finitions
-            qui résistent à l'usage quotidien, et des coloris qui s'accordent à toutes les saisons.
+            Sara Valenti, c'est aussi un choix de valeurs. Pas de faux cuir vendu au prix du vrai.
+            Pas de collection éphémère remplacée tous les mois. Des modèles pensés pour durer,
+            sélectionnés pour leur qualité de fabrication et leur capacité à traverser les saisons
+            sans vieillir.
           </p>
         </div>
 
         <section className="mt-16">
-          <h2 className="mb-6 font-serif text-2xl">Pourquoi le cuir italien ?</h2>
-          <p className="leading-relaxed text-sv-mid">
-            L'Italie dispose d'une tradition maroquinière établie. Les tanneries italiennes sélectionnent les
-            peaux pour leur souplesse, leur résistance et leur homogénéité. Chaque peau est choisie
-            individuellement avant la fabrication de chaque modèle.
+          <h2 className="mb-6 font-serif text-2xl">Comment nous sélectionnons nos modèles</h2>
+          <p className="text-sm leading-relaxed text-sv-mid md:text-base">
+            Chaque modèle est choisi selon trois critères : la qualité du cuir, la solidité des
+            finitions, et la pertinence du format pour une utilisation quotidienne réelle. Avant
+            d'entrer dans la collection, chaque sac est testé sur la durée. Ceux qui ne tiennent pas
+            leurs promesses n'y restent pas.
           </p>
         </section>
 
         <section className="mt-16">
-          <h2 className="mb-6 font-serif text-2xl">Une petite entreprise française à votre service</h2>
-          <p className="leading-relaxed text-sv-mid">
-            Sara Valenti est une marque indépendante, basée en France. Petite structure, grandes exigences :
-            chaque commande est traitée avec soin, chaque question reçoit une vraie réponse. Ici, pas de
-            service client automatisé ni de formulaire qui disparaît dans le vide. Vous avez une question,
-            vous obtenez une réponse.
+          <h2 className="mb-6 font-serif text-2xl">Pourquoi le cuir italien</h2>
+          <p className="text-sm leading-relaxed text-sv-mid md:text-base">
+            L'Italie reste la référence mondiale pour la maroquinerie de qualité. Les ateliers
+            italiens sont reconnus pour leur maîtrise du travail du cuir, leur sélection rigoureuse
+            des peaux et leur attention aux finitions. C'est cette exigence que nous cherchons dans
+            chaque pièce de la collection.
           </p>
         </section>
 
-        {/* Notre promesse — citation éditoriale */}
+        <section className="mt-16">
+          <h2 className="mb-6 font-serif text-2xl">Une marque française, des produits italiens</h2>
+          <p className="text-sm leading-relaxed text-sv-mid md:text-base">
+            Sara Valenti est basée en France. Toutes nos commandes sont expédiées depuis la France,
+            avec un service client disponible par email. Petite structure, grandes exigences : chaque
+            commande est traitée avec soin, chaque question reçoit une vraie réponse.
+          </p>
+        </section>
+
+        {/* Notre promesse */}
         <section className="mt-20 border-t border-sv-border pt-16">
           <blockquote className="mx-auto text-center">
             <p className="font-serif text-xl italic leading-relaxed text-sv-black md:text-2xl">
-              "Un sac Sara Valenti n'est pas un achat impulsif. C'est un choix réfléchi, une pièce que vous
-              porterez des années et que vous ne voudrez pas remplacer."
+              "Un sac Sara Valenti n'est pas un achat impulsif. C'est un choix réfléchi, une pièce que
+              vous porterez des années et que vous ne voudrez pas remplacer."
             </p>
             <footer className="mt-6 text-xs font-medium uppercase tracking-[0.2em] text-sv-gold-dark">
               Notre promesse

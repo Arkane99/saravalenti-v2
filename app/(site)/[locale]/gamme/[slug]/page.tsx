@@ -43,7 +43,7 @@ const GAMMES: Record<string, GammeConfig> = {
       {
         titre: 'Le cuir brossé : une matière qui dure',
         texte:
-          'Le cuir brossé est un cuir naturel dont la surface a été légèrement poncée, lui donnant un aspect doux et légèrement satiné. Cette finition le rend résistant aux petites égratignures du quotidien et aux variations d\'humidité légères. Avec l\'usage, il développe une patine caractéristique qui lui donne du caractère. Contrairement au cuir verni, le cuir brossé vieillit bien et ne craquèle pas.',
+          "Le cuir brossé a une qualité que peu de matières possèdent : il s'améliore avec le temps. Les légères marques d'usage qui apparaissent au fil des mois ne sont pas des défauts, c'est la patine, unique à chaque sac, unique à chaque utilisatrice. Le Rita que vous aurez dans 5 ans ne ressemblera à aucun autre.",
       },
       {
         titre: 'Comment porter le Rita',
@@ -85,7 +85,7 @@ const GAMMES: Record<string, GammeConfig> = {
       {
         titre: 'Le cuir suède : velours naturel',
         texte:
-          'Le cuir suède est la face intérieure de la peau, veloutée et douce au toucher. C\'est un matériau vivant, sensible à la lumière et à l\'usage, qui développe une patine propre à chaque pièce. Contrairement aux idées reçues, un sac en suède bien entretenu résiste aux années. La clé : une protection imperméabilisante avant la première utilisation, et une brosse à suède pour l\'entretien régulier.',
+          "Le suède est la matière la plus douce de notre collection, et la plus mal comprise. On le dit fragile. En réalité, un suède bien entretenu résiste mieux que beaucoup de cuirs lisses. La texture veloutée du Grazia capte la lumière différemment selon l'angle, donnant au sac une profondeur que les photos ne rendent pas complètement.",
       },
       {
         titre: 'Grazia suède, Grazia grainé, Grazita : les différences',
@@ -122,7 +122,7 @@ const GAMMES: Record<string, GammeConfig> = {
     heroSousTitre: 'Sac porté épaule en cuir suède souple',
     heroCouleur: '',
     intro:
-      'Le Mina est un sac porté épaule en cuir suède souple, conçu pour porter beaucoup sans peser. Sa bandoulière réglable permet de l\'adapter à toutes les morphologies, du port à l\'épaule au port croisé.',
+      "Le Mina est fait pour les journées où vous portez tout. Sa bandoulière réglable permet de l'adapter à votre morphologie : court sur l'épaule pour un look structuré, long en bandoulière croisée pour les mains libres. Le cuir suède souple ne déforme pas, il épouse votre contenu sans perdre sa silhouette.",
     sections: [
       {
         titre: 'Un sac pour le quotidien actif',

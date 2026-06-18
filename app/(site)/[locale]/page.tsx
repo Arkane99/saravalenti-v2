@@ -60,19 +60,35 @@ const ARGUMENTS = [
 const FAQ_HOME = [
   {
     q: 'Les sacs Sara Valenti sont-ils en cuir véritable ?',
-    r: 'Oui. Tous les sacs Sara Valenti sont fabriqués en cuir naturel d\'origine italienne : cuir brossé, cuir suède ou cuir grainé selon le modèle. Aucun cuir reconstitué ni matière synthétique n\'est utilisé dans la collection.',
+    r: 'Oui. Tous nos sacs sont fabriqués en cuir naturel d\'origine italienne : cuir brossé, cuir suède ou cuir grainé selon le modèle. Aucun cuir reconstitué ni matière synthétique n\'est utilisé dans la collection.',
   },
   {
     q: 'Où sont fabriqués les sacs Sara Valenti ?',
-    r: 'Les sacs Sara Valenti sont fabriqués en Italie dans des ateliers maroquiniers spécialisés. La sélection des peaux est réalisée dans des tanneries italiennes. La marque est basée en France.',
+    r: 'Les sacs Sara Valenti sont fabriqués dans des ateliers de maroquinerie italiens, sélectionnés pour leur maîtrise du travail du cuir et la qualité de leurs finitions.',
   },
   {
     q: 'Quel est le prix des sacs Sara Valenti ?',
-    r: 'Les sacs Sara Valenti sont proposés à partir de 109,90 EUR. Ce prix est identique pour tous les modèles de la collection, quelle que soit la couleur choisie. Aucun frais supplémentaire n\'est appliqué selon la variante.',
+    r: 'Les sacs sont proposés à partir de 19,90 EUR. Les modèles principaux de la collection (Rita, Grazia) sont à 109,90 EUR. Le prix est identique pour toutes les couleurs d\'un même modèle.',
   },
   {
-    q: 'Quelles gammes de sacs propose Sara Valenti ?',
-    r: 'Sara Valenti propose trois gammes principales : le Rita (sac à main en cuir brossé, 5 couleurs), le Grazia (cuir suède ou grainé, 13 couleurs au total) et le Mina (sac porté épaule en cuir suède souple, 5 couleurs). La collection complète comprend une vingtaine de modèles.',
+    q: 'La livraison est-elle gratuite ?',
+    r: 'Oui, la livraison est offerte à partir de 45 EUR d\'achat. En dessous de ce montant, les frais sont calculés selon le transporteur choisi (Colissimo, Mondial Relay ou Chronopost).',
+  },
+  {
+    q: 'Quelle est la différence entre le Rita, le Grazia et le Mina ?',
+    r: 'Le Rita est un sac à main structuré en cuir brossé, disponible en 5 coloris. Le Grazia est un grand sac souple en cuir suède ou grainé, disponible en 13 coloris au total. Le Mina est un sac porté épaule en cuir suède souple, plus léger et plus décontracté.',
+  },
+  {
+    q: 'Comment choisir entre cuir brossé et cuir suède ?',
+    r: 'Le cuir brossé est plus résistant et développe une patine avec l\'usage. Le cuir suède est plus doux au toucher mais demande un entretien régulier (spray imperméabilisant). Consultez notre guide complet pour choisir selon votre usage.',
+  },
+  {
+    q: 'Un sac Sara Valenti peut-il se porter en hiver ?',
+    r: 'Oui. Le cuir brossé et le cuir grainé résistent bien au froid et aux variations d\'humidité légères. Pour le suède, nous recommandons un spray imperméabilisant avant la saison hivernale.',
+  },
+  {
+    q: 'Les sacs Sara Valenti sont-ils disponibles en boutique ?',
+    r: 'Sara Valenti est une marque exclusivement en ligne. Cela nous permet de proposer des prix justes sans intermédiaire, et d\'expédier directement depuis la France.',
   },
 ]
 
