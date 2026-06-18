@@ -188,6 +188,37 @@ Commits : 4c00731 (H1) d2375c8 (a-propos) 44c8a01 (URL couleurs + import) 7e8844
   Structure prete pour swap Unsplash au go prod.
 - package.json : import:run charge desormais .env.local via --env-file.
 
+## Fait (Phase 5g — refonte visuelle + architecture URL, juin 2026)
+
+### Commit fb5c5ee — architecture URL double niveau + 5 corrections
+
+- URL double niveau (Sezane/A.P.C.) : /catalogue/[modele] (ProductGroup, 27 pages) + /catalogue/[modele]-[couleur] (Product, 88 pages) = 115 pages statiques.
+  generateStaticParams genere les deux types. decomposerSlug() inline (plus d'import async).
+  isVariantOf.url pointe vers /catalogue/[modele]. BreadcrumbList 4 niveaux sur pages couleur.
+  Lien "Voir tous les coloris" sur chaque page couleur.
+- Fix H1 homepage : text-3xl mobile / text-5xl desktop + sous-titre "Collection Sara Valenti" (supprime apres refonte visuelle).
+- Fix gamme : grille de cartes par COULEUR (1 carte = 1 variante, lien direct /catalogue/[modele]-[couleur]).
+- Fix FicheProduit : accordeon ouvert par defaut (useState(true)) + description courte = variante uniquement (plus de fallback modele).
+- Fix import script : supprimerEmojis() (remove emojis dans PortableText) + \n\n -> blocs Portable Text. Re-import execute (27 modeles).
+
+### Commit 87df334 — refonte visuelle gold standard
+
+- Hero homepage : photo Pexels plein ecran h-[calc(100vh-5rem)], overlay bg-black/25, contenu bottom-left.
+  H1 Cormorant font-light clamp(3rem,6vw,5.5rem) tracking-tight blanc. CTA texte "Découvrir ->".
+  Supprime : label "FABRICATION ITALIENNE", sous-titre "COLLECTION SARA VALENTI", gros bouton doré.
+- Heroes gammes (rita/grazia/mina) : 60vh, photo Sanity urlFor (camel/noir/premier), fallback statique.
+  Titre nom du modele (Rita/Grazia/Mina) : Cormorant font-light centré clamp(3rem,5vw,5rem).
+  Sous-titre DM Sans font-light white/70 uppercase tracking-widest.
+  H1 redondant dans le corps de page supprime.
+- Typographie : Cormorant poids 300 charge (next/font weight array). globals.css : heading styles dans @layer base.
+- Infrastructure : images.pexels.com dans next.config.ts remotePatterns + CSP img-src.
+- Newsletter : delai 4s -> 12s, max-w-sm -> max-w-xs.
+
+### Description fiche produit (tache 4 du brief)
+- Emojis et \n\n corriges dans l'import script, re-import execute.
+- Description courte = variante uniquement (plus de fallback modele = plus de "Sac noir" sur Moka).
+- Si le probleme persiste apres deploy, verifier les donnees Sanity directement (Sanity Studio).
+
 ## En attente (go prod)
 
 1. Valentin : valider visuellement ces corrections en local (npm run dev) ou sur la prochaine preview.
