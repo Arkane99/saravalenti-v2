@@ -20,7 +20,7 @@ export function FicheProduit({ produit, couleurSlug }: { produit: ProduitDetail;
   const { ajouterAuPanier } = usePanier()
   const { toggleFavori, estFavori } = useFavoris()
   const [iPhoto, setIPhoto] = useState(0)
-  const [descOuverte, setDescOuverte] = useState(false)
+  const [descOuverte, setDescOuverte] = useState(true)
 
   const photos = v?.photos ?? []
   const photo = photos[iPhoto] ?? photos[0]
@@ -38,7 +38,7 @@ export function FicheProduit({ produit, couleurSlug }: { produit: ProduitDetail;
         : 'En stock'
   const stockClasse = v?.reappro ? 'text-sv-gold-dark' : epuise ? 'text-sv-mid' : 'text-green-700'
 
-  const descriptionCourte = v?.description_courte || produit.description_courte
+  const descriptionCourte = v?.description_courte
 
   return (
     <div className="grid gap-10 md:grid-cols-2">

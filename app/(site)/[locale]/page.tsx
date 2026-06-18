@@ -136,9 +136,10 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       {/* Hero */}
       <section className="mx-auto flex max-w-4xl flex-col items-center px-6 py-28 text-center">
         <p className="text-xs font-medium uppercase tracking-[0.3em] text-sv-gold-dark">Fabrication italienne</p>
-        <h1 className="mt-6 font-serif text-4xl leading-tight text-balance md:text-5xl lg:text-6xl">
+        <h1 className="mt-6 font-serif text-3xl leading-tight text-balance md:text-5xl">
           Sacs en cuir italien
         </h1>
+        <p className="mt-3 text-xs font-medium uppercase tracking-[0.25em] text-sv-gold-dark">Collection Sara Valenti</p>
         <p className="mt-6 max-w-xl text-base leading-relaxed text-sv-mid">
           Fabriqués en Italie. Cuir véritable. Des pièces qui durent.
         </p>

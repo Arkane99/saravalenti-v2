@@ -3,9 +3,10 @@ import { notFound } from 'next/navigation'
 import { setRequestLocale } from 'next-intl/server'
 import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
-import { client } from '@/sanity/lib/client'
+import { client, urlFor } from '@/sanity/lib/client'
 import { REQUETE_PRODUITS_GAMME } from '@/sanity/lib/queries'
-import { CarteProduit } from '@/components/produit/CarteProduit'
+import { slugifier } from '@/lib/slugifier'
+import { formatPrix } from '@/lib/format'
 import type { ProduitCarte } from '@/lib/types'
 
 export const revalidate = 60
@@ -291,16 +292,50 @@ export default async function PageGamme({
           </Link>
         </div>
 
-        {/* Grille produits */}
+        {/* Grille couleurs : 1 carte par variante */}
         {produits.length > 0 && (
           <section aria-labelledby="titre-produits">
-            <h2 id="titre-produits" className="mb-8 font-serif text-3xl">
-              {produits.length === 1 ? 'Le modèle' : 'Les modèles de la gamme'}
-            </h2>
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {produits.map((p, idx) => (
-                <CarteProduit key={p._id} produit={p} prioritaire={idx < 3} />
-              ))}
+            <h2 id="titre-produits" className="mb-8 font-serif text-3xl">Les coloris disponibles</h2>
+            <div className="grid grid-cols-2 gap-x-5 gap-y-9 sm:grid-cols-3 lg:grid-cols-4">
+              {produits.flatMap((p) =>
+                (p.variantes ?? []).map((v, vIdx) => {
+                  const photo = v.photos?.[0]
+                  const prixActuel = v.promo ?? v.prix
+                  const epuise = (v.stock ?? 0) <= 0 && !v.reappro
+                  const href = `/catalogue/${p.slug}-${slugifier(v.couleur)}`
+                  return (
+                    <article key={v.sku || `${p._id}-${vIdx}`} className="group">
+                      <Link href={href} className="relative block aspect-[4/5] overflow-hidden bg-sv-warm-white">
+                        {photo?.asset && (
+                          <Image
+                            src={urlFor(photo).width(600).height(750).fit('crop').url()}
+                            alt={`${p.nom} ${v.couleur}`}
+                            fill
+                            sizes="(min-width:1024px) 25vw, (min-width:640px) 33vw, 50vw"
+                            priority={vIdx < 4}
+                            className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                          />
+                        )}
+                        {epuise && (
+                          <span className="absolute right-3 top-3 bg-sv-black/80 px-2 py-1 text-[10px] uppercase tracking-[0.15em] text-sv-cream">
+                            Epuise
+                          </span>
+                        )}
+                      </Link>
+                      <div className="mt-3">
+                        <Link href={href}>
+                          <p className="font-serif text-lg leading-tight transition-colors group-hover:text-sv-gold-dark">
+                            {p.nom} {v.couleur}
+                          </p>
+                        </Link>
+                        {prixActuel != null && (
+                          <p className="mt-1 text-sm text-sv-mid">{formatPrix(prixActuel)}</p>
+                        )}
+                      </div>
+                    </article>
+                  )
+                })
+              )}
             </div>
           </section>
         )}

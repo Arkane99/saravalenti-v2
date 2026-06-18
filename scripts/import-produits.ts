@@ -214,12 +214,25 @@ function versSpans(html: string): Span[] {
   return spans
 }
 
+function supprimerEmojis(s: string): string {
+  // Supplementary Multilingual Plane (emojis, drapeaux, symboles)
+  return s
+    .replace(/[\u{1F000}-\u{1FFFF}]/gu, '')
+    .replace(/[☀-➿]/g, '')   // misc symbols (✨ etc.)
+    .replace(/[︀-﻿]/g, '')   // variation selectors
+    .replace(/‍/g, '')            // zero-width joiner
+}
+
 export function htmlVersPortableText(html: string): Bloc[] {
   if (!html || !html.trim()) return []
   const blocs: Bloc[] = []
-  // Les <li> deviennent des blocs liste ; le reste est decoupe sur <p> et <br>
-  const morceaux = html
+  // Nettoyage : emojis + double sauts de ligne -> balise </p> pour forcer un bloc
+  const htmlNettoye = supprimerEmojis(html)
     .replace(/\r/g, '')
+    .replace(/\n\n+/g, '</p>')
+    .replace(/\n/g, ' ')
+  // Les <li> deviennent des blocs liste ; le reste est decoupe sur <p> et <br>
+  const morceaux = htmlNettoye
     .split(/<\/p>|<\/li>|<br\s*\/?\s*>/i)
     .map((c) => c.trim())
     .filter(Boolean)
