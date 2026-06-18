@@ -147,7 +147,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           alt="Sac Rita en cuir camel Sara Valenti"
           fill
           sizes="100vw"
-          className="object-cover object-top"
+          className="object-cover object-[center_20%]"
           priority
         />
         <div className="absolute inset-0 bg-black/25" />

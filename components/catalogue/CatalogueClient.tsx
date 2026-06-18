@@ -288,9 +288,9 @@ export function CatalogueClient({ produits }: { produits: ProduitCarte[] }) {
             </button>
           </p>
         ) : (
-          <div className="grid grid-cols-2 gap-x-5 gap-y-9 lg:grid-cols-3">
+          <div className="grid grid-cols-2 gap-3 md:gap-x-5 md:gap-y-9 lg:grid-cols-3">
             {resultats.map((p, idx) => (
-              <CarteProduit key={p._id} produit={p} prioritaire={idx < 6} />
+              <CarteProduit key={p._id} produit={p} prioritaire={idx < 12} />
             ))}
           </div>
         )}
