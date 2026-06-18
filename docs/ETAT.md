@@ -170,25 +170,32 @@ Fix 6 (commit 665fa93) — og:image :
 
 Build final : 33 routes. Tous les commits sur main.
 
-## En cours — Phase 5f (deploy, juin 2026)
+## Fait — Phase 5f corrections visuelles (juin 2026, 7 corrections)
 
-### Fait
+Commits : 4c00731 (H1) d2375c8 (a-propos) 44c8a01 (URL couleurs + import) 7e8844c (SEO) 4bb623a (images hero)
 
-- .env.local mis a jour : toutes les cles branees (Supabase, Stripe live, Brevo, Boxtal).
-- isSupabaseConfigured() / isStripeConfigured() → true. Stripe mode LIVE confirme.
-- Migration SQL Supabase executee (succes) : tables adresses + commandes + favoris + RLS + index. Projet : aqoxnpfzjiepajwhdlun.
-- vercel.json cree (framework: nextjs). CLI mis a jour 54.1.0 → 54.14.2.
-- Variables Vercel poussees : 12 cles sur production + preview + development.
-- Preview deployee (commit f2d7d2c) : READY, 60 routes, 0 erreur runtime.
-  URL preview : https://sara-valenti-dep5g5uk3-palissonv-6407s-projects.vercel.app
+- Fix 1 — H1 homepage : text-4xl text-balance, libelle "Sacs en cuir italien" (sans "collection Sara Valenti").
+- Fix 2 — Schema Sanity + import : description_courte par variante couleur. Re-import : 27 modeles, 88 variantes.
+- Fix 3 — Architecture URL 1 page / couleur : /catalogue/rita-camel, /catalogue/grazia-graine-bordeaux.
+  generateStaticParams genere N pages par modele (N = nb couleurs). Swatches = Links. Schema.org Product + isVariantOf.
+  lib/slugifier.ts partage la logique import / frontend.
+- Fix 4 — Bug Gamme Grazia : resolu par le re-import (grazia-graine + grazita.gamme='grazia' now in Sanity).
+  GROQ query REQUETE_PRODUITS_GAMME inchangee, elle etait correcte.
+- Fix 5 — /a-propos : hero image (Rita Camel) + "Notre promesse" en citation Cormorant italique centree.
+- Fix 6 — Textes SEO/GEO/AEO : meta description home avec modeles/prix, FAQ 4 questions + FAQPage schema home,
+  claims verifiables ("tradition maqroitniere etablie" vs "reference mondiale"), gamme Rita precisions dimensions.
+- Fix 7 — Images hero : gammes Rita/Grazia/Mina + /entretien-cuir. Photos produits existantes.
+  Structure prete pour swap Unsplash au go prod.
+- package.json : import:run charge desormais .env.local via --env-file.
 
-### En attente (todo dans l'ordre)
+## En attente (go prod)
 
-1. Valentin : valider visuellement la preview (catalogue, fiche, panier, compte).
-2. Confirmer "go prod" → lancer vercel --prod.
-3. Stripe : creer le webhook → endpoint https://www.saravalenti.fr/api/webhook, event checkout.session.completed → recuperer whsec_... → ajouter avec : vercel env add STRIPE_WEBHOOK_SECRET production --value 'whsec_...'
-4. Domaine : pointer saravalenti.fr vers Vercel (Settings → Domains dans le dashboard Vercel), configurer DNS chez Ionos.
+1. Valentin : valider visuellement ces corrections en local (npm run dev) ou sur la prochaine preview.
+2. Deployer les corrections : vercel (preview) puis vercel --prod apres validation.
+3. Stripe : creer le webhook → endpoint https://www.saravalenti.fr/api/webhook, event checkout.session.completed → recuperer whsec_... → vercel env add STRIPE_WEBHOOK_SECRET production --value 'whsec_...'
+4. Domaine : pointer saravalenti.fr vers Vercel (Settings → Domains), configurer DNS chez Ionos.
 5. CORS Studio Sanity : dashboard.sanity.io → project r949oibi → API → CORS → ajouter https://www.saravalenti.fr + credentials.
+6. Images Unsplash : swapper les photos produits (hero gammes + entretien-cuir) par des photos Unsplash cuir/maroquinerie/lifestyle avec credit photographe.
 
 ### Cles manquantes / placeholders restants
 
@@ -197,6 +204,7 @@ Build final : 33 routes. Tous les commits sur main.
 
 ### Notes
 
-- .env.local gitignore : OK. Ne jamais commiter les vraies cles.
+- .env.local gitignore : OK.
 - Vercel project ID : prj_RTmWy3Uu2mGkeHZgncg55fbE2wkX (compte palissonv-6407s-projects).
 - GitHub non connecte a Vercel (erreur Login Connection) : deploy CLI uniquement pour l'instant.
+- URLs catalogue : /catalogue/rita-camel etc. Les anciennes URLs /catalogue/rita sont maintenant 404 (pre-launch, OK).
