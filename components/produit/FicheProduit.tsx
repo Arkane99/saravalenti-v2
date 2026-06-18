@@ -296,6 +296,46 @@ export function FicheProduit({ produit, couleurSlug }: { produit: ProduitDetail;
             </p>
           </Accordeon>
         </div>
+
+        {/* Autres coloris du même modèle */}
+        {produit.variantes.length > 1 && (
+          <div className="mt-10 border-t border-sv-border pt-8">
+            <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-sv-gold-dark">
+              Les autres coloris {produit.nom}
+            </p>
+            <div className="grid grid-cols-3 gap-3 sm:grid-cols-4">
+              {produit.variantes
+                .filter((va) => slugifier(va.couleur) !== couleurSlug)
+                .slice(0, 4)
+                .map((va) => {
+                  const photo = va.photos?.[0]
+                  const href = `/catalogue/${produit.slug}-${slugifier(va.couleur)}`
+                  const px = va.promo ?? va.prix
+                  return (
+                    <Link key={va.sku || va.couleur} href={href} className="group">
+                      <div className="relative aspect-[4/5] overflow-hidden bg-sv-warm-white">
+                        {photo?.asset && (
+                          <Image
+                            src={urlFor(photo).width(280).height(350).fit('crop').url()}
+                            alt={`${produit.nom} ${va.couleur}`}
+                            fill
+                            sizes="(min-width:640px) 140px, 110px"
+                            className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                          />
+                        )}
+                      </div>
+                      <p className="mt-2 text-sm text-sv-mid transition-colors group-hover:text-sv-gold-dark">
+                        {va.couleur}
+                      </p>
+                      {px != null && (
+                        <p className="text-xs text-sv-mid">{formatPrix(px)}</p>
+                      )}
+                    </Link>
+                  )
+                })}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )
