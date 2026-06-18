@@ -252,6 +252,13 @@ Commits : c80a060 (import) d402fc3 (FicheProduit) b8fa91d (gamme) 413619d (hero 
 - **Commit 4** — FicheProduit : section "Les autres coloris [modèle]" (max 4 cartes photo + couleur + prix + lien) après l'accordéon Entretien.
 - **Commit 5** — CartDrawer mobile : `body { overflow-x: hidden }`, `aria-hidden={!ouvert}`, `pointer-events-none` quand fermé (fix "Panier" text floating).
 
+## Fait (SEO code — juin 2026, commit 9ce461d)
+
+- sitemap.ts : ajout des 88 URLs couleur via REQUETE_SLUGS_COULEURS. Pages couleur à priority 0.9 (étaient absentes). Pages modèle restent à priority 0.7.
+- layout.tsx : twitter:card summary_large_image + title + description dans metadata globale. Couverture Twitter/X partage.
+- catalogue/[slug]/page.tsx generateMetadata : titre couleur enrichi "Sac Rita Camel en cuir brossé" (~45 chars) au lieu de "Rita Camel" (~10 chars). Utilise p.type (résolu via Sanity ref) et v.matiere.
+- Résolution boucle redirect /compte/connexion : route group (auth-guard) isole les pages protégées. /compte/connexion n'a plus de layout guard.
+
 ## En attente (go prod)
 
 1. Valentin : valider visuellement ces corrections en local (npm run dev) ou sur la prochaine preview.
