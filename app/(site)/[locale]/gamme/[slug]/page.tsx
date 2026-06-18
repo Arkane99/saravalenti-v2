@@ -276,10 +276,10 @@ export default async function PageGamme({
             alt={g.heroTitre}
             fill
             sizes="100vw"
-            className="object-cover object-center"
+            className="object-cover object-top"
             priority
           />
-          <div className="absolute inset-0 bg-black/30" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/55" />
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
             <h1
               className="font-serif font-light text-white text-balance"
@@ -327,51 +327,118 @@ export default async function PageGamme({
           </Link>
         </div>
 
-        {/* Grille couleurs : 1 carte par variante */}
+        {/* Grille coloris */}
         {produits.length > 0 && (
           <section aria-labelledby="titre-produits">
             <h2 id="titre-produits" className="mb-8 font-serif text-3xl">Les coloris disponibles</h2>
-            <div className="grid grid-cols-2 gap-x-5 gap-y-9 sm:grid-cols-3 lg:grid-cols-4">
-              {produits.flatMap((p) =>
-                (p.variantes ?? []).map((v, vIdx) => {
-                  const photo = v.photos?.[0]
-                  const prixActuel = v.promo ?? v.prix
-                  const epuise = (v.stock ?? 0) <= 0 && !v.reappro
-                  const href = `/catalogue/${p.slug}-${slugifier(v.couleur)}`
+
+            {slug === 'grazia' ? (
+              /* Grazia : 3 sections par matière */
+              <div className="space-y-16">
+                {(
+                  [
+                    { modelSlug: 'grazia', titre: 'Grazia suède', sous: 'La version originale, au toucher velouté' },
+                    { modelSlug: 'grazia-graine', titre: 'Grazia grainé', sous: 'La version structurée, plus résistante' },
+                    { modelSlug: 'grazita', titre: 'Grazita', sous: 'La version compacte' },
+                  ] as { modelSlug: string; titre: string; sous: string }[]
+                ).map(({ modelSlug, titre, sous }) => {
+                  const sectionProduits = produits.filter((p) => p.slug === modelSlug)
+                  if (!sectionProduits.length) return null
                   return (
-                    <article key={v.sku || `${p._id}-${vIdx}`} className="group">
-                      <Link href={href} className="relative block aspect-[4/5] overflow-hidden bg-sv-warm-white">
-                        {photo?.asset && (
-                          <Image
-                            src={urlFor(photo).width(600).height(750).fit('crop').url()}
-                            alt={`${p.nom} ${v.couleur}`}
-                            fill
-                            sizes="(min-width:1024px) 25vw, (min-width:640px) 33vw, 50vw"
-                            priority={vIdx < 4}
-                            className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                          />
-                        )}
-                        {epuise && (
-                          <span className="absolute right-3 top-3 bg-sv-black/80 px-2 py-1 text-[10px] uppercase tracking-[0.15em] text-sv-cream">
-                            Epuise
-                          </span>
-                        )}
-                      </Link>
-                      <div className="mt-3">
-                        <Link href={href}>
-                          <p className="font-serif text-lg leading-tight transition-colors group-hover:text-sv-gold-dark">
-                            {p.nom} {v.couleur}
-                          </p>
-                        </Link>
-                        {prixActuel != null && (
-                          <p className="mt-1 text-sm text-sv-mid">{formatPrix(prixActuel)}</p>
+                    <section key={modelSlug}>
+                      <div className="mb-8 border-t border-sv-border pt-8">
+                        <h2 className="font-serif font-light text-2xl">{titre}</h2>
+                        <p className="mt-1 text-sm text-sv-mid">{sous}</p>
+                      </div>
+                      <div className="grid grid-cols-2 gap-x-5 gap-y-9 sm:grid-cols-3 lg:grid-cols-4">
+                        {sectionProduits.flatMap((p) =>
+                          (p.variantes ?? []).map((v, vIdx) => {
+                            const photo = v.photos?.[0]
+                            const prixActuel = v.promo ?? v.prix
+                            const epuise = (v.stock ?? 0) <= 0 && !v.reappro
+                            const href = `/catalogue/${p.slug}-${slugifier(v.couleur)}`
+                            return (
+                              <article key={v.sku || `${p._id}-${vIdx}`} className="group">
+                                <Link href={href} className="relative block aspect-[4/5] overflow-hidden bg-sv-warm-white">
+                                  {photo?.asset && (
+                                    <Image
+                                      src={urlFor(photo).width(600).height(750).fit('crop').url()}
+                                      alt={`${p.nom} ${v.couleur}`}
+                                      fill
+                                      sizes="(min-width:1024px) 25vw, (min-width:640px) 33vw, 50vw"
+                                      priority={vIdx < 4}
+                                      className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                                    />
+                                  )}
+                                  {epuise && (
+                                    <span className="absolute right-3 top-3 bg-sv-black/80 px-2 py-1 text-[10px] uppercase tracking-[0.15em] text-sv-cream">
+                                      Épuisé
+                                    </span>
+                                  )}
+                                </Link>
+                                <div className="mt-3">
+                                  <Link href={href}>
+                                    <p className="font-serif text-lg leading-tight transition-colors group-hover:text-sv-gold-dark">
+                                      {v.couleur}
+                                    </p>
+                                  </Link>
+                                  {prixActuel != null && (
+                                    <p className="mt-1 text-sm text-sv-mid">{formatPrix(prixActuel)}</p>
+                                  )}
+                                </div>
+                              </article>
+                            )
+                          })
                         )}
                       </div>
-                    </article>
+                    </section>
                   )
-                })
-              )}
-            </div>
+                })}
+              </div>
+            ) : (
+              /* Rita, Mina : grille unique */
+              <div className="grid grid-cols-2 gap-x-5 gap-y-9 sm:grid-cols-3 lg:grid-cols-4">
+                {produits.flatMap((p) =>
+                  (p.variantes ?? []).map((v, vIdx) => {
+                    const photo = v.photos?.[0]
+                    const prixActuel = v.promo ?? v.prix
+                    const epuise = (v.stock ?? 0) <= 0 && !v.reappro
+                    const href = `/catalogue/${p.slug}-${slugifier(v.couleur)}`
+                    return (
+                      <article key={v.sku || `${p._id}-${vIdx}`} className="group">
+                        <Link href={href} className="relative block aspect-[4/5] overflow-hidden bg-sv-warm-white">
+                          {photo?.asset && (
+                            <Image
+                              src={urlFor(photo).width(600).height(750).fit('crop').url()}
+                              alt={`${p.nom} ${v.couleur}`}
+                              fill
+                              sizes="(min-width:1024px) 25vw, (min-width:640px) 33vw, 50vw"
+                              priority={vIdx < 4}
+                              className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                            />
+                          )}
+                          {epuise && (
+                            <span className="absolute right-3 top-3 bg-sv-black/80 px-2 py-1 text-[10px] uppercase tracking-[0.15em] text-sv-cream">
+                              Épuisé
+                            </span>
+                          )}
+                        </Link>
+                        <div className="mt-3">
+                          <Link href={href}>
+                            <p className="font-serif text-lg leading-tight transition-colors group-hover:text-sv-gold-dark">
+                              {v.couleur}
+                            </p>
+                          </Link>
+                          {prixActuel != null && (
+                            <p className="mt-1 text-sm text-sv-mid">{formatPrix(prixActuel)}</p>
+                          )}
+                        </div>
+                      </article>
+                    )
+                  })
+                )}
+              </div>
+            )}
           </section>
         )}
 
