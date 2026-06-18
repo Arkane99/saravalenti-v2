@@ -32,7 +32,7 @@ Next.js 15 (App Router) + Tailwind v4 + next-intl (FR defaut, EN/NL/DE) | Sanity
 - **5c Editorial** : pages Gamme Rita/Grazia, home, about, pages statiques.
 - **5d E-commerce** : panier (localStorage + Supabase), auth Supabase, checkout Stripe, Boxtal, emails Brevo.
 - **5e Marketing/SEO** : landing pages Sanity, newsletter, flux Google/Meta/TikTok, sitemap/Schema.org/hreflang, security headers.
-- **5f Deploy** : studio protege, Vercel, tests e2e, bascule domaine, docs.
+- **5f Deploy** : ✅ migration Supabase, ✅ env vars Vercel, ✅ preview READY — reste : go prod, webhook Stripe, DNS saravalenti.fr.
 
 ## Regles non negociables
 
@@ -43,7 +43,9 @@ Next.js 15 (App Router) + Tailwind v4 + next-intl (FR defaut, EN/NL/DE) | Sanity
 - RLS Supabase sur toutes les tables sensibles ; aucun secret en NEXT_PUBLIC_.
 - Google Fonts uniquement via next/font/google. Puppeteer si PDF.
 - Subagents par module, commits atomiques.
-- URL dev : saravalenti.vercel.app ; prod future : https://www.saravalenti.fr (metadataBase, canonical www).
+- URL preview : https://sara-valenti-dep5g5uk3-palissonv-6407s-projects.vercel.app (commit f2d7d2c, READY).
+- URL prod cible : https://www.saravalenti.fr (domaine Ionos, a pointer apres "go prod").
+- Vercel project : prj_RTmWy3Uu2mGkeHZgncg55fbE2wkX (compte palissonv-6407s-projects).
 
 ## Methode de travail (economie de contexte)
 

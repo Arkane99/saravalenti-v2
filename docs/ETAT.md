@@ -170,15 +170,33 @@ Fix 6 (commit 665fa93) — og:image :
 
 Build final : 33 routes. Tous les commits sur main.
 
-## En cours
+## En cours — Phase 5f (deploy, juin 2026)
 
-- Phase 5e + revue visuelle terminees. Prochaine : phase 5f (mise en production).
-- Brevo : stub en place (log console). Brancher apres avoir la cle BREVO_API_KEY.
+### Fait
 
-## Actions requises (Valentin)
+- .env.local mis a jour : toutes les cles branees (Supabase, Stripe live, Brevo, Boxtal).
+- isSupabaseConfigured() / isStripeConfigured() → true. Stripe mode LIVE confirme.
+- Migration SQL Supabase executee (succes) : tables adresses + commandes + favoris + RLS + index. Projet : aqoxnpfzjiepajwhdlun.
+- vercel.json cree (framework: nextjs). CLI mis a jour 54.1.0 → 54.14.2.
+- Variables Vercel poussees : 12 cles sur production + preview + development.
+- Preview deployee (commit f2d7d2c) : READY, 60 routes, 0 erreur runtime.
+  URL preview : https://sara-valenti-dep5g5uk3-palissonv-6407s-projects.vercel.app
 
-1. CORS Studio a autoriser (voir plus haut) : n'impacte pas le site public.
-2. Creer le projet Supabase → copier URL + ANON_KEY + SERVICE_ROLE_KEY dans .env.local → executer supabase/migrations/001_ecommerce.sql.
-3. Creer le compte Stripe → copier les cles dans .env.local → configurer le webhook (endpoint /api/webhook, event checkout.session.completed).
-4. Email du compte Vercel dedie Sara Valenti : a confirmer.
-5. Brevo + Boxtal : cles a brancher quand disponibles.
+### En attente (todo dans l'ordre)
+
+1. Valentin : valider visuellement la preview (catalogue, fiche, panier, compte).
+2. Confirmer "go prod" → lancer vercel --prod.
+3. Stripe : creer le webhook → endpoint https://www.saravalenti.fr/api/webhook, event checkout.session.completed → recuperer whsec_... → ajouter avec : vercel env add STRIPE_WEBHOOK_SECRET production --value 'whsec_...'
+4. Domaine : pointer saravalenti.fr vers Vercel (Settings → Domains dans le dashboard Vercel), configurer DNS chez Ionos.
+5. CORS Studio Sanity : dashboard.sanity.io → project r949oibi → API → CORS → ajouter https://www.saravalenti.fr + credentials.
+
+### Cles manquantes / placeholders restants
+
+- STRIPE_WEBHOOK_SECRET : whsec_PLACEHOLDER (a renseigner apres creation du webhook)
+- BREVO_LIST_ID_NEWSLETTER : PLACEHOLDER (optionnel, le stub console fonctionne sans)
+
+### Notes
+
+- .env.local gitignore : OK. Ne jamais commiter les vraies cles.
+- Vercel project ID : prj_RTmWy3Uu2mGkeHZgncg55fbE2wkX (compte palissonv-6407s-projects).
+- GitHub non connecte a Vercel (erreur Login Connection) : deploy CLI uniquement pour l'instant.
