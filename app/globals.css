@@ -31,9 +31,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4 {
-  font-family: var(--font-cormorant), serif;
-  font-weight: 500;
+@layer base {
+  h1, h2, h3, h4 {
+    font-family: var(--font-cormorant), serif;
+    font-weight: 500;
+  }
 }
 
 /* Focus clavier visible et distinct de l'etat selectionne (ring gold). Contraste >= 3:1 sur creme et sur noir. */

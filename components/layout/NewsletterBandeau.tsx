@@ -11,7 +11,7 @@ export function NewsletterBandeau() {
 
   useEffect(() => {
     if (!localStorage.getItem(CLE_REJET)) {
-      const t = setTimeout(() => setVisible(true), 4000)
+      const t = setTimeout(() => setVisible(true), 12000)
       return () => clearTimeout(t)
     }
   }, [])
@@ -46,7 +46,7 @@ export function NewsletterBandeau() {
       role="dialog"
       aria-label="Offres et nouveautés Sara Valenti"
       aria-modal="false"
-      className="fixed bottom-0 left-0 right-0 z-40 border-t border-sv-border bg-sv-cream px-6 py-5 shadow-xl md:bottom-6 md:left-auto md:right-6 md:max-w-sm md:rounded-lg md:border"
+      className="fixed bottom-0 left-0 right-0 z-40 border-t border-sv-border bg-sv-cream px-6 py-5 shadow-xl md:bottom-6 md:left-auto md:right-6 md:max-w-xs md:rounded-lg md:border"
     >
       <button
         onClick={fermer}

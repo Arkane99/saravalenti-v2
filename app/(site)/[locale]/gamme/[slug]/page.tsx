@@ -23,6 +23,9 @@ interface GammeConfig {
   intro: string
   sections: { titre: string; texte: string }[]
   faq: FaqItem[]
+  heroTitre: string
+  heroSousTitre: string
+  heroCouleur: string
 }
 
 const GAMMES: Record<string, GammeConfig> = {
@@ -31,6 +34,9 @@ const GAMMES: Record<string, GammeConfig> = {
     metaTitle: 'Sac à main Rita en cuir brossé - Sara Valenti',
     metaDescription:
       'Découvrez la gamme Rita : sac à main en cuir brossé italien, disponible en plusieurs couleurs. Fabriqué en Italie, livré en France.',
+    heroTitre: 'Rita',
+    heroSousTitre: 'Sac à main en cuir brossé',
+    heroCouleur: 'camel',
     intro:
       'Le Rita est un sac à main structuré en cuir brossé, conçu pour le port quotidien. Poignée courte et bandoulière amovible permettent deux façons de le porter selon la situation.',
     sections: [
@@ -70,6 +76,9 @@ const GAMMES: Record<string, GammeConfig> = {
     metaTitle: 'Sac Grazia en cuir suède - 13 couleurs - Sara Valenti',
     metaDescription:
       'Le sac Grazia en cuir suède italien : 13 couleurs disponibles, cuir suède et grainé. Fabriqué en Italie par des artisans maroquiniers. Livraison France.',
+    heroTitre: 'Grazia',
+    heroSousTitre: 'Sac en cuir suède, 13 coloris',
+    heroCouleur: 'noir',
     intro:
       'La gamme Grazia regroupe le sac Grazia en cuir suède (6 couleurs), le Grazia en cuir grainé (7 couleurs), et le Grazita, version compacte en suède. Trois déclinaisons d\'un même esprit : souplesse, élégance, fabrication italienne.',
     sections: [
@@ -109,6 +118,9 @@ const GAMMES: Record<string, GammeConfig> = {
     metaTitle: 'Sac porté épaule Mina en cuir suède - Sara Valenti',
     metaDescription:
       'Le sac Mina : porté épaule en cuir suède souple, fabrication italienne. Bandoulière réglable, format quotidien. Livraison France.',
+    heroTitre: 'Mina',
+    heroSousTitre: 'Sac porté épaule en cuir suède souple',
+    heroCouleur: '',
     intro:
       'Le Mina est un sac porté épaule en cuir suède souple, conçu pour porter beaucoup sans peser. Sa bandoulière réglable permet de l\'adapter à toutes les morphologies, du port à l\'épaule au port croisé.',
     sections: [
@@ -155,11 +167,6 @@ const OG_IMAGES: Record<string, string> = {
   mina: '/images/produits/sac-cuir-suede-daim-nubuck-mina-camel-1-scaled.jpg',
 }
 
-const HERO_IMAGES: Record<string, string> = {
-  rita: '/images/produits/Sac-Rita-Camel-4-scaled.jpg',
-  grazia: '/images/produits/sac-a-main-cuir-graine-grazia-moka-1-scaled.jpg',
-  mina: '/images/produits/sac-cuir-suede-daim-nubuck-mina-chocolat-1-scaled.jpg',
-}
 
 export async function generateMetadata({
   params,
@@ -229,7 +236,26 @@ export default async function PageGamme({
     })),
   }
 
-  const heroImg = HERO_IMAGES[slug]
+  // Trouver la photo hero depuis les données Sanity
+  const heroCouleur = g.heroCouleur
+  let heroPhotoUrl: string | undefined
+  for (const p of produits) {
+    const v = heroCouleur
+      ? (p.variantes.find((va) => va.couleur.toLowerCase().includes(heroCouleur)) ?? p.variantes[0])
+      : p.variantes[0]
+    const photo = v?.photos?.[0]
+    if (photo?.asset) {
+      heroPhotoUrl = urlFor(photo).width(1920).height(1080).fit('crop').url()
+      break
+    }
+  }
+  // Fallback sur les images statiques si Sanity ne répond pas
+  const HERO_FALLBACK: Record<string, string> = {
+    rita: '/images/produits/Sac-Rita-Camel-4-scaled.jpg',
+    grazia: '/images/produits/sac-a-main-cuir-graine-grazia-moka-1-scaled.jpg',
+    mina: '/images/produits/sac-cuir-suede-daim-nubuck-mina-chocolat-1-scaled.jpg',
+  }
+  const heroSrc = heroPhotoUrl ?? HERO_FALLBACK[slug]
 
   return (
     <>
@@ -242,18 +268,29 @@ export default async function PageGamme({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaFaq) }}
       />
 
-      {/* Hero image */}
-      {heroImg && (
-        <div className="relative h-56 overflow-hidden md:h-80">
+      {/* Hero 60vh — photo Sanity, titre centré */}
+      {heroSrc && (
+        <div className="relative h-[60vh] min-h-[400px] overflow-hidden">
           <Image
-            src={heroImg}
-            alt={g.h1.split(' : ')[0]}
+            src={heroSrc}
+            alt={g.heroTitre}
             fill
             sizes="100vw"
             className="object-cover object-center"
             priority
           />
-          <div className="absolute inset-0 bg-sv-black/20" />
+          <div className="absolute inset-0 bg-black/30" />
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+            <h1
+              className="font-serif font-light text-white text-balance"
+              style={{ fontSize: 'clamp(3rem, 5vw, 5rem)', letterSpacing: '-0.02em' }}
+            >
+              {g.heroTitre}
+            </h1>
+            <p className="mt-4 text-sm font-light text-white/70 uppercase tracking-widest">
+              {g.heroSousTitre}
+            </p>
+          </div>
         </div>
       )}
 
@@ -267,11 +304,9 @@ export default async function PageGamme({
           </ol>
         </nav>
 
-        {/* Hero éditorial */}
+        {/* Intro éditoriale */}
         <header className="mb-14 max-w-3xl">
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.3em] text-sv-gold-dark">Gamme</p>
-          <h1 className="font-serif text-4xl leading-tight md:text-5xl">{g.h1}</h1>
-          <p className="mt-6 text-base leading-relaxed text-sv-mid">{g.intro}</p>
+          <p className="text-base leading-relaxed text-sv-mid">{g.intro}</p>
         </header>
 
         {/* Sections éditoriales */}

@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import { setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
-import { Bouton } from '@/components/ui/Bouton'
 import { client } from '@/sanity/lib/client'
 import { REQUETE_MODELES_PHARES, REQUETE_AVIS } from '@/sanity/lib/queries'
 import { urlFor } from '@/sanity/lib/client'
@@ -133,17 +132,34 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaFaqHome) }}
       />
 
-      {/* Hero */}
-      <section className="mx-auto flex max-w-4xl flex-col items-center px-6 py-28 text-center">
-        <p className="text-xs font-medium uppercase tracking-[0.3em] text-sv-gold-dark">Fabrication italienne</p>
-        <h1 className="mt-6 font-serif text-3xl leading-tight text-balance md:text-5xl">
-          Sacs en cuir italien
-        </h1>
-        <p className="mt-3 text-xs font-medium uppercase tracking-[0.25em] text-sv-gold-dark">Collection Sara Valenti</p>
-        <p className="mt-6 max-w-xl text-base leading-relaxed text-sv-mid">
-          Fabriqués en Italie. Cuir véritable. Des pièces qui durent.
-        </p>
-        <Bouton href="/catalogue" className="mt-10">Découvrir la collection</Bouton>
+      {/* Hero full-screen */}
+      <section className="relative h-[calc(100vh-5rem)] min-h-[500px] max-h-[900px] overflow-hidden">
+        <Image
+          src="https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&w=1920"
+          alt="Sac en cuir Sara Valenti"
+          fill
+          sizes="100vw"
+          className="object-cover object-center"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/25" />
+        <div className="absolute bottom-[8%] left-[8%]">
+          <h1
+            className="font-serif font-light text-white text-balance"
+            style={{ fontSize: 'clamp(3rem, 6vw, 5.5rem)', letterSpacing: '-0.02em' }}
+          >
+            Sacs en cuir italien
+          </h1>
+          <p className="mt-4 text-sm font-light text-white/80">
+            Fabriqués en Italie. Cuir véritable.
+          </p>
+          <Link
+            href="/catalogue"
+            className="mt-6 inline-block text-sm uppercase tracking-widest text-white underline-offset-4 hover:opacity-70 transition-opacity"
+          >
+            Découvrir la collection →
+          </Link>
+        </div>
       </section>
 
       {/* Section matières */}

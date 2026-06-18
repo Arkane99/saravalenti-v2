@@ -8,7 +8,7 @@ const CSP = [
   "script-src 'self' 'unsafe-inline' js.stripe.com",
   "style-src 'self' 'unsafe-inline' fonts.googleapis.com",
   "font-src 'self' fonts.gstatic.com data:",
-  "img-src 'self' cdn.sanity.io data: blob:",
+  "img-src 'self' cdn.sanity.io images.pexels.com data: blob:",
   "connect-src 'self' *.sanity.io api.stripe.com",
   "frame-src js.stripe.com",
   "frame-ancestors 'none'",
@@ -33,7 +33,10 @@ const HEADERS_SECURITE = [
 
 const nextConfig: NextConfig = {
   images: {
-    remotePatterns: [{ protocol: 'https', hostname: 'cdn.sanity.io' }],
+    remotePatterns: [
+      { protocol: 'https', hostname: 'cdn.sanity.io' },
+      { protocol: 'https', hostname: 'images.pexels.com' },
+    ],
   },
   async headers() {
     return [
