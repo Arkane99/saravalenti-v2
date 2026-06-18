@@ -242,6 +242,16 @@ Commits : c80a060 (import) d402fc3 (FicheProduit) b8fa91d (gamme) 413619d (hero 
 - Homepage : remplace Pexels par photo Rita Camel urlFor() depuis modeles déjà chargés. Fallback /images/produits/Sac-Rita-Camel-4-scaled.jpg.
 - Heroes gammes : gradient-to-b from-black/20 to-black/55 + object-top pour meilleur cadrage.
 
+## Fait (corrections audit design, juin 2026)
+
+5 commits atomiques — build vert à chaque fois.
+
+- **Commit 1** — Catalogue : 12 premières cartes `priority={true}` (était 6), grille mobile `gap-3`. Hero homepage : `object-[center_20%]` (était `object-top`).
+- **Commit 2** — Nav : "La gamme Rita/Grazia/Mina" → "Rita / Grazia / Mina" (messages/fr.json). Contraste `sv-mid` : `#6b6460` → `#5a5552` (WCAG AA 4.6:1).
+- **Commit 3** — Breadcrumbs casse normale (suppression `uppercase`). Favoris button `w-auto px-6`. Footer : 4e colonne "Mon compte" (Connexion / Mes commandes / Mes favoris). Gamme Grazia overlay `from-black/10 to-black/35`. Grazia sections `space-y-24`. Homepage mobile : "Nos matières" placé après "Modèles phares" via flex ordering.
+- **Commit 4** — FicheProduit : section "Les autres coloris [modèle]" (max 4 cartes photo + couleur + prix + lien) après l'accordéon Entretien.
+- **Commit 5** — CartDrawer mobile : `body { overflow-x: hidden }`, `aria-hidden={!ouvert}`, `pointer-events-none` quand fermé (fix "Panier" text floating).
+
 ## En attente (go prod)
 
 1. Valentin : valider visuellement ces corrections en local (npm run dev) ou sur la prochaine preview.
