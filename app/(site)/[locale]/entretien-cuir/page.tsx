@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 
@@ -171,6 +172,19 @@ export default async function EntretienCuirPage({ params }: { params: Promise<{ 
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaFaq) }}
       />
+
+      {/* Hero image — cuir brossé Rita camel */}
+      <div className="relative h-48 overflow-hidden md:h-64">
+        <Image
+          src="/images/produits/sac-a-main-cuir-brosse-rita-camel-2.png"
+          alt="Détail du cuir brossé — sac Rita Sara Valenti"
+          fill
+          sizes="100vw"
+          className="object-cover object-center"
+          priority
+        />
+        <div className="absolute inset-0 bg-sv-black/20" />
+      </div>
 
       <div className="mx-auto max-w-4xl px-6 py-16">
         <header className="mb-14">

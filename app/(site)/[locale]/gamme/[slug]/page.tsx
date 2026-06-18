@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { setRequestLocale } from 'next-intl/server'
+import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import { client } from '@/sanity/lib/client'
 import { REQUETE_PRODUITS_GAMME } from '@/sanity/lib/queries'
@@ -153,6 +154,12 @@ const OG_IMAGES: Record<string, string> = {
   mina: '/images/produits/sac-cuir-suede-daim-nubuck-mina-camel-1-scaled.jpg',
 }
 
+const HERO_IMAGES: Record<string, string> = {
+  rita: '/images/produits/Sac-Rita-Camel-4-scaled.jpg',
+  grazia: '/images/produits/sac-a-main-cuir-graine-grazia-moka-1-scaled.jpg',
+  mina: '/images/produits/sac-cuir-suede-daim-nubuck-mina-chocolat-1-scaled.jpg',
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -221,6 +228,8 @@ export default async function PageGamme({
     })),
   }
 
+  const heroImg = HERO_IMAGES[slug]
+
   return (
     <>
       <script
@@ -231,6 +240,21 @@ export default async function PageGamme({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaFaq) }}
       />
+
+      {/* Hero image */}
+      {heroImg && (
+        <div className="relative h-56 overflow-hidden md:h-80">
+          <Image
+            src={heroImg}
+            alt={g.h1.split(' : ')[0]}
+            fill
+            sizes="100vw"
+            className="object-cover object-center"
+            priority
+          />
+          <div className="absolute inset-0 bg-sv-black/20" />
+        </div>
+      )}
 
       <div className="mx-auto max-w-7xl px-6 py-16">
         {/* Fil d'Ariane */}
