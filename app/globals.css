@@ -29,6 +29,7 @@ body {
   color: var(--color-sv-black);
   font-family: var(--font-dm-sans), sans-serif;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 @layer base {

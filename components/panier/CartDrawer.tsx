@@ -26,8 +26,9 @@ export function CartDrawer() {
         role="dialog"
         aria-modal="true"
         aria-label="Votre panier"
+        aria-hidden={!ouvert}
         className={`fixed right-0 top-0 z-50 flex h-full w-full max-w-sm flex-col bg-sv-cream shadow-2xl transition-transform duration-300 ${
-          ouvert ? 'translate-x-0' : 'translate-x-full'
+          ouvert ? 'translate-x-0' : 'translate-x-full pointer-events-none'
         }`}
       >
         {/* En-tête */}
