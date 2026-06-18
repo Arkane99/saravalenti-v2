@@ -219,6 +219,29 @@ Commits : 4c00731 (H1) d2375c8 (a-propos) 44c8a01 (URL couleurs + import) 7e8844
 - Description courte = variante uniquement (plus de fallback modele = plus de "Sac noir" sur Moka).
 - Si le probleme persiste apres deploy, verifier les donnees Sanity directement (Sanity Studio).
 
+## Fait (Phase 5h — descriptions + organisation fiche + gamme Grazia, juin 2026)
+
+Commits : c80a060 (import) d402fc3 (FicheProduit) b8fa91d (gamme) 413619d (hero homepage)
+
+### Import script (task 1+2+4)
+- `genererDescriptionCourte()` : template par variante "Le [Nom] [couleur] est un [type] en cuir [matière] fabriqué en Italie."
+  Remplace la lecture WooCommerce 'Description courte' (HTML brut avec \n et emojis). Re-import exécuté (27 modèles).
+
+### FicheProduit (task 3)
+- Suppression PortableText — plus de risque de \n visibles.
+- 3 accordéons : Description (ouvert), Caractéristiques (fermé), Entretien (fermé).
+  - Accordéon 1 : description_courte variante + phrase matière + phrase fabrication (2-3 paragraphes, prose, 0 tiret cadratin).
+  - Accordéon 2 : tableau dimensions / matière / couleur / poids / fabrication.
+  - Accordéon 3 : 4 conseils entretien par catégorie (brossé/suède/grainé/irisé/défaut) + lien guide.
+
+### Page gamme Grazia (task 5+6)
+- 3 sections H2 Cormorant font-light + border-t : "Grazia suède", "Grazia grainé", "Grazita".
+- Cartes : v.couleur seul (plus "Grazia suède Noir" mais "Noir").
+
+### Hero homepage + gammes (task 7)
+- Homepage : remplace Pexels par photo Rita Camel urlFor() depuis modeles déjà chargés. Fallback /images/produits/Sac-Rita-Camel-4-scaled.jpg.
+- Heroes gammes : gradient-to-b from-black/20 to-black/55 + object-top pour meilleur cadrage.
+
 ## En attente (go prod)
 
 1. Valentin : valider visuellement ces corrections en local (npm run dev) ou sur la prochaine preview.
