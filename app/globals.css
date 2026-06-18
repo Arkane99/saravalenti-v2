@@ -12,7 +12,7 @@
   --color-sv-gold-light: #d4b07a;
   /* Or fonce pour le TEXTE sur fond clair (AA >= 4.5:1 sur creme) ; le gold clair reste pour fonds/bordures/accents. */
   --color-sv-gold-dark: #7e5e2c;
-  --color-sv-mid: #6b6460;
+  --color-sv-mid: #5a5552;
   --color-sv-border: #e0d9d0;
 
   /* Typo : Cormorant Garamond (titres, signatures) + DM Sans (corps, UI) */
