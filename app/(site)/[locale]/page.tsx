@@ -121,6 +121,14 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     client.fetch<AvisClient[]>(REQUETE_AVIS),
   ])
 
+  const ritaModel = modeles.find((m) => m.slug === 'rita')
+  const camelV = ritaModel?.variantes?.find((v) => v.couleur.toLowerCase().includes('camel'))
+  const heroPhotoV = camelV ?? ritaModel?.variantes?.[0]
+  const heroPhoto = heroPhotoV?.photos?.[0]
+  const heroSrc = heroPhoto?.asset
+    ? urlFor(heroPhoto).width(1920).height(1080).fit('crop').url()
+    : '/images/produits/Sac-Rita-Camel-4-scaled.jpg'
+
   return (
     <>
       <script
@@ -132,14 +140,14 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaFaqHome) }}
       />
 
-      {/* Hero full-screen */}
+      {/* Hero full-screen — photo Rita Camel depuis Sanity */}
       <section className="relative h-[calc(100vh-5rem)] min-h-[500px] max-h-[900px] overflow-hidden">
         <Image
-          src="https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&w=1920"
-          alt="Sac en cuir Sara Valenti"
+          src={heroSrc}
+          alt="Sac Rita en cuir camel Sara Valenti"
           fill
           sizes="100vw"
-          className="object-cover object-center"
+          className="object-cover object-top"
           priority
         />
         <div className="absolute inset-0 bg-black/25" />
