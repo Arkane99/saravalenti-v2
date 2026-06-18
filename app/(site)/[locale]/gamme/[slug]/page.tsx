@@ -279,7 +279,7 @@ export default async function PageGamme({
             className="object-cover object-top"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/55" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/35" />
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
             <h1
               className="font-serif font-light text-white text-balance"
@@ -334,7 +334,7 @@ export default async function PageGamme({
 
             {slug === 'grazia' ? (
               /* Grazia : 3 sections par matière */
-              <div className="space-y-16">
+              <div className="space-y-24">
                 {(
                   [
                     { modelSlug: 'grazia', titre: 'Grazia suède', sous: 'La version originale, au toucher velouté' },

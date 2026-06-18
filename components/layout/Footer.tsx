@@ -7,7 +7,7 @@ export async function Footer() {
 
   return (
     <footer className="border-t border-sv-border bg-sv-warm-white">
-      <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-3">
+      <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-4">
         <div>
           <p className="font-serif text-xl tracking-[0.22em] uppercase">Sara Valenti</p>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-sv-mid">{t('baseline')}</p>
@@ -20,6 +20,15 @@ export async function Footer() {
             <li><Link href="/gamme/rita" className="transition-colors hover:text-sv-gold-dark">{tNav('gammeRita')}</Link></li>
             <li><Link href="/gamme/grazia" className="transition-colors hover:text-sv-gold-dark">{tNav('gammeGrazia')}</Link></li>
             <li><Link href="/gamme/mina" className="transition-colors hover:text-sv-gold-dark">{tNav('gammeMina')}</Link></li>
+          </ul>
+        </div>
+
+        <div>
+          <p className="text-xs font-medium uppercase tracking-[0.18em] text-sv-gold-dark">Mon compte</p>
+          <ul className="mt-4 space-y-2 text-sm text-sv-mid">
+            <li><Link href="/compte/connexion" className="transition-colors hover:text-sv-gold-dark">Connexion</Link></li>
+            <li><Link href="/compte/commandes" className="transition-colors hover:text-sv-gold-dark">Mes commandes</Link></li>
+            <li><Link href="/compte/favoris" className="transition-colors hover:text-sv-gold-dark">Mes favoris</Link></li>
           </ul>
         </div>
 

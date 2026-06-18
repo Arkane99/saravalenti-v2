@@ -140,7 +140,7 @@ function PageModele({ produit }: { produit: ProduitDetail }) {
       />
 
       <div className="mx-auto max-w-6xl px-6 py-10">
-        <nav className="mb-8 text-xs uppercase tracking-[0.12em] text-sv-mid">
+        <nav className="mb-8 text-xs tracking-[0.06em] text-sv-mid">
           <Link href="/catalogue" className="hover:text-sv-gold">
             Catalogue
           </Link>
@@ -310,7 +310,7 @@ export default async function ProduitPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaBreadcrumb) }}
       />
       <div className="mx-auto max-w-6xl px-6 py-10">
-        <nav className="mb-6 text-xs uppercase tracking-[0.12em] text-sv-mid">
+        <nav className="mb-6 text-xs tracking-[0.06em] text-sv-mid">
           <Link href="/catalogue" className="hover:text-sv-gold">
             Catalogue
           </Link>

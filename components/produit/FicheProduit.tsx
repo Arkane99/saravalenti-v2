@@ -252,6 +252,7 @@ export function FicheProduit({ produit, couleurSlug }: { produit: ProduitDetail;
           </BoutonAction>
           <BoutonAction
             variante="contour"
+            className="w-auto px-6"
             onClick={() => toggleFavori(cléFavori(produit.slug, v?.couleur ?? ''))}
             aria-pressed={estFavori(cléFavori(produit.slug, v?.couleur ?? ''))}
             aria-label={estFavori(cléFavori(produit.slug, v?.couleur ?? '')) ? 'Retirer des favoris' : 'Ajouter aux favoris'}

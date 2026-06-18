@@ -170,30 +170,31 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </div>
       </section>
 
-      {/* Section matières */}
-      <section className="border-t border-sv-border bg-sv-warm-white py-20" aria-labelledby="titre-matieres">
-        <div className="mx-auto max-w-7xl px-6">
-          <h2 id="titre-matieres" className="mb-3 font-serif text-3xl">Nos matières</h2>
-          <p className="mb-10 max-w-2xl text-sm text-sv-mid">
-            Trois familles de cuir, chacune avec ses propriétés spécifiques. Toutes d'origine italienne, sélectionnées pour leur qualité.
-          </p>
-          <div className="grid gap-8 md:grid-cols-3">
-            {MATIERES.map((m) => (
-              <article key={m.nom} className="rounded border border-sv-border bg-sv-cream p-6">
-                <h3 className="mb-3 font-serif text-xl">{m.nom}</h3>
-                <p className="mb-4 text-sm leading-relaxed text-sv-mid">{m.description}</p>
-                <p className="text-xs text-sv-mid">
-                  <span className="font-medium text-sv-black">Modèles :</span> {m.modeles}
-                </p>
-              </article>
-            ))}
+      {/* Mobile: modèles phares first, matières second. Desktop: DOM order (matières first). */}
+      <div className="flex flex-col md:block">
+        <section className="order-2 border-t border-sv-border bg-sv-warm-white py-20" aria-labelledby="titre-matieres">
+          <div className="mx-auto max-w-7xl px-6">
+            <h2 id="titre-matieres" className="mb-3 font-serif text-3xl">Nos matières</h2>
+            <p className="mb-10 max-w-2xl text-sm text-sv-mid">
+              Trois familles de cuir, chacune avec ses propriétés spécifiques. Toutes d'origine italienne, sélectionnées pour leur qualité.
+            </p>
+            <div className="grid gap-8 md:grid-cols-3">
+              {MATIERES.map((m) => (
+                <article key={m.nom} className="rounded border border-sv-border bg-sv-cream p-6">
+                  <h3 className="mb-3 font-serif text-xl">{m.nom}</h3>
+                  <p className="mb-4 text-sm leading-relaxed text-sv-mid">{m.description}</p>
+                  <p className="text-xs text-sv-mid">
+                    <span className="font-medium text-sv-black">Modèles :</span> {m.modeles}
+                  </p>
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Carousel modèles phares */}
-      {modeles.length > 0 && (
-        <section className="py-20" aria-labelledby="titre-modeles">
+        {/* Carousel modèles phares */}
+        {modeles.length > 0 && (
+        <section className="order-1 py-20" aria-labelledby="titre-modeles">
           <div className="mx-auto max-w-7xl px-6">
             <div className="mb-10 flex items-end justify-between">
               <h2 id="titre-modeles" className="font-serif text-3xl">Modèles phares</h2>
@@ -243,7 +244,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             </div>
           </div>
         </section>
-      )}
+        )}
+      </div>
 
       {/* Avis clients */}
       {avis.length > 0 && (
