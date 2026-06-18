@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import { PortableText } from '@portabletext/react'
 import { urlFor } from '@/sanity/lib/client'
 import { formatPrix } from '@/lib/format'
 import { hexCouleur } from '@/lib/couleurs'
@@ -13,6 +12,105 @@ import { usePanier } from '@/lib/store/panier'
 import { useFavoris, cléFavori } from '@/lib/store/favoris'
 import type { ProduitDetail } from '@/lib/types'
 
+// -- Entretien par matière -------------------------------------------------------
+
+type CatEntretien = 'brosse' | 'suede' | 'graine' | 'irise' | 'defaut'
+
+function categorieEntretien(matiere: string | undefined): CatEntretien {
+  if (!matiere) return 'defaut'
+  const m = matiere.toLowerCase()
+  if (m.includes('irisé') || m.includes('irise') || m.includes('nacré')) return 'irise'
+  if (m.includes('grainé') || m.includes('graine')) return 'graine'
+  if (m.includes('suède') || m.includes('suede') || m.includes('daim') || m.includes('nubuck')) return 'suede'
+  if (m.includes('brossé') || m.includes('brosse')) return 'brosse'
+  return 'defaut'
+}
+
+const CONSEILS: Record<CatEntretien, string[]> = {
+  brosse: [
+    "Essuyez les taches légères avec un chiffon légèrement humide, séchez immédiatement à l'air libre.",
+    'Deux fois par an, appliquez une crème incolore à base de cire pour nourrir la surface.',
+    "Évitez l'exposition prolongée au soleil direct qui peut altérer la teinte.",
+    'Rangez dans une housse en tissu, jamais en plastique.',
+  ],
+  suede: [
+    'Protégez avant la première utilisation avec un spray imperméabilisant spécial suède.',
+    'Utilisez une brosse à suède à poils doux pour enlever la poussière et remettre le velours debout.',
+    'Pour les taches, tamponnez avec une gomme à suède spéciale, sans frotter.',
+    "En cas de pluie, laissez sécher à l'air libre, jamais près d'une source de chaleur.",
+  ],
+  graine: [
+    "Essuyez avec un chiffon légèrement humide pour les taches courantes, séchez à l'air libre.",
+    'Deux fois par an, appliquez une crème hydratante incolore pour entretenir la souplesse.',
+    'Le cuir grainé résiste naturellement aux rayures ; évitez cependant les surfaces abrasives.',
+    'Rangez dans une housse en tissu pour protéger le relief.',
+  ],
+  irise: [
+    'Nettoyez délicatement avec un chiffon doux sec ou très légèrement humide.',
+    'Évitez tout produit chimique qui pourrait altérer les reflets nacrés.',
+    "Protégez de la lumière directe prolongée pour conserver l'éclat.",
+    "Rangez séparément pour éviter les rayures au contact d'autres matières.",
+  ],
+  defaut: [
+    "Essuyez les taches légères avec un chiffon légèrement humide, séchez à l'air libre.",
+    'Nourrissez le cuir deux fois par an avec une crème incolore adaptée.',
+    "Évitez l'exposition prolongée au soleil direct et à l'humidité.",
+    'Rangez dans une housse en tissu pour protéger la surface.',
+  ],
+}
+
+function phraseMatiere(matiere: string | undefined): string | null {
+  if (!matiere) return null
+  const m = matiere.toLowerCase()
+  if (m.includes('irisé') || m.includes('irise'))
+    return 'Ses reflets nacrés changent selon la lumière pour un effet subtil et élégant.'
+  if (m.includes('grainé') || m.includes('graine'))
+    return "Sa surface texturée résiste naturellement aux marques d'usage et conserve sa forme dans le temps."
+  if (m.includes('suède') || m.includes('suede') || m.includes('daim') || m.includes('nubuck'))
+    return "Sa texture veloutée est douce au toucher. Un spray imperméabilisant est recommandé avant la première utilisation."
+  if (m.includes('brossé') || m.includes('brosse'))
+    return "Sa surface légèrement satinée se patine avec l'usage pour développer un caractère unique."
+  return null
+}
+
+// -- Accordéon -------------------------------------------------------------------
+
+function Accordeon({
+  titre,
+  ouvert,
+  onToggle,
+  id,
+  children,
+}: {
+  titre: string
+  ouvert: boolean
+  onToggle: () => void
+  id: string
+  children: React.ReactNode
+}) {
+  return (
+    <div className="border-t border-sv-border pt-4">
+      <button
+        type="button"
+        onClick={onToggle}
+        aria-expanded={ouvert}
+        aria-controls={id}
+        className="flex w-full items-center justify-between pb-4 text-sm uppercase tracking-[0.12em]"
+      >
+        {titre}
+        <span className="text-sv-gold-dark" aria-hidden="true">{ouvert ? '-' : '+'}</span>
+      </button>
+      {ouvert && (
+        <div id={id} className="pb-4">
+          {children}
+        </div>
+      )}
+    </div>
+  )
+}
+
+// -- Composant principal ---------------------------------------------------------
+
 export function FicheProduit({ produit, couleurSlug }: { produit: ProduitDetail; couleurSlug?: string }) {
   const v = couleurSlug
     ? (produit.variantes.find((va) => slugifier(va.couleur) === couleurSlug) ?? produit.variantes[0])
@@ -20,7 +118,9 @@ export function FicheProduit({ produit, couleurSlug }: { produit: ProduitDetail;
   const { ajouterAuPanier } = usePanier()
   const { toggleFavori, estFavori } = useFavoris()
   const [iPhoto, setIPhoto] = useState(0)
-  const [descOuverte, setDescOuverte] = useState(true)
+  const [acc1, setAcc1] = useState(true)
+  const [acc2, setAcc2] = useState(false)
+  const [acc3, setAcc3] = useState(false)
 
   const photos = v?.photos ?? []
   const photo = photos[iPhoto] ?? photos[0]
@@ -38,7 +138,20 @@ export function FicheProduit({ produit, couleurSlug }: { produit: ProduitDetail;
         : 'En stock'
   const stockClasse = v?.reappro ? 'text-sv-gold-dark' : epuise ? 'text-sv-mid' : 'text-green-700'
 
-  const descriptionCourte = v?.description_courte
+  const descPara1 = v?.description_courte || `Le ${produit.nom} ${v?.couleur ?? ''} est un sac en cuir fabriqué en Italie.`
+  const descPara2 = phraseMatiere(v?.matiere)
+
+  const caracts: { label: string; valeur: string }[] = [
+    ...(aDims
+      ? [{ label: 'Dimensions', valeur: `${dims?.longueur ?? '?'} x ${dims?.largeur ?? '?'} x ${dims?.hauteur ?? '?'} cm` }]
+      : []),
+    ...(v?.matiere ? [{ label: 'Matière', valeur: v.matiere }] : []),
+    { label: 'Couleur', valeur: v?.couleur ?? '' },
+    ...(v?.poids ? [{ label: 'Poids', valeur: `${v.poids} kg` }] : []),
+    { label: 'Fabrication', valeur: 'Italie' },
+  ]
+
+  const conseils = CONSEILS[categorieEntretien(v?.matiere)]
 
   return (
     <div className="grid gap-10 md:grid-cols-2">
@@ -88,8 +201,6 @@ export function FicheProduit({ produit, couleurSlug }: { produit: ProduitDetail;
           <span className={enPromo ? 'text-sv-gold-dark' : ''}>{formatPrix(v?.promo ?? v?.prix)}</span>
         </p>
 
-        {descriptionCourte && <p className="mt-4 leading-relaxed text-sv-mid">{descriptionCourte}</p>}
-
         {/* Sélecteur couleur — swatches = Links */}
         <div className="mt-6">
           <p className="text-xs uppercase tracking-[0.1em] text-sv-mid">
@@ -117,13 +228,6 @@ export function FicheProduit({ produit, couleurSlug }: { produit: ProduitDetail;
         </div>
 
         <p className={`mt-4 text-sm ${stockClasse}`}>{stockLabel}</p>
-
-        {aDims && (
-          <p className="mt-2 text-sm text-sv-mid">
-            Dimensions : {dims?.longueur ?? '?'} x {dims?.largeur ?? '?'} x {dims?.hauteur ?? '?'} cm
-            {v?.poids ? ` · ${v.poids} kg` : ''}
-          </p>
-        )}
 
         {/* CTA panier + favoris */}
         <div className="mt-6 flex flex-col gap-3 sm:flex-row">
@@ -155,32 +259,42 @@ export function FicheProduit({ produit, couleurSlug }: { produit: ProduitDetail;
             {estFavori(cléFavori(produit.slug, v?.couleur ?? '')) ? 'Favori' : 'Favoris'}
           </BoutonAction>
         </div>
-        <p className="mt-4 text-xs text-sv-mid">
-          <Link href="/entretien-cuir" className="underline underline-offset-2 hover:text-sv-gold-dark">
-            Guide d'entretien du cuir
-          </Link>
-        </p>
+        {/* Accordéons */}
+        <div className="mt-8">
+          <Accordeon titre="Description" ouvert={acc1} onToggle={() => setAcc1((o) => !o)} id="acc-desc">
+            <div className="space-y-3 text-sm leading-relaxed text-sv-mid">
+              <p>{descPara1}</p>
+              {descPara2 && <p>{descPara2}</p>}
+              <p>Fabriqué dans des ateliers italiens sélectionnés pour leur maîtrise de la maroquinerie.</p>
+            </div>
+          </Accordeon>
 
-        {/* Description longue en accordeon */}
-        {produit.description && produit.description.length > 0 && (
-          <div className="mt-8 border-t border-sv-border pt-4">
-            <button
-              type="button"
-              onClick={() => setDescOuverte((o) => !o)}
-              aria-expanded={descOuverte}
-              aria-controls="desc-panneau"
-              className="flex w-full items-center justify-between text-sm uppercase tracking-[0.12em]"
-            >
-              Description
-              <span className="text-sv-gold-dark" aria-hidden="true">{descOuverte ? '-' : '+'}</span>
-            </button>
-            {descOuverte && (
-              <div id="desc-panneau" className="mt-4 space-y-3 text-sm leading-relaxed text-sv-mid [&_ul]:list-disc [&_ul]:pl-5">
-                <PortableText value={produit.description} />
-              </div>
-            )}
-          </div>
-        )}
+          <Accordeon titre="Caractéristiques" ouvert={acc2} onToggle={() => setAcc2((o) => !o)} id="acc-caract">
+            <table className="w-full text-sm">
+              <tbody className="divide-y divide-sv-border">
+                {caracts.map(({ label, valeur }) => (
+                  <tr key={label}>
+                    <td className="py-2 pr-4 text-sv-mid" style={{ width: '45%' }}>{label}</td>
+                    <td className="py-2 text-sv-black">{valeur}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </Accordeon>
+
+          <Accordeon titre="Entretien" ouvert={acc3} onToggle={() => setAcc3((o) => !o)} id="acc-entretien">
+            <ul className="space-y-2 text-sm leading-relaxed text-sv-mid">
+              {conseils.map((c, i) => (
+                <li key={i}>{c}</li>
+              ))}
+            </ul>
+            <p className="mt-4 text-xs">
+              <Link href="/entretien-cuir" className="text-sv-gold-dark underline underline-offset-2 hover:opacity-80">
+                Guide complet d'entretien du cuir
+              </Link>
+            </p>
+          </Accordeon>
+        </div>
       </div>
     </div>
   )
