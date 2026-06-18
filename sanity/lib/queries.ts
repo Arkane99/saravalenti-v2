@@ -2,7 +2,7 @@ import { groq } from 'next-sanity'
 
 /** Projection d'une variante : champs + photos avec LQIP pour le blur placeholder. */
 const VARIANTE = groq`
-  couleur, matiere, prix, promo, stock, reappro, sku, poids, dimensions,
+  couleur, description_courte, matiere, prix, promo, stock, reappro, sku, poids, dimensions,
   "photos": photos[]{ asset, "lqip": asset->metadata.lqip }
 `
 
@@ -26,6 +26,12 @@ export const REQUETE_PRODUIT = groq`*[_type == "produit" && slug.current == $slu
 }`
 
 export const REQUETE_SLUGS = groq`*[_type == "produit" && defined(slug.current)].slug.current`
+
+/** Slugs + couleurs de toutes les variantes : sert à generateStaticParams des pages couleur. */
+export const REQUETE_SLUGS_COULEURS = groq`*[_type == "produit" && defined(slug.current)]{
+  "slug": slug.current,
+  "couleurs": variantes[].couleur
+}`
 
 /** Produits d'une gamme : le modele principal (slug==gamme) + les variantes rattachees (gamme==slug). */
 export const REQUETE_PRODUITS_GAMME = groq`*[_type == "produit" && (slug.current == $slug || gamme == $slug)] | order(coalesce(date_creation, _createdAt) asc){

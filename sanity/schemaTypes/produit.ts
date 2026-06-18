@@ -9,6 +9,7 @@ const variante = defineArrayMember({
   type: 'object',
   fields: [
     defineField({ name: 'couleur', title: 'Couleur', type: 'string', validation: (r) => r.required() }),
+    defineField({ name: 'description_courte', title: 'Description courte (cette couleur)', type: 'string' }),
     defineField({
       name: 'matiere',
       title: 'Matière',

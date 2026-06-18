@@ -246,6 +246,7 @@ export function htmlVersPortableText(html: string): Bloc[] {
 
 interface Variante {
   couleur: string
+  description_courte?: string
   matiere?: string
   prix?: number
   promo?: number
@@ -310,6 +311,7 @@ function regrouper(lignes: Ligne[]): { modeles: Modele[]; anomalies: Anomalies }
     const enStock = (r['En stock ?'] || '').trim()
     const variante: Variante = {
       couleur: attrs.couleur || 'Unique',
+      description_courte: (r['Description courte'] || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim() || undefined,
       matiere: attrs.matiere,
       prix: nombre(r['Tarif régulier']),
       promo: nombre(r['Tarif promo']),

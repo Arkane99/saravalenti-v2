@@ -6,21 +6,22 @@ import { PortableText } from '@portabletext/react'
 import { urlFor } from '@/sanity/lib/client'
 import { formatPrix } from '@/lib/format'
 import { hexCouleur } from '@/lib/couleurs'
+import { slugifier } from '@/lib/slugifier'
 import { BoutonAction } from '@/components/ui/Bouton'
 import { Link } from '@/i18n/navigation'
 import { usePanier } from '@/lib/store/panier'
 import { useFavoris, cléFavori } from '@/lib/store/favoris'
 import type { ProduitDetail } from '@/lib/types'
 
-export function FicheProduit({ produit, couleurInitiale }: { produit: ProduitDetail; couleurInitiale?: string }) {
-  const idxInit = couleurInitiale ? produit.variantes.findIndex((v) => v.couleur === couleurInitiale) : 0
-  const [iVar, setIVar] = useState(idxInit < 0 ? 0 : idxInit)
+export function FicheProduit({ produit, couleurSlug }: { produit: ProduitDetail; couleurSlug?: string }) {
+  const v = couleurSlug
+    ? (produit.variantes.find((va) => slugifier(va.couleur) === couleurSlug) ?? produit.variantes[0])
+    : produit.variantes[0]
   const { ajouterAuPanier } = usePanier()
   const { toggleFavori, estFavori } = useFavoris()
   const [iPhoto, setIPhoto] = useState(0)
   const [descOuverte, setDescOuverte] = useState(false)
 
-  const v = produit.variantes[iVar]
   const photos = v?.photos ?? []
   const photo = photos[iPhoto] ?? photos[0]
   const enPromo = v?.promo != null && v?.prix != null && v.promo < v.prix
@@ -37,10 +38,7 @@ export function FicheProduit({ produit, couleurInitiale }: { produit: ProduitDet
         : 'En stock'
   const stockClasse = v?.reappro ? 'text-sv-gold-dark' : epuise ? 'text-sv-mid' : 'text-green-700'
 
-  function choisirVariante(i: number) {
-    setIVar(i)
-    setIPhoto(0)
-  }
+  const descriptionCourte = v?.description_courte || produit.description_courte
 
   return (
     <div className="grid gap-10 md:grid-cols-2">
@@ -83,36 +81,38 @@ export function FicheProduit({ produit, couleurInitiale }: { produit: ProduitDet
       {/* Infos */}
       <div>
         {produit.type && <p className="text-xs uppercase tracking-[0.18em] text-sv-gold-dark">{produit.type}</p>}
-        <h1 className="mt-2 font-serif text-4xl">{produit.nom}</h1>
+        <h1 className="mt-2 font-serif text-4xl">{produit.nom} {v.couleur}</h1>
 
         <p className="mt-3 text-xl">
           {enPromo && <span className="mr-2 text-sv-mid line-through">{formatPrix(v.prix)}</span>}
           <span className={enPromo ? 'text-sv-gold-dark' : ''}>{formatPrix(v?.promo ?? v?.prix)}</span>
         </p>
 
-        {produit.description_courte && <p className="mt-4 leading-relaxed text-sv-mid">{produit.description_courte}</p>}
+        {descriptionCourte && <p className="mt-4 leading-relaxed text-sv-mid">{descriptionCourte}</p>}
 
-        {/* Selecteur couleur */}
+        {/* Sélecteur couleur — swatches = Links */}
         <div className="mt-6">
           <p className="text-xs uppercase tracking-[0.1em] text-sv-mid">
             Couleur : <span className="text-sv-black">{v?.couleur}</span>
             {v?.matiere && <span className="text-sv-mid"> · {v.matiere}</span>}
           </p>
           <div className="mt-2 flex flex-wrap gap-2">
-            {produit.variantes.map((va, idx) => (
-              <button
-                key={va.sku || `${va.couleur}-${idx}`}
-                type="button"
-                onClick={() => choisirVariante(idx)}
-                aria-label={va.couleur}
-                aria-pressed={idx === iVar}
-                title={va.couleur}
-                className={`h-7 w-7 rounded-full border transition ${
-                  idx === iVar ? 'border-sv-gold ring-1 ring-sv-gold ring-offset-1' : 'border-sv-border hover:scale-110'
-                }`}
-                style={{ backgroundColor: hexCouleur(va.couleur) }}
-              />
-            ))}
+            {produit.variantes.map((va) => {
+              const estActive = slugifier(va.couleur) === couleurSlug || (!couleurSlug && va === produit.variantes[0])
+              return (
+                <Link
+                  key={va.sku || va.couleur}
+                  href={`/catalogue/${produit.slug}-${slugifier(va.couleur)}`}
+                  aria-label={va.couleur}
+                  aria-current={estActive ? 'page' : undefined}
+                  title={va.couleur}
+                  className={`block h-7 w-7 rounded-full border transition hover:scale-110 ${
+                    estActive ? 'border-sv-gold ring-1 ring-sv-gold ring-offset-1' : 'border-sv-border'
+                  }`}
+                  style={{ backgroundColor: hexCouleur(va.couleur) }}
+                />
+              )
+            })}
           </div>
         </div>
 
@@ -133,14 +133,14 @@ export function FicheProduit({ produit, couleurInitiale }: { produit: ProduitDet
             className="flex-1"
             onClick={() => {
               if (epuise || !v?.sku) return
-              const photo = photos[0]
+              const ph = photos[0]
               ajouterAuPanier({
                 slug: produit.slug,
                 nom: produit.nom,
                 couleur: v.couleur,
                 sku: v.sku,
                 prix: v.promo ?? v.prix ?? 0,
-                photoUrl: photo?.asset ? urlFor(photo).width(200).height(250).fit('crop').url() : undefined,
+                photoUrl: ph?.asset ? urlFor(ph).width(200).height(250).fit('crop').url() : undefined,
               })
             }}
           >
@@ -172,7 +172,7 @@ export function FicheProduit({ produit, couleurInitiale }: { produit: ProduitDet
               className="flex w-full items-center justify-between text-sm uppercase tracking-[0.12em]"
             >
               Description
-              <span className="text-sv-gold-dark" aria-hidden="true">{descOuverte ? '–' : '+'}</span>
+              <span className="text-sv-gold-dark" aria-hidden="true">{descOuverte ? '-' : '+'}</span>
             </button>
             {descOuverte && (
               <div id="desc-panneau" className="mt-4 space-y-3 text-sm leading-relaxed text-sv-mid [&_ul]:list-disc [&_ul]:pl-5">

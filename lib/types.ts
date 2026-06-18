@@ -7,6 +7,7 @@ export interface PhotoSanity {
 
 export interface Variante {
   couleur: string
+  description_courte?: string
   matiere?: string
   prix?: number
   promo?: number
