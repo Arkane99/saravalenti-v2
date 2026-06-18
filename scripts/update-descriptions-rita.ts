@@ -19,6 +19,8 @@ const DESCRIPTIONS: Record<string, string> = {
     "Le Rita Camel est la teinte signature de la gamme. Le cuir brossé camel capte la lumière et révèle les nuances chaudes du cuir naturel à chaque utilisation. Une couleur qui vieillit mieux que toutes les autres.",
   'Bleu Marine':
     "Le Rita Bleu Marine est l'alternative au noir pour celles qui cherchent une couleur profonde sans être classique. Sobre en journée, il prend une dimension différente le soir sous la lumière artificielle.",
+  'Bleu marine':
+    "Le Rita Bleu Marine est l'alternative au noir pour celles qui cherchent une couleur profonde sans être classique. Sobre en journée, il prend une dimension différente le soir sous la lumière artificielle.",
   'Chocolat':
     "Le Rita Chocolat est la teinte la plus chaleureuse de la gamme. Le brun profond du cuir brossé s'accorde naturellement aux tons neutres et aux matières naturelles. Un choix durable qui ne se démode pas.",
   'Taupe':
