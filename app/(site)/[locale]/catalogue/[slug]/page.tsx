@@ -18,15 +18,19 @@ export const revalidate = 60
 
 /** Génère 27 pages modèles + 88 pages couleurs = 115 pages statiques. */
 export async function generateStaticParams() {
-  const produits = await client.fetch<{ slug: string; couleurs: string[] }[]>(REQUETE_SLUGS_COULEURS)
+  try {
+    const produits = await client.fetch<{ slug: string; couleurs: string[] }[]>(REQUETE_SLUGS_COULEURS)
 
-  const pagesModeles = produits.map(({ slug }) => ({ slug }))
-  const pagesCouleurs = produits.flatMap(({ slug: modelSlug, couleurs }) =>
-    (couleurs ?? []).map((couleur) => ({ slug: `${modelSlug}-${slugifier(couleur)}` }))
-  )
+    const pagesModeles = produits.map(({ slug }) => ({ slug }))
+    const pagesCouleurs = produits.flatMap(({ slug: modelSlug, couleurs }) =>
+      (couleurs ?? []).map((couleur) => ({ slug: `${modelSlug}-${slugifier(couleur)}` }))
+    )
 
-  const toutes = [...pagesModeles, ...pagesCouleurs]
-  return routing.locales.flatMap((locale) => toutes.map(({ slug }) => ({ locale, slug })))
+    const toutes = [...pagesModeles, ...pagesCouleurs]
+    return routing.locales.flatMap((locale) => toutes.map(({ slug }) => ({ locale, slug })))
+  } catch {
+    return []
+  }
 }
 
 /** Décompose "grazia-graine-bordeaux" → { modelSlug: "grazia-graine", couleurSlug: "bordeaux" }. */
