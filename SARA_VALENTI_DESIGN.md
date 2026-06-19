@@ -483,3 +483,194 @@ Observations directes sur ce que les références évitent et qui tirerait vers 
 
 *Créé : juin 2026 — Sources : Polène Paris, Sézane, Oh My Bag (crawl direct)*  
 *À relire avant tout travail UI sur saravalenti-v2. Complément de DESIGN_RULES.md (règles génériques Studio Clave).*
+
+---
+
+## 6. IMAGE_SELECTION — Quel type d'image pour chaque page
+
+*Sources crawlées : Polène Paris, Sézane, ARKET, Cuyana, Mansur Gavriel — juin 2026.*
+
+### 6.1 Synthèse des références
+
+| Marque | Hero | Traitement lumière | Position sujet | Texte sur image |
+|---|---|---|---|---|
+| Polène | Lifestyle — modèle en extérieur (bord de mer rocheux) | Doux, brumeux, tons désaturés | Légèrement décentré droite | Aucun (overlay produit bas-gauche) |
+| Sézane | Lifestyle — modèle sur terrasse méditerranéenne | Chaud, lumineux, estival | Légèrement gauche | CTA centré, texte blanc |
+| ARKET | Editorial — très gros plan, corps/vêtement | High-key, désaturé, fond gris | Centré (mais crop très serré) | Aucun |
+| Cuyana | Split — lifestyle gauche + still life droit | Backlight lifestyle, ombres dures still life | Tiers-gauche règle des tiers | Bottom-left, blanc sans gradient |
+| Mansur Gavriel | Still life — sac sur surface bois sombre/rouge | Lumière directionnelle, ombres portées | Décentré, beaucoup d'espace négatif | Aucun (texte hors image) |
+
+**Pattern commun aux 5 références :** le texte n'est jamais positionné sur une zone claire. Soit pas de texte sur l'image, soit le texte est dans une zone naturellement sombre (ombre, fond bois, ciel nuageux).
+
+---
+
+### 6.2 Homepage hero
+
+**Contexte :** image pleine hauteur (`h-[calc(100vh-5rem)]`), texte bottom-left avec titre h1 blanc et sous-titre.
+
+**NON :**
+- Photo produit studio sur fond gris neutre — trop froid, pas d'émotion
+- Sac camel posé sur fond clair sans surface texturée — cuir clair sur fond clair = contraste texte impossible même avec gradient
+- Photo trop lumineuse et uniforme — le gradient ne peut pas créer une zone sombre si toute l'image est exposée identiquement
+- Même photo que la page gamme Rita
+
+**OUI :**
+- Photo lifestyle en extérieur : sac Rita porté par une personne, arrière-plan naturel (pavés, végétation sombre, intérieur boisé)
+- Photo still life avec surface texturée sombre : sac camel sur marbre sombre, bois brut ou tissu texturé brun/gris
+- Zone naturellement sombre dans le tiers bas-gauche (là où se positionne le texte)
+- Ambiance Polène/Cuyana : lumière naturelle légèrement contre-jour ou rasante, pas de lumière de studio plate
+- Sujet décalé à droite ou centré-haut, tiers bas-gauche libre pour le texte
+
+```
+Composition idéale homepage :
+  [     espace libre     | sac / modèle  ]
+  [                                      ]
+  [  H1 "Sacs en cuir"  |               ]  ← zone sombre naturelle ici
+```
+
+---
+
+### 6.3 Page gamme Rita (`/gamme/rita`)
+
+**Contexte :** hero 60vh, texte centré ou bottom, "Rita / SAC À MAIN EN CUIR BROSSÉ".
+
+**NON :**
+- Même photo que la homepage
+- Photo identique à la photo principale du catalogue Rita
+- Plan d'ensemble du sac seul sur fond uni : trop catalogue, pas assez éditorial
+
+**OUI :**
+- Détail texture cuir brossé en lumière rasante : lumière venant d'un côté à ~15-30°, grain visible, reflets subtils sur la peau
+- Photo du sac ouvert montrant l'intérieur et les coutures : valorise l'artisanat
+- Sac porté en situation : femme marchant, sac en mouvement, flou d'arrière-plan
+- Zone d'ombre ou fond foncé dans le quart bas de l'image pour le texte
+
+**Référence technique :**
+```
+Cuir brossé en lumière rasante : la lumière rasante (< 30° de l'axe de l'objectif)
+révèle les micro-reliefs du cuir brossé que la lumière frontale aplatirait.
+Résultat : l'image communique la matière, pas juste la couleur.
+```
+
+---
+
+### 6.4 Page gamme Grazia (`/gamme/grazia`)
+
+**Contexte :** hero 60vh, "Grazia / SAC EN CUIR SUÈDE ET GRAINÉ", 13 coloris.
+
+**NON :**
+- Lumière dure / flash direct : le suède absorbe la lumière, un flash l'aplatit et le fait ressembler à du tissu bon marché
+- Fond blanc pur : le suède perd toute profondeur sur blanc
+
+**OUI :**
+- Lumière douce diffuse (ciel couvert, intérieur près d'une fenêtre) : révèle le velouté du suède
+- Fond dans les tons de la matière : beige chaud, gris doux, tissu lin
+- Photo avec légère sous-exposition intentionnelle : le suède est sombre et chaleureux, pas lumineux
+- Détail couture ou doublure visible si possible : signature qualité artisanale
+
+---
+
+### 6.5 Page À propos (`/a-propos`)
+
+**Contexte :** hero 40vh, petit texte eyebrow "À PROPOS DE SARA VALENTI" en bas.
+
+**NON :**
+- Photo de sac (c'est une page marque, pas produit)
+- Photo catalogue réutilisée depuis la homepage ou le catalogue
+
+**OUI (par ordre de préférence) :**
+1. Mains d'un artisan travaillant le cuir — aiguille et fil, couture à la main, ou découpe d'une peau
+2. Atelier de maroquinerie : outils épars, peaux brutes, lumière naturelle par une grande fenêtre
+3. Peau de cuir brute dépliée sur une surface de travail
+4. Portrait de la fondatrice en contexte (pas pose studio)
+
+**Référence Mansur Gavriel :** leur page About montre systématiquement l'atelier et les mains — jamais un sac fini seul.
+
+---
+
+### 6.6 Page catalogue (`/catalogue`)
+
+**Contexte :** pas de hero, grille de cartes produit `aspect-[3/4]`.
+
+**Images de grille — OUI :**
+- Fond `bg-sv-warm-white` (#faf8f5) — jamais blanc pur
+- Sac centré avec espace autour, modèle Mansur Gavriel (sac seul, bien éclairé, fond neutre)
+- Éclairage de 3/4 avant (léger angle) : révèle la forme 3D sans aplatir
+- Couleur sac fidèle : ne pas surexposer les clairs (camel) ni sous-exposer les sombres (noir, brun)
+
+**Images de grille — NON :**
+- Fond gris froid (#e0e0e0) — pas dans la palette Sara Valenti
+- Recadrage différent d'un sac à l'autre : toute la grille doit avoir la même logique de cadrage
+- Ombres portées dures : `box-shadow` ou ombre studio exagérée déséquilibre la grille
+
+---
+
+### 6.7 Fiche produit (`/catalogue/[slug]`)
+
+**Contexte :** galerie principale `aspect-[3/4]` desktop gauche, mini-galerie de vignettes en bas.
+
+**Photo principale (index 0) :**
+- Face 3/4 avant : montre la forme, les anses, les coutures et le corps du sac
+- Fond `bg-sv-warm-white`, éclairage diffus frontal légèrement décalé
+
+**Photos secondaires (index 1-5) :**
+- Index 1 : profil ou 3/4 arrière
+- Index 2 : intérieur du sac ouvert (doublure, poches, logo)
+- Index 3 : détail fermeture/couture, matière en gros plan
+- Index 4 : porté par une personne (lifestyle contextuel)
+- Index 5 : photo de détail hardware (rivets, zip, anneau)
+
+**NON :**
+- Toutes les photos avec le même angle
+- Photo floue ou sous-exposée en vignette
+- Lifestyle en photo principale — difficile à lire en miniature
+
+---
+
+### 6.8 Règles transversales
+
+```
+JAMAIS :
+- Deux heros avec la même photo (homepage ≠ gamme Rita ≠ gamme Grazia ≠ à-propos)
+- Cuir clair sur fond clair sans gradient from-black/55 minimum
+- Photo de sac noir sur fond noir ou très sombre (illisible)
+- Flash direct sur suède (aplatit la matière)
+
+TOUJOURS :
+- Zone sombre naturelle là où se positionne le texte — le gradient est un filet de sécurité,
+  pas la première ligne de défense
+- Sujet décalé pour laisser respirer le texte : règle des tiers, jamais centré sur un hero
+- Ratio hero desktop : 16:9 ou 21:9 (max-h-[900px])
+- Ratio hero mobile : 3:4 natif ou crop 4:5 (jamais 16:9 sur mobile)
+- Cohérence colorimétrique dans la même page : si deux photos côte à côte,
+  même température de blanc
+
+CONTRASTE WCAG AA (obligatoire sur toute image avec texte blanc) :
+- bg-black/25 seul : environ 1.8:1 — INSUFFISANT
+- bg-black/55 : environ 3.2:1 — minimum acceptable (texte large)
+- bg-gradient-to-t from-black/55 via-black/20 to-transparent : 4:1+ dans la zone de texte — OK
+- Solution préférable : choisir une image avec zone naturellement sombre ≥ 50% luminosité
+  dans la zone de texte, puis ajouter le gradient comme filet de sécurité
+```
+
+---
+
+### 6.9 Brief photographique (pour brief à une photographe)
+
+```
+AMBIANCE GÉNÉRALE : cuir artisanal, lumière naturelle, espace, matière.
+Références : Polène (poésie), Cuyana (clarté), Mansur Gavriel (minimalisme).
+Éviter : H&M, Zara (lumière de studio synthétique, poses figées).
+
+ÉCLAIRAGE : lumière naturelle en priorité. Fenêtre nord (lumière diffuse stable)
+ou extérieur par ciel légèrement couvert. Pas de flash. Réflecteur si besoin.
+
+FONDS : bois naturel non verni (chêne, acacia), marbre gris/blanc, lin écru,
+asphalte mouillé, pavés parisiens, végétation sombre. Éviter : fond papier blanc.
+
+TENUE DU MODÈLE : tons neutres (beige, blanc cassé, gris anthracite, noir).
+Jamais de couleur vive qui entre en concurrence avec le sac.
+
+ANGLES À COUVRIR PAR SAC : (1) 3/4 avant, (2) profil, (3) intérieur, 
+(4) détail matière ×2, (5) lifestyle porté.
+```
