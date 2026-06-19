@@ -61,6 +61,7 @@ export const usePanier = create<PanierStore>()(
     {
       name: 'sara-valenti-panier',
       version: 1,
+      partialize: (state) => ({ lignes: state.lignes }),
     }
   )
 )
