@@ -32,8 +32,8 @@ export default async function AProposPage({ params }: { params: Promise<{ locale
       {/* Hero image */}
       <div className="relative h-64 overflow-hidden md:h-96">
         <Image
-          src="/images/produits/Sac-Rita-Camel-4-scaled.jpg"
-          alt="Sac Rita camel en cuir brossé Sara Valenti"
+          src="/images/heroes/hero-apropos.webp"
+          alt="Artisan maroquinier cousant du cuir à la main, Sara Valenti"
           fill
           sizes="100vw"
           className="object-cover object-center"

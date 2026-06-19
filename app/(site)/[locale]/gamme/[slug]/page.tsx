@@ -251,11 +251,12 @@ export default async function PageGamme({
   }
   // Fallback sur les images statiques si Sanity ne répond pas
   const HERO_FALLBACK: Record<string, string> = {
-    rita: '/images/produits/Sac-Rita-Camel-4-scaled.jpg',
+    rita: '/images/heroes/hero-rita.webp',
     grazia: '/images/produits/sac-a-main-cuir-graine-grazia-moka-1-scaled.jpg',
-    mina: '/images/produits/sac-cuir-suede-daim-nubuck-mina-chocolat-1-scaled.jpg',
+    mina: '/images/heroes/hero-mina.webp',
   }
-  const heroSrc = heroPhotoUrl ?? HERO_FALLBACK[slug]
+  // TEMP PLACEHOLDER — remplacer par image Sanity après shooting
+  const heroSrc = HERO_FALLBACK[slug] ?? heroPhotoUrl
 
   return (
     <>

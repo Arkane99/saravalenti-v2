@@ -141,9 +141,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const camelV = ritaModel?.variantes?.find((v) => v.couleur.toLowerCase().includes('camel'))
   const heroPhotoV = camelV ?? ritaModel?.variantes?.[0]
   const heroPhoto = heroPhotoV?.photos?.[0]
-  const heroSrc = heroPhoto?.asset
-    ? urlFor(heroPhoto).width(1920).height(1080).fit('crop').url()
-    : '/images/produits/Sac-Rita-Camel-4-scaled.jpg'
+  // TEMP PLACEHOLDER — remplacer par image Sanity après shooting
+  const heroSrc = '/images/heroes/hero-home.webp'
 
   return (
     <>
