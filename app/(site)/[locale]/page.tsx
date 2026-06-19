@@ -166,7 +166,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           className="object-cover object-[center_20%]"
           priority
         />
-        <div className="absolute inset-0 bg-black/25" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/20 to-transparent" />
         <div className="absolute bottom-[8%] left-[8%]">
           <h1
             className="font-serif font-light text-white text-balance"

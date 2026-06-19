@@ -39,7 +39,7 @@ export default async function AProposPage({ params }: { params: Promise<{ locale
           className="object-cover object-center"
           priority
         />
-        <div className="absolute inset-0 bg-sv-black/25" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/20 to-transparent" />
         <div className="absolute inset-0 flex items-end px-8 pb-8">
           <p className="text-xs font-medium uppercase tracking-[0.3em] text-white/80">
             À propos de Sara Valenti
