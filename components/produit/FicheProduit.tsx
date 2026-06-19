@@ -158,10 +158,10 @@ export function FicheProduit({ produit, couleurSlug }: { produit: ProduitDetail;
     <div className="grid gap-10 md:grid-cols-2">
       {/* Galerie */}
       <div>
-        <div className="relative aspect-[4/5] overflow-hidden bg-sv-warm-white">
+        <div className="relative aspect-[3/4] overflow-hidden bg-sv-warm-white">
           {photo?.asset && (
             <Image
-              src={urlFor(photo).width(1000).height(1250).fit('crop').url()}
+              src={urlFor(photo).width(1000).height(1333).fit('crop').url()}
               alt={`${produit.nom} ${v.couleur}`}
               fill
               sizes="(min-width:768px) 50vw, 100vw"
@@ -330,10 +330,10 @@ export function FicheProduit({ produit, couleurSlug }: { produit: ProduitDetail;
                   const px = va.promo ?? va.prix
                   return (
                     <Link key={va.sku || va.couleur} href={href} className="group">
-                      <div className="relative aspect-[4/5] overflow-hidden bg-sv-warm-white">
+                      <div className="relative aspect-[3/4] overflow-hidden bg-sv-warm-white">
                         {photo?.asset && (
                           <Image
-                            src={urlFor(photo).width(280).height(350).fit('crop').url()}
+                            src={urlFor(photo).width(280).height(373).fit('crop').url()}
                             alt={`${produit.nom} ${va.couleur}`}
                             fill
                             sizes="(min-width:640px) 140px, 110px"

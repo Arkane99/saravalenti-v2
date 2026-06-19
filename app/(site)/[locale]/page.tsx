@@ -231,10 +231,10 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                     className="group w-72 flex-shrink-0 snap-start"
                   >
                     <Link href={`/catalogue/${p.slug}`} className="block">
-                      <div className="relative aspect-[4/5] overflow-hidden bg-sv-warm-white rounded">
+                      <div className="relative aspect-[3/4] overflow-hidden bg-sv-warm-white rounded">
                         {photo?.asset && (
                           <Image
-                            src={urlFor(photo).width(600).height(750).fit('crop').url()}
+                            src={urlFor(photo).width(600).height(800).fit('crop').url()}
                             alt={`${p.nom} ${v.couleur}`}
                             fill
                             sizes="288px"

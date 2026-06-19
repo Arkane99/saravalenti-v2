@@ -22,10 +22,10 @@ export function CarteProduit({ produit, prioritaire = false }: { produit: Produi
 
   return (
     <article className="group">
-      <Link href={href} className="relative block aspect-[4/5] overflow-hidden bg-sv-warm-white">
+      <Link href={href} className="relative block aspect-[3/4] overflow-hidden bg-sv-warm-white">
         {photo?.asset && (
           <Image
-            src={urlFor(photo).width(700).height(875).fit('crop').url()}
+            src={urlFor(photo).width(600).height(800).fit('crop').url()}
             alt={`${produit.nom} ${v.couleur}`}
             fill
             sizes="(min-width:1024px) 30vw, (min-width:640px) 45vw, 90vw"

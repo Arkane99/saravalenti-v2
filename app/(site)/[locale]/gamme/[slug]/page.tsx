@@ -359,10 +359,10 @@ export default async function PageGamme({
                             const href = `/catalogue/${p.slug}-${slugifier(v.couleur)}`
                             return (
                               <article key={v.sku || `${p._id}-${vIdx}`} className="group">
-                                <Link href={href} className="relative block aspect-[4/5] overflow-hidden bg-sv-warm-white">
+                                <Link href={href} className="relative block aspect-[3/4] overflow-hidden bg-sv-warm-white">
                                   {photo?.asset && (
                                     <Image
-                                      src={urlFor(photo).width(600).height(750).fit('crop').url()}
+                                      src={urlFor(photo).width(600).height(800).fit('crop').url()}
                                       alt={`${p.nom} ${v.couleur}`}
                                       fill
                                       sizes="(min-width:1024px) 25vw, (min-width:640px) 33vw, 50vw"
@@ -406,10 +406,10 @@ export default async function PageGamme({
                     const href = `/catalogue/${p.slug}-${slugifier(v.couleur)}`
                     return (
                       <article key={v.sku || `${p._id}-${vIdx}`} className="group">
-                        <Link href={href} className="relative block aspect-[4/5] overflow-hidden bg-sv-warm-white">
+                        <Link href={href} className="relative block aspect-[3/4] overflow-hidden bg-sv-warm-white">
                           {photo?.asset && (
                             <Image
-                              src={urlFor(photo).width(600).height(750).fit('crop').url()}
+                              src={urlFor(photo).width(600).height(800).fit('crop').url()}
                               alt={`${p.nom} ${v.couleur}`}
                               fill
                               sizes="(min-width:1024px) 25vw, (min-width:640px) 33vw, 50vw"
