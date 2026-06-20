@@ -269,7 +269,7 @@ export function FicheProduit({ produit, couleurSlug }: { produit: ProduitDetail;
           </div>
           <div className="flex items-center gap-2">
             <ShieldCheck className="h-4 w-4 shrink-0" />
-            <span>100% cuir véritable</span>
+            <span>Cuir naturel italien</span>
           </div>
           <div className="flex items-center gap-2">
             <RotateCcw className="h-4 w-4 shrink-0" />

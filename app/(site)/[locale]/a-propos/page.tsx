@@ -96,7 +96,7 @@ export default async function AProposPage({ params }: { params: Promise<{ locale
           <h2 className="mb-6 font-serif text-2xl">Une marque française, des produits italiens</h2>
           <p className="text-sm leading-relaxed text-sv-mid md:text-base">
             Sara Valenti est basée en France. Toutes nos commandes sont expédiées depuis la France,
-            avec un service client disponible par email. Petite structure, grandes exigences : chaque
+            avec un service client disponible par email à contact@saravalenti.fr. Petite structure, grandes exigences : chaque
             commande est traitée avec soin, chaque question reçoit une vraie réponse.
           </p>
         </section>

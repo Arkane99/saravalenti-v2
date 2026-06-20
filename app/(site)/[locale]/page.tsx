@@ -28,7 +28,7 @@ const MATIERES = [
     nom: 'Cuir suède',
     description:
       'Face intérieure de la peau, veloutée et douce au toucher. Plus sensible à l\'eau que le cuir lisse, mais d\'un rendu exceptionnel. Avec un spray imperméabilisant, il dure des années.',
-    modeles: 'Grazia, Mina, Grazita, Elia',
+    modeles: 'Mina, Grazita, Elia (Grazia aussi en version suède)',
   },
   {
     nom: 'Cuir grainé',
