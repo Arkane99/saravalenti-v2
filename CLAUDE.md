@@ -73,6 +73,7 @@ Next.js 15 (App Router) + Tailwind v4 + next-intl (FR defaut, EN/NL/DE) | Sanity
 ## Fichiers à lire au démarrage
 
 - `knowledge/ECOMMERCE_STRATEGY.md` — stratégie e-commerce complète : conversion, pricing, email flows, KPIs, flux Google/Meta, règles Sara Valenti, checklist go-prod. **Lire avant toute décision de conversion, marketing ou go-prod.**
+- `COMPETITIVE_ANALYSIS.md` — analyse Maison 1921, Oh My Bag, Dione Couture : positionnement, UX, SEO, e-commerce + 4 sections synthèse (ce qu'on doit faire, où on peut prendre le lead, opportunités SEO, tableau comparatif). **Lire avant toute décision de positionnement, pricing ou contenu.**
 
 ## Fichiers à lire avant tout travail UI
 
