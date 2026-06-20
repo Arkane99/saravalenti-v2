@@ -2,7 +2,6 @@
 
 import { useEffect, useMemo, useState } from 'react'
 import { useRouter, usePathname } from '@/i18n/navigation'
-import { useSearchParams } from 'next/navigation'
 import { CarteProduit } from '@/components/produit/CarteProduit'
 import { hexCouleur } from '@/lib/couleurs'
 import { formatPrix } from '@/lib/format'
@@ -14,10 +13,15 @@ function prixMini(p: ProduitCarte): number {
   return Math.min(...p.variantes.map((v) => v.promo ?? v.prix ?? Infinity))
 }
 
-export function CatalogueClient({ produits }: { produits: ProduitCarte[] }) {
+export function CatalogueClient({
+  produits,
+  initialParams = {},
+}: {
+  produits: ProduitCarte[]
+  initialParams?: Record<string, string>
+}) {
   const router = useRouter()
   const pathname = usePathname()
-  const sp = useSearchParams()
 
   const [drawerOuvert, setDrawerOuvert] = useState(false)
 
@@ -44,18 +48,18 @@ export function CatalogueClient({ produits }: { produits: ProduitCarte[] }) {
     }
   }, [produits])
 
-  const [selCouleurs, setSelCouleurs] = useState<string[]>(() => sp.get('couleur')?.split(',').filter(Boolean) ?? [])
-  const [selMatieres, setSelMatieres] = useState<string[]>(() => sp.get('matiere')?.split(',').filter(Boolean) ?? [])
-  const [selTypes, setSelTypes] = useState<string[]>(() => sp.get('type')?.split(',').filter(Boolean) ?? [])
+  const [selCouleurs, setSelCouleurs] = useState<string[]>(() => initialParams.couleur?.split(',').filter(Boolean) ?? [])
+  const [selMatieres, setSelMatieres] = useState<string[]>(() => initialParams.matiere?.split(',').filter(Boolean) ?? [])
+  const [selTypes, setSelTypes] = useState<string[]>(() => initialParams.type?.split(',').filter(Boolean) ?? [])
   const [prixMax, setPrixMax] = useState<number>(() => {
-    const raw = sp.get('prixMax')
+    const raw = initialParams.prixMax
     if (raw == null) return prixPlafond
     const n = Number(raw)
     return Number.isFinite(n) ? Math.min(Math.max(0, n), prixPlafond) : prixPlafond
   })
-  const [enStock, setEnStock] = useState<boolean>(() => sp.get('stock') === '1' || sp.get('stock') === 'reappro')
-  const [inclureReappro, setInclureReappro] = useState<boolean>(() => sp.get('stock') === 'reappro')
-  const [tri, setTri] = useState<Tri>(() => (sp.get('tri') as Tri) || 'nouveautes')
+  const [enStock, setEnStock] = useState<boolean>(() => initialParams.stock === '1' || initialParams.stock === 'reappro')
+  const [inclureReappro, setInclureReappro] = useState<boolean>(() => initialParams.stock === 'reappro')
+  const [tri, setTri] = useState<Tri>(() => (initialParams.tri as Tri) || 'nouveautes')
 
   useEffect(() => {
     if (drawerOuvert) {
