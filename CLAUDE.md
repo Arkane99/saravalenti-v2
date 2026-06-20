@@ -6,12 +6,12 @@ Ces lectures sont NON NÉGOCIABLES. Annoncer explicitement "J'ai lu X, Y, Z" ava
 
 | Tâche | Fichiers à lire avant de commencer |
 |-------|-----------------------------------|
-| UI / composant / section visuelle | `DESIGN_RULES.md` + `SARA_VALENTI_DESIGN.md` |
-| Texte / contenu / copywriting | `COPYWRITING_RULES.md` + `BRAND_VOICE.md` |
-| SEO / meta / schema.org | `SEARCH_RULES.md` |
-| Auth / API / webhook / sécurité | `SECURITY_RULES.md` |
-| E-commerce / conversion / pricing | `ECOMMERCE_STRATEGY.md` |
-| Mise en production / go-prod | `END_OF_SESSION_CHECKLIST.md` |
+| UI / composant / section visuelle | `knowledge/DESIGN_RULES.md` + `SARA_VALENTI_DESIGN.md` |
+| Texte / contenu / copywriting | `knowledge/COPYWRITING_RULES.md` + `BRAND_VOICE.md` |
+| SEO / meta / schema.org | `knowledge/SEARCH_RULES.md` |
+| Auth / API / webhook / sécurité | `knowledge/SECURITY_RULES.md` |
+| E-commerce / conversion / pricing | `knowledge/ECOMMERCE_STRATEGY.md` |
+| Mise en production / go-prod | `knowledge/END_OF_SESSION_CHECKLIST.md` |
 | Nouveau composant React | `COMPONENT_LIBRARY.md` |
 
 
@@ -72,7 +72,7 @@ Next.js 15 (App Router) + Tailwind v4 + next-intl (FR defaut, EN/NL/DE) | Sanity
 
 ## Fichiers à lire au démarrage
 
-- `ECOMMERCE_STRATEGY.md` — stratégie e-commerce complète : conversion, pricing, email flows, KPIs, flux Google/Meta, règles Sara Valenti, checklist go-prod. **Lire avant toute décision de conversion, marketing ou go-prod.**
+- `knowledge/ECOMMERCE_STRATEGY.md` — stratégie e-commerce complète : conversion, pricing, email flows, KPIs, flux Google/Meta, règles Sara Valenti, checklist go-prod. **Lire avant toute décision de conversion, marketing ou go-prod.**
 
 ## Fichiers à lire avant tout travail UI
 
