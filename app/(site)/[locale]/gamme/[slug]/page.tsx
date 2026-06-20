@@ -236,6 +236,16 @@ export default async function PageGamme({
     })),
   }
 
+  const schemaBreadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.saravalenti.fr' },
+      { '@type': 'ListItem', position: 2, name: 'Catalogue', item: 'https://www.saravalenti.fr/catalogue' },
+      { '@type': 'ListItem', position: 3, name: g.h1, item: `https://www.saravalenti.fr/gamme/${slug}` },
+    ],
+  }
+
   // Trouver la photo hero depuis les données Sanity
   const heroCouleur = g.heroCouleur
   let heroPhotoUrl: string | undefined
@@ -267,6 +277,10 @@ export default async function PageGamme({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaFaq) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaBreadcrumb) }}
       />
 
       {/* Hero 60vh — photo Sanity, titre centré */}
