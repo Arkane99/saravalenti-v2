@@ -119,10 +119,10 @@ export default function CheckoutPage() {
           window.location.href = data.url
         }
       } else {
-        setErreur('Erreur lors du paiement. Veuillez reessayer.')
+        setErreur('Erreur lors du paiement. Veuillez réessayer.')
       }
     } catch {
-      setErreur('Erreur reseau. Veuillez reessayer.')
+      setErreur('Erreur réseau. Veuillez réessayer.')
     }
     setChargement(false)
   }
@@ -144,13 +144,13 @@ export default function CheckoutPage() {
             {etape === 'adresse' ? (
               <form onSubmit={validerAdresse} className="space-y-4">
                 <div className="grid gap-4 sm:grid-cols-2">
-                  {champ('prenom', 'Prenom', { autoComplete: 'given-name' })}
+                  {champ('prenom', 'Prénom', { autoComplete: 'given-name' })}
                   {champ('nom', 'Nom', { autoComplete: 'family-name' })}
                 </div>
                 {champ('email', 'Email', { type: 'email', autoComplete: 'email' })}
-                {champ('telephone', 'Telephone', { type: 'tel', autoComplete: 'tel', required: false })}
+                {champ('telephone', 'Téléphone', { type: 'tel', autoComplete: 'tel', required: false })}
                 {champ('rue', 'Adresse', { autoComplete: 'street-address' })}
-                {champ('complement', 'Complement (batiment, etage...)', { required: false })}
+                {champ('complement', 'Complément (bâtiment, étage...)', { required: false })}
                 <div className="grid gap-4 sm:grid-cols-2">
                   {champ('code_postal', 'Code postal', { autoComplete: 'postal-code' })}
                   {champ('ville', 'Ville', { autoComplete: 'address-level2' })}
@@ -245,7 +245,7 @@ export default function CheckoutPage() {
               </h2>
 
               <div className="rounded border border-sv-border bg-sv-warm-white p-5 text-sm text-sv-mid">
-                <p>Vous allez etre redirige vers Stripe pour effectuer le paiement en toute securite.</p>
+                <p>Vous allez être redirigé vers Stripe pour effectuer le paiement en toute sécurité.</p>
                 <p className="mt-2">Cartes acceptees : Visa, Mastercard, American Express.</p>
               </div>
 

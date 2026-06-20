@@ -37,7 +37,7 @@ export default async function RetoursPage({ params }: { params: Promise<{ locale
         <h2 className="mb-4 font-serif text-2xl">Procédure de retour</h2>
         <ol className="space-y-4 text-sm text-sv-mid">
           {[
-            'Contactez-nous par email avant de renvoyer l\'article pour obtenir l\'adresse de retour et un numéro de retour.',
+            'Contactez-nous par email à contact@saravalenti.fr avant de renvoyer l\'article pour obtenir l\'adresse de retour et un numéro de retour.',
             'Emballez soigneusement le produit dans son emballage d\'origine.',
             'Expédiez le colis avec un service de suivi à votre charge.',
             'Dès réception et vérification, nous procédons au remboursement sous 7 jours ouvrés.',

@@ -13,7 +13,7 @@ export const revalidate = 60
 export const metadata: Metadata = {
   title: 'Sacs en cuir italien Sara Valenti - Rita, Grazia, Mina',
   description:
-    'Sacs en cuir italien fabriqués en Italie : cuir brossé, suède et grainé. Modèles Rita, Grazia, Mina, Grazita. Prix à partir de 109,90 EUR. Livraison France.',
+    'Sacs en cuir italien fabriqués en Italie : cuir brossé, suède et grainé. Modèles Rita, Grazia, Mina, Grazita. Prix à partir de 19,90 EUR. Livraison France.',
   alternates: { canonical: '/' },
 }
 

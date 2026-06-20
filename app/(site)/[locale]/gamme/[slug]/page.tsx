@@ -132,7 +132,7 @@ const GAMMES: Record<string, GammeConfig> = {
       {
         titre: 'Le cuir suède souple : caractéristiques',
         texte:
-          'La variété de cuir suède utilisée sur le Mina est sélectionnée pour sa souplesse particulière. Ce cuir s\'assouplit encore avec l\'usage, épousant les habitudes de port. Sa légèreté relative par rapport au cuir pleine surface en fait un choix idéal pour les sacs portés longtemps. Les tanneries italiennes sélectionnent les peaux pour leur uniformité et leur résistance au déchirement.',
+          'La variété de cuir suède utilisée sur le Mina est sélectionnée pour sa souplesse particulière. Ce cuir s\'assouplit encore avec l\'usage, épousant les habitudes de port. Sa légèreté relative par rapport au cuir structuré ou grainé en fait un choix idéal pour les sacs portés longtemps. Les tanneries italiennes sélectionnent les peaux pour leur uniformité et leur résistance au déchirement.',
       },
       {
         titre: 'Entretien du Mina',

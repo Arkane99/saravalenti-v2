@@ -22,8 +22,8 @@ export default async function MentionsLegalesPage({ params }: { params: Promise<
           <h2 className="mb-4 font-serif text-xl text-sv-black">Éditeur du site</h2>
           <p>
             Le site <strong>www.saravalenti.fr</strong> est édité par Sara Valenti.<br />
-            Contact : [adresse email à renseigner]<br />
-            Directeur de la publication : [à renseigner]
+            Contact : contact@saravalenti.fr<br />
+            Directeur de la publication : Sara Valenti
           </p>
         </section>
 
@@ -46,7 +46,7 @@ export default async function MentionsLegalesPage({ params }: { params: Promise<
         <section>
           <h2 className="mb-4 font-serif text-xl text-sv-black">Données personnelles</h2>
           <p>
-            Les informations collectées sur ce site sont utilisées exclusivement pour le traitement des commandes et la relation client. Conformément à la loi Informatique et Libertés du 6 janvier 1978 et au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ces droits : [email à renseigner].
+            Les informations collectées sur ce site sont utilisées exclusivement pour le traitement des commandes et la relation client. Conformément à la loi Informatique et Libertés du 6 janvier 1978 et au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ces droits : contact@saravalenti.fr.
           </p>
         </section>
 

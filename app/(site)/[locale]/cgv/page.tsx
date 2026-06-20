@@ -50,7 +50,7 @@ export default async function CgvPage({ params }: { params: Promise<{ locale: st
         <section>
           <h2 className="mb-4 font-serif text-xl text-sv-black">Article 5 - Paiement</h2>
           <p>
-            Le paiement s'effectue par carte bancaire (Visa, Mastercard) ou PayPal via une plateforme sécurisée. Les données bancaires ne sont pas conservées par le Vendeur.
+            Le paiement s'effectue par carte bancaire (Visa, Mastercard, American Express) via la plateforme sécurisée Stripe. Les données bancaires ne sont pas conservées par le Vendeur.
           </p>
         </section>
 

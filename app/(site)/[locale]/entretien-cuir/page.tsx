@@ -177,7 +177,7 @@ export default async function EntretienCuirPage({ params }: { params: Promise<{ 
       <div className="relative h-48 overflow-hidden md:h-64">
         <Image
           src="/images/produits/sac-a-main-cuir-brosse-rita-camel-2.png"
-          alt="Détail du cuir brossé — sac Rita Sara Valenti"
+          alt="Détail du cuir brossé, sac Rita Sara Valenti"
           fill
           sizes="100vw"
           className="object-cover object-center"

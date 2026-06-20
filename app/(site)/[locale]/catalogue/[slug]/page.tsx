@@ -54,7 +54,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const p = await client.fetch<ProduitDetail | null>(REQUETE_PRODUIT, { slug: pageSlug })
     if (!p) return {}
     return {
-      title: `${p.nom} — tous les coloris | Sara Valenti`,
+      title: `${p.nom} - tous les coloris | Sara Valenti`,
       description:
         p.description_courte ||
         `${p.nom}, sac en cuir italien Sara Valenti. ${p.variantes.length} coloris disponibles.`,
@@ -73,7 +73,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const typeSac = p.type ?? 'Sac'
   const matStr = v.matiere ? ` en ${v.matiere.toLowerCase()}` : ''
   const titre = `${typeSac} ${p.nom} ${v.couleur}${matStr}`
-  const description = v.description_courte || `${titre} — sac en cuir italien Sara Valenti.`
+  const description = v.description_courte || `${titre}, sac en cuir italien Sara Valenti.`
   const ogPhoto = v.photos?.find((ph) => ph.asset)
   const ogImage = ogPhoto ? urlFor(ogPhoto).width(1200).height(900).fit('crop').url() : undefined
   return {
