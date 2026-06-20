@@ -25,14 +25,26 @@ const dmSans = DM_Sans({
   display: 'swap',
 })
 
+const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.saravalenti.fr'
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.saravalenti.fr'),
+  metadataBase: new URL(SITE),
   title: {
     default: 'Sara Valenti - Sacs en cuir italien',
     template: '%s | Sara Valenti',
   },
   description:
     'Sacs en cuir italien, fabrication italienne. Cuir brossé, suède et grainé : des modèles intemporels, du sac à main à la banane.',
+  alternates: {
+    canonical: SITE,
+    languages: {
+      fr: SITE,
+      en: `${SITE}/en`,
+      nl: `${SITE}/nl`,
+      de: `${SITE}/de`,
+      'x-default': SITE,
+    },
+  },
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
@@ -41,7 +53,7 @@ export const metadata: Metadata = {
       {
         url: '/images/produits/Sac-Rita-Camel-3-scaled.jpg',
         width: 1200,
-        height: 900,
+        height: 630,
         alt: 'Sac à main Rita en cuir brossé camel - Sara Valenti',
       },
     ],
