@@ -14,6 +14,7 @@ const CSP = [
   "frame-ancestors 'none'",
   "object-src 'none'",
   "base-uri 'self'",
+  "upgrade-insecure-requests",
 ].join('; ')
 
 const HEADERS_SECURITE = [
@@ -33,6 +34,7 @@ const HEADERS_SECURITE = [
 
 const nextConfig: NextConfig = {
   images: {
+    formats: ['image/avif', 'image/webp'],
     remotePatterns: [
       { protocol: 'https', hostname: 'cdn.sanity.io' },
       { protocol: 'https', hostname: 'images.pexels.com' },
