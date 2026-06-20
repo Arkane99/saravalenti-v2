@@ -1,5 +1,21 @@
 # Sara Valenti V2 : e-commerce sacs en cuir italien
 
+## RÈGLES DE LECTURE OBLIGATOIRE
+
+Ces lectures sont NON NÉGOCIABLES. Annoncer explicitement "J'ai lu X, Y, Z" avant de commencer la tâche.
+
+| Tâche | Fichiers à lire avant de commencer |
+|-------|-----------------------------------|
+| UI / composant / section visuelle | `DESIGN_RULES.md` + `SARA_VALENTI_DESIGN.md` |
+| Texte / contenu / copywriting | `COPYWRITING_RULES.md` + `BRAND_VOICE.md` |
+| SEO / meta / schema.org | `SEARCH_RULES.md` |
+| Auth / API / webhook / sécurité | `SECURITY_RULES.md` |
+| E-commerce / conversion / pricing | `ECOMMERCE_STRATEGY.md` |
+| Mise en production / go-prod | `END_OF_SESSION_CHECKLIST.md` |
+| Nouveau composant React | `COMPONENT_LIBRARY.md` |
+
+
+
 Remplace le site WooCommerce actuel (saravalenti.fr, LIVE, ne pas toucher). Bascule du domaine (chez Ionos) seulement quand la V2 est parfaite. Cliente : Sarah Es-Soudaiki ; gestion : Valentin (Studio Clave).
 
 **Brief complet et detaille : `docs/BRIEF-PHASE5.md`** (schemas Sanity, features, flux marketplaces, env vars). Le lire avant toute phase de travail ; ce fichier-ci n'est que le resume operationnel.
