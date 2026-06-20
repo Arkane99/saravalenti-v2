@@ -6,16 +6,16 @@ export async function Footer() {
   const t = await getTranslations('footer')
 
   return (
-    <footer className="border-t border-sv-border bg-sv-warm-white">
+    <footer className="border-t border-sv-border bg-sv-black">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-4">
         <div>
-          <p className="font-serif text-xl tracking-[0.22em] uppercase">Sara Valenti</p>
-          <p className="mt-3 max-w-xs text-sm leading-relaxed text-sv-mid">{t('baseline')}</p>
+          <p className="font-serif text-xl tracking-[0.22em] uppercase text-sv-cream">Sara Valenti</p>
+          <p className="mt-3 max-w-xs text-sm leading-relaxed text-sv-cream/60">{t('baseline')}</p>
         </div>
 
         <div>
           <p className="text-xs font-medium uppercase tracking-[0.18em] text-sv-gold-dark">{t('boutique')}</p>
-          <ul className="mt-4 space-y-2 text-sm text-sv-mid">
+          <ul className="mt-4 space-y-2 text-sm text-sv-cream/70">
             <li><Link href="/catalogue" className="transition-colors hover:text-sv-gold-dark">{tNav('catalogue')}</Link></li>
             <li><Link href="/gamme/rita" className="transition-colors hover:text-sv-gold-dark">{tNav('gammeRita')}</Link></li>
             <li><Link href="/gamme/grazia" className="transition-colors hover:text-sv-gold-dark">{tNav('gammeGrazia')}</Link></li>
@@ -25,7 +25,7 @@ export async function Footer() {
 
         <div>
           <p className="text-xs font-medium uppercase tracking-[0.18em] text-sv-gold-dark">Mon compte</p>
-          <ul className="mt-4 space-y-2 text-sm text-sv-mid">
+          <ul className="mt-4 space-y-2 text-sm text-sv-cream/70">
             <li><Link href="/compte/connexion" className="transition-colors hover:text-sv-gold-dark">Connexion</Link></li>
             <li><Link href="/compte/commandes" className="transition-colors hover:text-sv-gold-dark">Mes commandes</Link></li>
             <li><Link href="/compte/favoris" className="transition-colors hover:text-sv-gold-dark">Mes favoris</Link></li>
@@ -34,24 +34,25 @@ export async function Footer() {
 
         <div>
           <p className="text-xs font-medium uppercase tracking-[0.18em] text-sv-gold-dark">{t('informations')}</p>
-          <ul className="mt-4 space-y-2 text-sm text-sv-mid">
+          <ul className="mt-4 space-y-2 text-sm text-sv-cream/70">
             <li><Link href="/a-propos" className="transition-colors hover:text-sv-gold-dark">{t('aPropos')}</Link></li>
             <li><Link href="/entretien-cuir" className="transition-colors hover:text-sv-gold-dark">{t('entretienCuir')}</Link></li>
             <li><Link href="/livraison" className="transition-colors hover:text-sv-gold-dark">{t('livraison')}</Link></li>
             <li><Link href="/retours" className="transition-colors hover:text-sv-gold-dark">{t('retours')}</Link></li>
             <li><Link href="/cgv" className="transition-colors hover:text-sv-gold-dark">{t('cgv')}</Link></li>
             <li><Link href="/mentions-legales" className="transition-colors hover:text-sv-gold-dark">{t('mentionsLegales')}</Link></li>
+            <li><Link href="/politique-de-confidentialite" className="transition-colors hover:text-sv-gold-dark">Politique de confidentialité</Link></li>
           </ul>
         </div>
       </div>
 
-      <div className="border-t border-sv-border py-5 text-center text-xs text-sv-mid">
+      <div className="border-t border-sv-cream/10 py-5 text-center text-xs text-sv-cream/50">
         <a
           href="https://www.instagram.com/saravalenti.fr/"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Sara Valenti sur Instagram"
-          className="mb-4 flex items-center justify-center gap-2 transition-colors hover:text-sv-gold-dark"
+          className="mb-4 flex items-center justify-center gap-2 text-sv-cream/50 transition-colors hover:text-sv-gold-dark"
         >
           {/* Instagram SVG — lucide-react ne l'exporte plus en v1+ */}
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

@@ -9,8 +9,8 @@ import type { ProduitCarte } from '@/lib/types'
 export const revalidate = 60
 
 export const metadata: Metadata = {
-  title: 'Catalogue',
-  description: 'Tous les sacs en cuir italien Sara Valenti : sacs à main, bandoulière, bananes et plus, en cuir brossé, suède et grainé.',
+  title: 'Sacs en cuir italien - Sara Valenti',
+  description: 'Collection complète Sara Valenti : sacs en cuir italien brossé, suède et grainé. Rita, Grazia, Mina et bien d\'autres modèles. Prix à partir de 19,90 EUR. Fabrication italienne.',
   alternates: { canonical: '/catalogue' },
 }
 
@@ -23,7 +23,7 @@ export default async function CataloguePage({ params }: { params: Promise<{ loca
   return (
     <div className="mx-auto max-w-7xl px-6 py-12">
       <header className="mb-8">
-        <h1 className="font-serif text-4xl md:text-5xl">Catalogue</h1>
+        <h1 className="font-serif text-4xl md:text-5xl">Sacs en cuir italien</h1>
         <p className="mt-2 text-sv-mid">{produits.length} modèles, fabrication italienne.</p>
       </header>
       <Suspense fallback={<p className="text-sv-mid">Chargement…</p>}>

@@ -249,7 +249,7 @@ export function FicheProduit({ produit, couleurSlug }: { produit: ProduitDetail;
               })
             }}
           >
-            {epuise ? 'Epuise' : 'Ajouter au panier'}
+            {epuise ? 'Épuisé' : 'Ajouter au panier'}
           </BoutonAction>
           <BoutonAction
             variante="contour"

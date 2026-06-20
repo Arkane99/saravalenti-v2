@@ -24,11 +24,11 @@ export default function InscriptionPage() {
       return
     }
     if (motDePasse.length < 8) {
-      setErreur('Le mot de passe doit contenir au moins 8 caracteres.')
+      setErreur('Le mot de passe doit contenir au moins 8 caractères.')
       return
     }
     if (!isSupabaseConfigured()) {
-      setErreur('Service d\'inscription non configure. Revenez plus tard.')
+      setErreur('Service d\'inscription non configuré. Revenez plus tard.')
       return
     }
 
@@ -41,7 +41,7 @@ export default function InscriptionPage() {
     })
 
     if (error) {
-      setErreur('Une erreur est survenue. Cet email est peut-etre deja utilise.')
+      setErreur('Une erreur est survenue. Cet email est peut-être déjà utilisé.')
       setChargement(false)
     } else {
       setSucces(true)
@@ -51,12 +51,12 @@ export default function InscriptionPage() {
   if (succes) {
     return (
       <div className="mx-auto max-w-md px-6 py-20 text-center">
-        <p className="font-serif text-2xl">Verifiez votre email</p>
+        <p className="font-serif text-2xl">Vérifiez votre email</p>
         <p className="mt-4 text-sv-mid">
-          Un lien de confirmation a ete envoye a <strong>{email}</strong>. Cliquez dessus pour activer votre compte.
+          Un lien de confirmation a été envoyé à <strong>{email}</strong>. Cliquez dessus pour activer votre compte.
         </p>
         <Link href="/" className="mt-8 inline-block text-sm text-sv-gold-dark underline-offset-2 hover:underline">
-          Retour a l'accueil
+          Retour à l'accueil
         </Link>
       </div>
     )
@@ -64,7 +64,7 @@ export default function InscriptionPage() {
 
   return (
     <div className="mx-auto max-w-md px-6 py-20">
-      <h1 className="mb-8 font-serif text-3xl">Creer un compte</h1>
+      <h1 className="mb-8 font-serif text-3xl">Créer un compte</h1>
 
       <form onSubmit={handleSubmit} className="space-y-5" noValidate>
         <div>
@@ -96,7 +96,7 @@ export default function InscriptionPage() {
             autoComplete="new-password"
             minLength={8}
             className="w-full rounded border border-sv-border bg-sv-cream px-4 py-3 text-sm outline-none focus:border-sv-black"
-            placeholder="8 caracteres minimum"
+            placeholder="8 caractères minimum"
           />
         </div>
 
@@ -126,12 +126,12 @@ export default function InscriptionPage() {
           disabled={chargement}
           className="w-full rounded bg-sv-black py-3 text-sm font-medium text-sv-cream transition-colors hover:bg-sv-gold hover:text-sv-black disabled:opacity-50"
         >
-          {chargement ? 'Creation...' : 'Creer mon compte'}
+          {chargement ? 'Création...' : 'Créer mon compte'}
         </button>
       </form>
 
       <p className="mt-6 text-center text-sm text-sv-mid">
-        Deja un compte ?{' '}
+        Déjà un compte ?{' '}
         <Link href="/compte/connexion" className="font-medium text-sv-black underline-offset-2 hover:underline">
           Se connecter
         </Link>

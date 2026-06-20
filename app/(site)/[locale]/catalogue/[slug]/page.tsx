@@ -195,7 +195,7 @@ function PageModele({ produit }: { produit: ProduitDetail }) {
                     )}
                     {epuise && (
                       <span className="absolute right-3 top-3 bg-sv-black/80 px-2 py-1 text-[10px] uppercase tracking-[0.15em] text-sv-cream">
-                        Epuise
+                        Épuisé
                       </span>
                     )}
                   </Link>

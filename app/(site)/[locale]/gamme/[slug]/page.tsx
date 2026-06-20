@@ -59,7 +59,7 @@ const GAMMES: Record<string, GammeConfig> = {
     faq: [
       {
         q: 'Quelle couleur de Rita choisir ?',
-        r: 'Le noir et le marron sont les plus polyvalents pour le quotidien. Les tons chauds (camel, miel) mettent en valeur le grain du cuir brossé. Le bleu marine offre une alternative élégante au noir, moins courante. En cas de doute, consultez les photos de détail pour voir le rendu de la matière par couleur.',
+        r: 'Le noir et le chocolat sont les plus polyvalents pour le quotidien. Les tons chauds (camel) mettent en valeur le grain du cuir brossé. Le taupe offre une neutralité élégante qui s\'adapte à toutes les tenues. En cas de doute, consultez les photos de détail pour voir le rendu de la matière par couleur.',
       },
       {
         q: 'Comment entretenir le cuir brossé ?',
@@ -72,12 +72,12 @@ const GAMMES: Record<string, GammeConfig> = {
     ],
   },
   grazia: {
-    h1: 'Sac Grazia en cuir suède : 13 couleurs disponibles',
-    metaTitle: 'Sac Grazia en cuir suède - 13 couleurs - Sara Valenti',
+    h1: 'Sac Grazia en cuir suède et grainé : 13 coloris disponibles',
+    metaTitle: 'Sac Grazia suède et grainé - 13 coloris - Sara Valenti',
     metaDescription:
-      'Le sac Grazia en cuir suède italien : 13 couleurs disponibles, cuir suède et grainé. Fabriqué en Italie par des artisans maroquiniers. Livraison France.',
+      'Le sac Grazia en cuir italien : 13 coloris disponibles en suède (6 couleurs) et grainé (7 couleurs). Fabriqué en Italie par des artisans maroquiniers. Livraison France.',
     heroTitre: 'Grazia',
-    heroSousTitre: 'Sac en cuir suède, 13 coloris',
+    heroSousTitre: 'Sac en cuir suède et grainé, 13 coloris',
     heroCouleur: 'noir',
     intro:
       'La gamme Grazia regroupe le sac Grazia en cuir suède (6 couleurs), le Grazia en cuir grainé (7 couleurs), et le Grazita, version compacte en suède. Trois déclinaisons d\'un même esprit : souplesse, élégance, fabrication italienne.',
@@ -109,7 +109,7 @@ const GAMMES: Record<string, GammeConfig> = {
       },
       {
         q: 'Quelle couleur de Grazia choisir ?',
-        r: 'Le caramel et le cognac mettent le mieux en valeur la texture du suède. Le noir est le plus polyvalent. Les tons neutres (gris perle, taupe) s\'accordent à toutes les tenues. Les couleurs vives demandent plus d\'attention à l\'entretien car les taches y sont plus visibles. Consultez les photos en détail avant de choisir.',
+        r: 'Le cognac et le camel mettent le mieux en valeur la texture du suède. Le noir est le plus polyvalent. Les tons neutres (taupe, beige) s\'accordent à toutes les tenues. Les couleurs vives demandent plus d\'attention à l\'entretien car les taches y sont plus visibles. Consultez les photos en détail avant de choisir.',
       },
     ],
   },

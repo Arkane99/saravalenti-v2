@@ -18,11 +18,11 @@ interface Commande {
 
 const LIBELLE_STATUT: Record<string, string> = {
   en_attente: 'En attente',
-  paye: 'Paye',
-  expedition: 'En cours d\'expedition',
-  livre: 'Livre',
-  annule: 'Annule',
-  rembourse: 'Rembourse',
+  paye: 'Payé',
+  expedition: 'En cours d\'expédition',
+  livre: 'Livré',
+  annule: 'Annulé',
+  rembourse: 'Remboursé',
 }
 
 export default async function CommandesPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -46,18 +46,18 @@ export default async function CommandesPage({ params }: { params: Promise<{ loca
 
       {!isSupabaseConfigured() && (
         <div className="mb-6 rounded border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
-          Mode demonstration -- Supabase non configure. Les commandes reelles apparaitront ici.
+          Mode démonstration - Supabase non configuré. Les commandes réelles apparaîtront ici.
         </div>
       )}
 
       {commandes.length === 0 ? (
         <div className="rounded border border-sv-border bg-sv-warm-white p-10 text-center">
-          <p className="text-sv-mid">Vous n'avez pas encore passe de commande.</p>
+          <p className="text-sv-mid">Vous n'avez pas encore passé de commande.</p>
           <Link
             href="/catalogue"
             className="mt-6 inline-block text-sm font-medium text-sv-gold-dark underline-offset-2 hover:underline"
           >
-            Decouvrir la collection
+            Découvrir la collection
           </Link>
         </div>
       ) : (

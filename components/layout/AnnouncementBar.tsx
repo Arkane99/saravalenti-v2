@@ -1,5 +1,5 @@
 const TEXTE =
-  'Livraison offerte dès 45 EUR · 100% cuir véritable · Fabrication italienne · Retours sous 14 jours'
+  'Livraison offerte dès 45 EUR · Cuir naturel italien · Fabrication artisanale · Retours sous 14 jours'
 
 export function AnnouncementBar() {
   return (

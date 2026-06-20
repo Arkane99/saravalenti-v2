@@ -31,15 +31,15 @@ function ConfirmationContenu() {
         </svg>
       </div>
 
-      <h1 className="font-serif text-3xl">Commande confirmee</h1>
+      <h1 className="font-serif text-3xl">Commande confirmée</h1>
 
       <p className="mt-4 text-sv-mid">
-        Merci pour votre achat. Un email de confirmation vous a ete envoye.
+        Merci pour votre achat. Un email de confirmation vous a été envoyé.
       </p>
 
       {mock && (
         <div className="mt-6 rounded border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
-          Mode demonstration -- aucun paiement reel n'a ete effectue.
+          Mode démonstration - aucun paiement réel n'a été effectué.
         </div>
       )}
 

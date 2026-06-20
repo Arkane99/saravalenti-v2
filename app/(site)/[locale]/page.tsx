@@ -53,7 +53,7 @@ const ARGUMENTS = [
   },
   {
     titre: 'Retours sous 14 jours',
-    texte: 'Vous avez 14 jours pour changer d\'avis. Retour simple, remboursement rapide. Pas de questions inutiles.',
+    texte: '14 jours pour retourner votre sac. Procédure par email, remboursement sous 7 jours ouvrés. Frais de retour à votre charge.',
   },
 ]
 
