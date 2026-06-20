@@ -1,0 +1,3 @@
+[submodule "knowledge"]
+	path = knowledge
+	url = https://github.com/Arkane99/studio-clave-knowledge.git
