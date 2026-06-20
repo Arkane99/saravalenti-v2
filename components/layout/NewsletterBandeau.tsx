@@ -68,12 +68,12 @@ export function NewsletterBandeau() {
 
       <p className="font-serif text-lg leading-tight">Offres et nouveautés</p>
       <p className="mt-1.5 text-xs text-sv-mid">
-        Inscrivez-vous et recevez <strong>10&nbsp;% de remise</strong> sur votre première commande.
+        Inscrivez-vous pour recevoir nos actualités et offres exclusives.
       </p>
 
       {statut === 'succes' ? (
         <p className="mt-4 text-sm font-medium text-green-700">
-          Merci ! Votre code de remise arrive par email.
+          Merci pour votre inscription !
         </p>
       ) : (
         <form onSubmit={inscrire} className="mt-4 space-y-3" noValidate>
@@ -113,7 +113,7 @@ export function NewsletterBandeau() {
             disabled={statut === 'chargement'}
             className="w-full rounded bg-sv-black py-3 text-sm font-medium text-sv-cream transition-colors hover:bg-sv-gold hover:text-sv-black disabled:opacity-50"
           >
-            {statut === 'chargement' ? 'Inscription...' : 'Obtenir ma remise de 10 %'}
+            {statut === 'chargement' ? 'Inscription...' : 'S\'inscrire'}
           </button>
         </form>
       )}
