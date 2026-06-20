@@ -54,6 +54,10 @@ Next.js 15 (App Router) + Tailwind v4 + next-intl (FR defaut, EN/NL/DE) | Sanity
 - Tenir `docs/ETAT.md` a jour en fin de session (3-10 lignes : fait / en cours / blocages). C'est la memoire inter-sessions, pas la conversation.
 - Valentin est frontend experimente mais decouvre Next.js : expliquer les choix d'architecture AVANT le code, succinctement.
 
+## Fichiers à lire au démarrage
+
+- `ECOMMERCE_STRATEGY.md` — stratégie e-commerce complète : conversion, pricing, email flows, KPIs, flux Google/Meta, règles Sara Valenti, checklist go-prod. **Lire avant toute décision de conversion, marketing ou go-prod.**
+
 ## Fichiers à lire avant tout travail UI
 
 - `SARA_VALENTI_DESIGN.md` — règles visuelles issues de l'analyse des références premium (Polène, Sézane, Oh My Bag) : aspect-ratio images, hero, typographie, CTAs, grille, couleurs. **Lire avant tout composant, page ou section UI.**
