@@ -13,7 +13,7 @@ export const revalidate = 60
 export const metadata: Metadata = {
   title: 'Sacs en cuir italien Sara Valenti - Rita, Grazia, Mina',
   description:
-    'Sacs en cuir italien fabriqués en Italie : cuir brossé, suède et grainé. Modèles Rita, Grazia, Mina, Grazita. Prix à partir de 19,90 EUR. Livraison France.',
+    'Sacs en cuir italien fabriqués en Italie : cuir brossé, suède et grainé. Modèles Rita, Grazia, Mina, Grazita. Prix à partir de 109,90 EUR. Livraison France.',
   alternates: { canonical: '/' },
 }
 
@@ -68,7 +68,7 @@ const FAQ_HOME = [
   },
   {
     q: 'Quel est le prix des sacs Sara Valenti ?',
-    r: 'Les sacs sont proposés à partir de 19,90 EUR. Les modèles principaux de la collection (Rita, Grazia) sont à 109,90 EUR. Le prix est identique pour toutes les couleurs d\'un même modèle.',
+    r: 'Les sacs Sara Valenti sont proposés à partir de 109,90 EUR. Le prix est identique pour toutes les couleurs d\'un même modèle.',
   },
   {
     q: 'La livraison est-elle gratuite ?',
@@ -124,6 +124,14 @@ const schemaOrganisation = {
       name: 'Sara Valenti',
       url: 'https://www.saravalenti.fr',
       publisher: { '@id': 'https://www.saravalenti.fr/#organisation' },
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: {
+          '@type': 'EntryPoint',
+          urlTemplate: 'https://www.saravalenti.fr/catalogue?q={search_term_string}',
+        },
+        'query-input': 'required name=search_term_string',
+      },
     },
   ],
 }
