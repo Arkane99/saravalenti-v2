@@ -18,7 +18,7 @@ export default function ConnexionPage() {
     setErreur('')
 
     if (!isSupabaseConfigured()) {
-      setErreur('Service d\'authentification non configure. Revenez plus tard.')
+      setErreur('Service d\'authentification non configuré. Revenez plus tard.')
       return
     }
 
@@ -30,7 +30,7 @@ export default function ConnexionPage() {
       setErreur(
         error.message === 'Invalid login credentials'
           ? 'Email ou mot de passe incorrect.'
-          : 'Une erreur est survenue. Veuillez reessayer.'
+          : 'Une erreur est survenue. Veuillez réessayer.'
       )
       setChargement(false)
     } else {

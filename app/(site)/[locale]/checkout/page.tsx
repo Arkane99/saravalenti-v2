@@ -246,7 +246,7 @@ export default function CheckoutPage() {
 
               <div className="rounded border border-sv-border bg-sv-warm-white p-5 text-sm text-sv-mid">
                 <p>Vous allez être redirigé vers Stripe pour effectuer le paiement en toute sécurité.</p>
-                <p className="mt-2">Cartes acceptees : Visa, Mastercard, American Express.</p>
+                <p className="mt-2">Cartes acceptées : Visa, Mastercard, American Express.</p>
               </div>
 
               {erreur && <p role="alert" className="mt-4 text-sm text-red-700">{erreur}</p>}
