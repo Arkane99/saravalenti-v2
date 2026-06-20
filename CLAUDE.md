@@ -78,7 +78,7 @@ Next.js 15 (App Router) + Tailwind v4 + next-intl (FR defaut, EN/NL/DE) | Sanity
 ## Fichiers à lire avant tout travail UI
 
 - `SARA_VALENTI_DESIGN.md` — règles visuelles issues de l'analyse des références premium (Polène, Sézane, Oh My Bag) : aspect-ratio images, hero, typographie, CTAs, grille, couleurs. **Lire avant tout composant, page ou section UI.**
-- `AUDIT_SARA_VALENTI.md` — problèmes identifiés sur le site staging (5 BLOQUANTS, 12 IMPORTANTS, 9 MINEURS).
+- `AUDIT_GLOBAL_V2.md` — **audit master** multi-dimensions (design, copy, SEO/GEO/AEO, sécurité, perf, e-commerce, concurrentiel, a11y) : 10 BLOQUANTS, 18 IMPORTANTS, 11 MINEURS. Supersède AUDIT_SARA_VALENTI.md et AUDIT_TEXTES_SARA_VALENTI.md. **Lire avant toute correction pré-lancement.**
 
 ## Avant de commencer tout travail
 
