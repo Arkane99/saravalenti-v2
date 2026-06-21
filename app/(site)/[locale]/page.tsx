@@ -24,21 +24,21 @@ const MATIERES = [
     description:
       'Surface soyeuse et résistante, se patine avec l\'usage pour développer un caractère unique. Idéal pour les sacs du quotidien.',
     modeles: 'Rita, Lola, Teresa',
-    photo: '/images/matieres/cuir-brosse.webp',
+    photo: '/images/matieres/cuir-brosse.jpg',
   },
   {
     nom: 'Cuir suède',
     description:
       'Velours doux au toucher, rendu exceptionnel. Avec un spray imperméabilisant, il dure des années sans perdre sa texture.',
     modeles: 'Mina, Grazita, Elia',
-    photo: '/images/matieres/suede.webp',
+    photo: '/images/matieres/suede.jpg',
   },
   {
     nom: 'Cuir grainé',
     description:
       'Embossé d\'un grain régulier, très résistant aux rayures et aux taches. Conserve sa forme et son aspect dans le temps.',
     modeles: 'Grazia grainé, Daria, Serena',
-    photo: '/images/matieres/graine.webp',
+    photo: '/images/matieres/graine.jpg',
   },
 ]
 
