@@ -57,7 +57,7 @@ export default async function CgvPage({ params }: { params: Promise<{ locale: st
         <section>
           <h2 className="mb-4 font-serif text-xl text-sv-black">Article 6 - Livraison</h2>
           <p>
-            Les livraisons sont effectuées en France métropolitaine et en Corse. Les délais et tarifs de livraison sont indiqués sur la page Livraison. Le Vendeur ne peut être tenu responsable des retards imputables au transporteur.
+            Les livraisons sont effectuées en France, Belgique, Pays-Bas, Allemagne, Suisse et Luxembourg. Les délais et tarifs de livraison sont indiqués sur la page Livraison. Le Vendeur ne peut être tenu responsable des retards imputables au transporteur.
           </p>
         </section>
 

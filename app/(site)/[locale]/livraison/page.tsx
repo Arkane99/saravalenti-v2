@@ -3,7 +3,7 @@ import { setRequestLocale } from 'next-intl/server'
 
 export const metadata: Metadata = {
   title: 'Livraison et délais - Sara Valenti',
-  description: 'Informations de livraison Sara Valenti : Colissimo, Mondial Relay, Chronopost. Délais et tarifs pour la France.',
+  description: 'Informations de livraison Sara Valenti : Colissimo, Mondial Relay, Chronopost. Livraison en France, Belgique, Pays-Bas, Allemagne, Suisse et Luxembourg.',
   alternates: { canonical: '/livraison' },
 }
 
@@ -21,10 +21,10 @@ const schemaFaq = {
     },
     {
       '@type': 'Question',
-      name: 'Livrez-vous en dehors de France ?',
+      name: 'Dans quels pays livrez-vous ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Actuellement, nous livrons uniquement en France métropolitaine et en Corse. La livraison à l\'international sera disponible prochainement.',
+        text: 'Nous livrons en France, Belgique, Pays-Bas, Allemagne, Suisse et Luxembourg. Les tarifs et délais sont calculés au checkout en fonction du poids de la commande et de l\'adresse de livraison.',
       },
     },
   ],
@@ -99,8 +99,8 @@ export default async function LivraisonPage({ params }: { params: Promise<{ loca
               <dd className="text-sm leading-relaxed text-sv-mid">Les commandes sont expédiées sous 24 à 48 heures ouvrées. Le délai de livraison dépend ensuite du transporteur choisi : 2 à 5 jours ouvrés pour Colissimo et Mondial Relay, 1 jour ouvré pour Chronopost.</dd>
             </div>
             <div className="py-5">
-              <dt className="mb-2 font-medium">Livrez-vous en dehors de France ?</dt>
-              <dd className="text-sm leading-relaxed text-sv-mid">Actuellement, nous livrons uniquement en France métropolitaine et en Corse. La livraison à l'international sera disponible prochainement.</dd>
+              <dt className="mb-2 font-medium">Dans quels pays livrez-vous ?</dt>
+              <dd className="text-sm leading-relaxed text-sv-mid">Nous livrons en France, Belgique, Pays-Bas, Allemagne, Suisse et Luxembourg. Les tarifs et délais sont calculés au checkout en fonction du poids de la commande et de l'adresse de livraison.</dd>
             </div>
           </dl>
         </section>
