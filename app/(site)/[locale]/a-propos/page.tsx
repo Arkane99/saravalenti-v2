@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import { setRequestLocale } from 'next-intl/server'
+import { Link } from '@/i18n/navigation'
 
 export const metadata: Metadata = {
   title: 'À propos - Sara Valenti',
@@ -81,7 +82,18 @@ export default async function AProposPage({ params }: { params: Promise<{ locale
             leurs promesses n'y restent pas.
           </p>
         </section>
+      </div>
 
+      {/* Blockquote pleine largeur */}
+      <div className="bg-sv-black text-sv-cream py-16 px-8">
+        <blockquote className="mx-auto max-w-2xl text-center">
+          <p className="font-serif text-2xl italic leading-relaxed md:text-3xl">
+            &ldquo;Un sac qui dure dix ans coûte moins cher qu&rsquo;un sac remplacé tous les ans.&rdquo;
+          </p>
+        </blockquote>
+      </div>
+
+      <div className="mx-auto max-w-3xl px-6">
         <section className="mt-16">
           <h2 className="mb-6 font-serif text-2xl">Pourquoi le cuir italien</h2>
           <p className="text-sm leading-relaxed text-sv-mid md:text-base">
@@ -92,7 +104,7 @@ export default async function AProposPage({ params }: { params: Promise<{ locale
           </p>
         </section>
 
-        <section className="mt-16">
+        <section className="mt-16 pb-20">
           <h2 className="mb-6 font-serif text-2xl">Une marque française, des produits italiens</h2>
           <p className="text-sm leading-relaxed text-sv-mid md:text-base">
             Sara Valenti est basée en France. Toutes nos commandes sont expédiées depuis la France,
@@ -100,19 +112,45 @@ export default async function AProposPage({ params }: { params: Promise<{ locale
             commande est traitée avec soin, chaque question reçoit une vraie réponse.
           </p>
         </section>
+      </div>
 
+      {/* Chiffres clés */}
+      <div className="bg-sv-warm-white py-16">
+        <div className="mx-auto max-w-3xl px-6 grid grid-cols-3 gap-8 text-center">
+          <div>
+            <p className="font-serif text-5xl text-sv-gold">2025</p>
+            <p className="mt-3 text-xs uppercase tracking-widest text-sv-mid">Année de création</p>
+          </div>
+          <div>
+            <p className="font-serif text-5xl text-sv-gold">3</p>
+            <p className="mt-3 text-xs uppercase tracking-widest text-sv-mid">Types de cuir</p>
+          </div>
+          <div>
+            <p className="font-serif text-5xl text-sv-gold">6</p>
+            <p className="mt-3 text-xs uppercase tracking-widest text-sv-mid">Pays de livraison</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="mx-auto max-w-3xl px-6 py-20">
         {/* Notre promesse */}
-        <section className="mt-20 border-t border-sv-border pt-16">
+        <section className="border-t border-sv-border pt-16">
           <blockquote className="mx-auto text-center">
             <p className="font-serif text-xl italic leading-relaxed text-sv-black md:text-2xl">
-              "Un sac Sara Valenti n'est pas un achat impulsif. C'est un choix réfléchi, une pièce que
-              vous porterez des années et que vous ne voudrez pas remplacer."
+              &ldquo;Un sac Sara Valenti n&rsquo;est pas un achat impulsif. C&rsquo;est un choix réfléchi, une pièce que
+              vous porterez des années et que vous ne voudrez pas remplacer.&rdquo;
             </p>
             <footer className="mt-6 text-xs font-medium uppercase tracking-[0.2em] text-sv-gold-dark">
               Notre promesse
             </footer>
           </blockquote>
         </section>
+
+        <div className="mt-12 text-center">
+          <Link href="/catalogue" className="text-sv-mid underline underline-offset-4 hover:text-sv-black transition-colors">
+            Découvrir la collection &rarr;
+          </Link>
+        </div>
       </div>
     </>
   )
