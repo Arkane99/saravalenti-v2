@@ -24,16 +24,10 @@ Cet audit supersède AUDIT_SARA_VALENTI.md et AUDIT_TEXTES_SARA_VALENTI.md.
 
 ---
 
-### BLQ-01 — Prix Elia 19,90 € affiché (devrait être ~109,90 €)
+### [CORRIGÉ] BLQ-01 — Prix Elia 19,90 € affiché (devrait être ~109,90 €)
 
 **Dimension :** E-commerce / Données  
-**Confirmé au crawl :** Homepage affiche Elia à 19,90 € dans la section modèles phares.  
-**Fichier :** Données Sanity (projet r949oibi)  
-**Constat :** La FAQ homepage dit "à partir de 109,90 EUR" mais le modèle Elia est à 19,90 EUR. Contradiction factuelle visible par les clients ET dans les SERP (meta description). Un client qui commande à 19,90 EUR a un titre légal à ce prix.  
-**Correction :**
-1. Sanity Studio → document `elia` → vérifier le prix de toutes les variantes
-2. Corriger à la valeur réelle (probablement 109,90 EUR ou prix propre à l'Elia)
-3. Vérifier Grazita et autres petits modèles avec le CSV `data/wc-product-export-8-6-2026.csv`
+**Résolution :** Prix confirmé correct. L'Elia est un porte-monnaie (pas un sac), vendu 19,90 EUR. La collection comprend donc des articles dès 19,90 EUR. Meta description et FAQ harmonisées en conséquence.
 
 ---
 
@@ -367,12 +361,15 @@ alternates: {
 
 ---
 
-### IMP-15 — Locales EN/NL/DE actives mais livraison France uniquement
+### [CORRIGÉ] IMP-15 — Locales EN/NL/DE actives mais livraison France uniquement
 
 **Dimension :** Internationalisation / UX  
-**Fichier :** `livraison/page.tsx`  
-**Constat :** Routes `/en/`, `/nl/`, `/de/` actives dans next-intl mais la page livraison indique "France métropolitaine uniquement". Un visiteur néerlandophone voit un site en néerlandais lui disant qu'il ne peut pas être livré.  
-**Correction (court terme) :** Ajouter un encart sur `/livraison` : "Livraison actuellement disponible uniquement en France métropolitaine et en Corse. Extension internationale prévue." — ou désactiver les locales non-FR jusqu'au go prod.
+**Résolution :** Zones de livraison étendues à FR/BE/NL/DE/CH/LU dans `livraison/page.tsx` (meta, schemaFaq, FAQ visible) et `cgv/page.tsx` (Article 6).
+
+**Roadmap post go-prod :**
+- Configurer les transporteurs Boxtal pour BE/NL/DE/CH/LU (tarifs et délais par zone)
+- Traduire les pages EN/NL/DE (livraison, cgv, retours)
+- Passer les hreflang par pays (ex: `nl-BE`, `de-DE`, `de-CH`) et non plus seulement par langue
 
 ---
 
