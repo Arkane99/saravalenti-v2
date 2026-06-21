@@ -21,20 +21,23 @@ const MATIERES = [
   {
     nom: 'Cuir brossé',
     description:
-      'Surface douce et légèrement satinée, résistante aux petites égratignures. Se patine avec l\'usage pour développer un caractère unique. Idéal pour les sacs du quotidien.',
+      'Surface soyeuse et résistante, se patine avec l\'usage pour développer un caractère unique. Idéal pour les sacs du quotidien.',
     modeles: 'Rita, Lola, Teresa',
+    photo: '/images/matieres/cuir-brosse.webp',
   },
   {
     nom: 'Cuir suède',
     description:
-      'Face intérieure de la peau, veloutée et douce au toucher. Plus sensible à l\'eau que le cuir lisse, mais d\'un rendu exceptionnel. Avec un spray imperméabilisant, il dure des années.',
-    modeles: 'Mina, Grazita, Elia (Grazia aussi en version suède)',
+      'Velours doux au toucher, rendu exceptionnel. Avec un spray imperméabilisant, il dure des années sans perdre sa texture.',
+    modeles: 'Mina, Grazita, Elia',
+    photo: '/images/matieres/suede.webp',
   },
   {
     nom: 'Cuir grainé',
     description:
-      'Embossé d\'un motif en relief régulier, très résistant aux rayures et aux taches. Plus rigide que le suède, il conserve sa forme et son aspect dans le temps.',
+      'Embossé d\'un grain régulier, très résistant aux rayures et aux taches. Conserve sa forme et son aspect dans le temps.',
     modeles: 'Grazia grainé, Daria, Serena',
+    photo: '/images/matieres/graine.webp',
   },
 ]
 
@@ -49,11 +52,11 @@ const ARGUMENTS = [
   },
   {
     titre: 'Livraison soignée',
-    texte: 'Expédition par Colissimo, Mondial Relay ou Chronopost selon votre choix. Suivi en temps réel, livraison partout en France.',
+    texte: 'Expédition par Colissimo, Mondial Relay ou Chronopost. Livraison en France, Belgique, Pays-Bas, Allemagne, Suisse et Luxembourg.',
   },
   {
     titre: 'Retours sous 14 jours',
-    texte: '14 jours pour retourner votre sac. Procédure par email, remboursement sous 7 jours ouvrés. Frais de retour à votre charge.',
+    texte: '14 jours pour retourner votre sac. Procédure par email, remboursement sous 7 jours ouvrés.',
   },
 ]
 
@@ -136,6 +139,46 @@ const schemaOrganisation = {
   ],
 }
 
+function IconeFabrication() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M3 8l7-6 7 6v10a1 1 0 01-1 1H4a1 1 0 01-1-1V8z"/>
+      <path d="M8 19V12h4v7"/>
+    </svg>
+  )
+}
+
+function IconeCuir() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M17 3C9 3 3 9 3 17"/>
+      <path d="M3 17C3 12 8 6 17 3"/>
+      <path d="M3 17l4-4"/>
+    </svg>
+  )
+}
+
+function IconeLivraison() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M2 6l8-4 8 4v9l-8 4-8-4V6z"/>
+      <path d="M2 6l8 4 8-4"/>
+      <line x1="10" y1="10" x2="10" y2="19"/>
+    </svg>
+  )
+}
+
+function IconeRetours() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <polyline points="2 4 2 10 8 10"/>
+      <path d="M4 14a7 7 0 1 0 1-5.7"/>
+    </svg>
+  )
+}
+
+const ICONES = [IconeFabrication, IconeCuir, IconeLivraison, IconeRetours]
+
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   setRequestLocale(locale)
@@ -145,11 +188,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     client.fetch<AvisClient[]>(REQUETE_AVIS),
   ])
 
-  const ritaModel = modeles.find((m) => m.slug === 'rita')
-  const camelV = ritaModel?.variantes?.find((v) => v.couleur.toLowerCase().includes('camel'))
-  const heroPhotoV = camelV ?? ritaModel?.variantes?.[0]
-  const heroPhoto = heroPhotoV?.photos?.[0]
-  // TEMP PLACEHOLDER — remplacer par image Sanity après shooting
   const heroSrc = '/images/heroes/hero-home.webp'
 
   return (
@@ -163,7 +201,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaFaqHome) }}
       />
 
-      {/* Hero full-screen — photo Rita Camel depuis Sanity */}
+      {/* 1. Hero */}
       <section className="relative h-[calc(100vh-5rem)] min-h-[500px] max-h-[900px] overflow-hidden">
         <Image
           src={heroSrc}
@@ -188,36 +226,14 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             href="/catalogue"
             className="mt-6 inline-block text-sm uppercase tracking-widest text-white underline-offset-4 hover:opacity-70 transition-opacity"
           >
-            Découvrir la collection →
+            Découvrir la collection &rarr;
           </Link>
         </div>
       </section>
 
-      {/* Mobile: modèles phares first, matières second. Desktop: DOM order (matières first). */}
-      <div className="flex flex-col md:block">
-        <section className="order-2 border-t border-sv-border bg-sv-warm-white py-20" aria-labelledby="titre-matieres">
-          <div className="mx-auto max-w-7xl px-6">
-            <h2 id="titre-matieres" className="mb-3 font-serif text-3xl">Nos matières</h2>
-            <p className="mb-10 max-w-2xl text-sm text-sv-mid">
-              Trois familles de cuir, chacune avec ses propriétés spécifiques. Toutes d'origine italienne, sélectionnées pour leur qualité.
-            </p>
-            <div className="grid gap-8 md:grid-cols-3">
-              {MATIERES.map((m) => (
-                <article key={m.nom} className="rounded border border-sv-border bg-sv-cream p-6">
-                  <h3 className="mb-3 font-serif text-xl">{m.nom}</h3>
-                  <p className="mb-4 text-sm leading-relaxed text-sv-mid">{m.description}</p>
-                  <p className="text-xs text-sv-mid">
-                    <span className="font-medium text-sv-black">Modèles :</span> {m.modeles}
-                  </p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Carousel modèles phares */}
-        {modeles.length > 0 && (
-        <section className="order-1 py-20" aria-labelledby="titre-modeles">
+      {/* 2. Modèles phares */}
+      {modeles.length > 0 && (
+        <section className="py-20" aria-labelledby="titre-modeles">
           <div className="mx-auto max-w-7xl px-6">
             <div className="mb-10 flex items-end justify-between">
               <h2 id="titre-modeles" className="font-serif text-3xl">Modèles phares</h2>
@@ -267,14 +283,98 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             </div>
           </div>
         </section>
-        )}
-      </div>
+      )}
 
-      {/* Avis clients */}
+      {/* 3. Nos matières */}
+      <section className="border-t border-sv-border bg-sv-warm-white py-16 md:py-24" aria-labelledby="titre-matieres">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-12 md:mb-16">
+            <p className="mb-2 text-xs uppercase tracking-widest text-sv-mid">Nos matières</p>
+            <h2 id="titre-matieres" className="font-serif text-3xl md:text-4xl leading-tight">
+              Trois cuirs. Fabriqués en Italie.
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 md:gap-px bg-sv-warm-white md:bg-sv-border">
+            {MATIERES.map((m) => (
+              <article key={m.nom} className="bg-sv-warm-white group">
+                <div className="relative aspect-[4/5] overflow-hidden bg-sv-border">
+                  <Image
+                    src={m.photo}
+                    alt={`Détail ${m.nom}`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                  />
+                </div>
+                <div className="px-6 py-8 md:px-8">
+                  <h3 className="font-serif text-2xl text-sv-black mb-2">{m.nom}</h3>
+                  <p className="text-sm leading-relaxed text-sv-mid mb-4 max-w-prose">{m.description}</p>
+                  <p className="text-xs uppercase tracking-widest text-sv-mid">
+                    <span className="font-medium text-sv-black">Modèles :</span> {m.modeles}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Pourquoi Sara Valenti */}
+      <section className="py-16 md:py-24 bg-sv-cream" aria-labelledby="titre-arguments">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+            <div className="relative aspect-[4/5] overflow-hidden">
+              <Image
+                src="/images/heroes/artisan-atelier.webp"
+                alt="Artisan maroquinier en atelier"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+              />
+              <div className="absolute bottom-6 left-6">
+                <p className="text-xs uppercase tracking-widest text-white/80">Fabriqué en Italie</p>
+              </div>
+            </div>
+            <div>
+              <p className="mb-3 text-xs uppercase tracking-widest text-sv-mid">Pourquoi Sara Valenti</p>
+              <h2 id="titre-arguments" className="font-serif text-3xl md:text-4xl leading-tight mb-6">
+                L&apos;artisanat italien.<br />Le prix juste.
+              </h2>
+              <p className="text-sm leading-relaxed text-sv-mid mb-10 max-w-prose">
+                Des sacs fabriqués dans des ateliers italiens sélectionnés pour leur savoir-faire maroquinier, sans les marges du luxe.
+              </p>
+              <ul className="space-y-6">
+                {ARGUMENTS.map((a, i) => {
+                  const Icone = ICONES[i]
+                  return (
+                    <li key={a.titre} className="flex gap-4 items-start">
+                      <span className="mt-0.5 shrink-0 text-sv-gold">
+                        <Icone />
+                      </span>
+                      <div>
+                        <p className="text-sm font-medium text-sv-black">{a.titre}</p>
+                        <p className="text-sm leading-relaxed text-sv-mid">{a.texte}</p>
+                      </div>
+                    </li>
+                  )
+                })}
+              </ul>
+              <Link
+                href="/a-propos"
+                className="mt-10 inline-flex items-center text-sm text-sv-mid underline underline-offset-4 hover:text-sv-black transition-colors"
+              >
+                Notre histoire &rarr;
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Avis clients */}
       {avis.length > 0 && (
         <section className="border-t border-sv-border bg-sv-warm-white py-20" aria-labelledby="titre-avis">
           <div className="mx-auto max-w-7xl px-6">
-            <h2 id="titre-avis" className="mb-10 font-serif text-3xl">Ce qu'en disent nos clients</h2>
+            <h2 id="titre-avis" className="mb-10 font-serif text-3xl">Ce qu&apos;en disent nos clients</h2>
             <div className="grid gap-6 md:grid-cols-3">
               {avis.slice(0, 3).map((a) => (
                 <article key={a._id} className="rounded border border-sv-border bg-sv-cream p-6">
@@ -285,12 +385,12 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                         className={i < a.note ? 'text-sv-gold-dark' : 'text-sv-border'}
                         aria-hidden="true"
                       >
-                        ★
+                        &#9733;
                       </span>
                     ))}
                   </div>
                   <blockquote className="mb-4 text-sm leading-relaxed text-sv-mid">
-                    <p>"{a.texte}"</p>
+                    <p>&quot;{a.texte}&quot;</p>
                   </blockquote>
                   <footer className="text-xs font-medium text-sv-black">
                     {a.auteur}
@@ -305,22 +405,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </section>
       )}
 
-      {/* Pourquoi Sara Valenti */}
-      <section className="py-20" aria-labelledby="titre-arguments">
-        <div className="mx-auto max-w-7xl px-6">
-          <h2 id="titre-arguments" className="mb-10 font-serif text-3xl">Pourquoi Sara Valenti</h2>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {ARGUMENTS.map((a) => (
-              <article key={a.titre}>
-                <h3 className="mb-2 font-medium">{a.titre}</h3>
-                <p className="text-sm leading-relaxed text-sv-mid">{a.texte}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
+      {/* 6. FAQ */}
       <section className="border-t border-sv-border bg-sv-warm-white py-20" aria-labelledby="titre-faq-home">
         <div className="mx-auto max-w-3xl px-6">
           <h2 id="titre-faq-home" className="mb-10 font-serif text-3xl">Questions fréquentes</h2>
