@@ -38,7 +38,7 @@ const GAMMES: Record<string, GammeConfig> = {
     heroSousTitre: 'Sac à main en cuir brossé',
     heroCouleur: 'camel',
     intro:
-      'Le Rita est un sac à main structuré en cuir brossé, conçu pour le port quotidien. Poignée courte et bandoulière amovible permettent deux façons de le porter selon la situation.',
+      'Le sac en cuir brossé Rita est un sac à main structuré, conçu pour le port quotidien. Poignée courte et bandoulière amovible permettent deux façons de le porter selon la situation.',
     sections: [
       {
         titre: 'Le cuir brossé : une matière qui dure',
@@ -90,12 +90,12 @@ const GAMMES: Record<string, GammeConfig> = {
       {
         titre: 'Grazia suède, Grazia grainé, Grazita : les différences',
         texte:
-          'Le Grazia suède et le Grazia grainé partagent la même forme et les mêmes dimensions. La différence est uniquement dans la matière : suède pour un rendu velours, cuir grainé pour une surface structurée plus résistante aux rayures. Le Grazita reprend le design du Grazia en version compacte, uniquement en cuir suède. Les trois modèles sont fabriqués dans les mêmes ateliers italiens.',
+          'Le sac en cuir suède Grazia et le sac en cuir grainé Grazia partagent la même forme et les mêmes dimensions. La différence est uniquement dans la matière : suède pour un rendu velours, cuir grainé pour une surface structurée plus résistante aux rayures. Le sac en cuir suède Grazita reprend le design du Grazia en version compacte. Les trois modèles sont fabriqués dans les mêmes ateliers italiens.',
       },
       {
         titre: 'Polyvalence du Grazia',
         texte:
-          'Le Grazia est un sac du quotidien par excellence : porté à la main ou à l\'épaule selon la bandoulière choisie, il convient aussi bien à une tenue décontractée qu\'à une occasion plus habillée. Son format s\'adapte à un usage actif sans encombrer.',
+          'Le sac en cuir suède et grainé Grazia est un sac du quotidien par excellence : porté à la main ou à l\'épaule selon la bandoulière choisie, il convient aussi bien à une tenue décontractée qu\'à une occasion plus habillée. Son format s\'adapte à un usage actif sans encombrer.',
       },
     ],
     faq: [
@@ -122,12 +122,12 @@ const GAMMES: Record<string, GammeConfig> = {
     heroSousTitre: 'Sac porté épaule en cuir suède souple',
     heroCouleur: '',
     intro:
-      "Le Mina est fait pour les journées où vous portez tout. Sa bandoulière réglable permet de l'adapter à votre morphologie : court sur l'épaule pour un look structuré, long en bandoulière croisée pour les mains libres. Le cuir suède souple ne déforme pas, il épouse votre contenu sans perdre sa silhouette.",
+      "Le sac en cuir suède Mina est fait pour les journées où vous portez tout. Sa bandoulière réglable permet de l'adapter à votre morphologie : court sur l'épaule pour un look structuré, long en bandoulière croisée pour les mains libres. Le cuir suède souple ne déforme pas, il épouse votre contenu sans perdre sa silhouette.",
     sections: [
       {
         titre: 'Un sac pour le quotidien actif',
         texte:
-          'Le Mina est pensé pour les journées chargées. Son format généreux permet d\'emporter l\'essentiel d\'une journée complète sans être encombrant. La souplesse du cuir suède lui permet de s\'adapter au contenu sans déformer la silhouette. Bandoulière réglable et fermeture sécurisée en font un sac pratique en milieu urbain.',
+          'Le sac en cuir suède Mina est pensé pour les journées chargées. Son format généreux permet d\'emporter l\'essentiel d\'une journée complète sans être encombrant. La souplesse du cuir suède lui permet de s\'adapter au contenu sans déformer la silhouette. Bandoulière réglable et fermeture sécurisée en font un sac pratique en milieu urbain.',
       },
       {
         titre: 'Le cuir suède souple : caractéristiques',
@@ -146,7 +146,7 @@ const GAMMES: Record<string, GammeConfig> = {
         r: 'Le Mina peut contenir un format A5, un portefeuille, des clés, un téléphone et des petits accessoires. Il n\'est pas prévu pour un ordinateur portable mais convient pour une journée complète sans bagages supplémentaires. Idéal pour le travail si vous n\'avez pas besoin d\'un laptop.',
       },
       {
-        q: 'Le Mina convient-il pour le travail ?',
+        q: 'Le sac Mina convient-il pour le travail ?',
         r: 'Oui, pour les usages sans ordinateur portable. Son format discret et son cuir suède lui donnent une allure professionnelle sobre. Le port à l\'épaule est pratique en déplacement urbain. Il convient aussi bien à une tenue professionnelle qu\'à une sortie du week-end.',
       },
       {

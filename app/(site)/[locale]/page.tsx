@@ -80,7 +80,7 @@ const FAQ_HOME = [
   },
   {
     q: 'Quelle est la différence entre le Rita, le Grazia et le Mina ?',
-    r: 'Le Rita est un sac à main structuré en cuir brossé, disponible en 5 coloris. Le Grazia est un grand sac souple en cuir suède ou grainé, disponible en 13 coloris au total. Le Mina est un sac porté épaule en cuir suède souple, plus léger et plus décontracté.',
+    r: 'Le sac en cuir brossé Rita est un sac à main structuré, disponible en 5 coloris. Le sac en cuir suède et grainé Grazia est un grand sac souple, disponible en 13 coloris au total. Le sac en cuir suède Mina est un sac porté épaule souple, plus léger et plus décontracté.',
   },
   {
     q: 'Comment choisir entre cuir brossé et cuir suède ?',
