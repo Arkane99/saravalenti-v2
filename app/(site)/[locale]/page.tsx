@@ -7,6 +7,7 @@ import { REQUETE_MODELES_PHARES, REQUETE_AVIS } from '@/sanity/lib/queries'
 import { urlFor } from '@/sanity/lib/client'
 import { formatPrix } from '@/lib/format'
 import type { ProduitCarte, AvisClient } from '@/lib/types'
+import { IconHammer, IconDiamond, IconTruck, IconArrowBackUp } from '@tabler/icons-react'
 
 export const revalidate = 60
 
@@ -139,45 +140,7 @@ const schemaOrganisation = {
   ],
 }
 
-function IconeFabrication() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <path d="M3 8l7-6 7 6v10a1 1 0 01-1 1H4a1 1 0 01-1-1V8z"/>
-      <path d="M8 19V12h4v7"/>
-    </svg>
-  )
-}
-
-function IconeCuir() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <path d="M17 3C9 3 3 9 3 17"/>
-      <path d="M3 17C3 12 8 6 17 3"/>
-      <path d="M3 17l4-4"/>
-    </svg>
-  )
-}
-
-function IconeLivraison() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <path d="M2 6l8-4 8 4v9l-8 4-8-4V6z"/>
-      <path d="M2 6l8 4 8-4"/>
-      <line x1="10" y1="10" x2="10" y2="19"/>
-    </svg>
-  )
-}
-
-function IconeRetours() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <polyline points="2 4 2 10 8 10"/>
-      <path d="M4 14a7 7 0 1 0 1-5.7"/>
-    </svg>
-  )
-}
-
-const ICONES = [IconeFabrication, IconeCuir, IconeLivraison, IconeRetours]
+const ICONES = [IconHammer, IconDiamond, IconTruck, IconArrowBackUp]
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
@@ -349,7 +312,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                   return (
                     <li key={a.titre} className="flex gap-4 items-start">
                       <span className="mt-0.5 shrink-0 text-sv-gold">
-                        <Icone />
+                        <Icone size={20} strokeWidth={1} aria-hidden />
                       </span>
                       <div>
                         <p className="text-sm font-medium text-sv-black">{a.titre}</p>
