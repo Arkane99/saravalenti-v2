@@ -66,9 +66,9 @@ export function NewsletterBandeau() {
         </svg>
       </button>
 
-      <p className="font-serif text-lg leading-tight">Offres et nouveautés</p>
+      <p className="font-serif text-lg leading-tight">-10 % sur votre première commande</p>
       <p className="mt-1.5 text-xs text-sv-mid">
-        Inscrivez-vous pour recevoir nos actualités et offres exclusives.
+        Inscrivez-vous et recevez 10 % de remise sur votre première commande.
       </p>
 
       {statut === 'succes' ? (
