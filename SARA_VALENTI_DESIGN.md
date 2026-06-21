@@ -4,7 +4,7 @@ Référentiel design spécifique au projet Sara Valenti V2.
 Basé sur l'analyse des références premium du secteur maroquinerie française.  
 **Lire avant tout travail de composant, page ou section UI sur ce projet.**
 
-Sources crawlées : Polène Paris, Sézane, Oh My Bag (juin 2026)
+Sources crawlées : Polène Paris, Sézane, Oh My Bag (juin 2026) — Polène Paris, Oh My Bag, Baggu, Lyst, Awwwards e-commerce (juin 2026, §7)
 
 ---
 
@@ -673,4 +673,228 @@ Jamais de couleur vive qui entre en concurrence avec le sac.
 
 ANGLES À COUVRIR PAR SAC : (1) 3/4 avant, (2) profil, (3) intérieur, 
 (4) détail matière ×2, (5) lifestyle porté.
+```
+
+---
+
+## §7 — Patterns visuels e-commerce premium (crawl juin 2026)
+
+Sources : Polène Paris (re-crawl), Oh My Bag, Baggu, Lyst, Awwwards e-commerce winners.  
+Mobbin.com et godly.website sont derrière authentification — non accessibles en crawl automatique.
+
+---
+
+### 7.1 Hero section — ce que font les meilleurs
+
+**Pattern convergent sur tous les sites premium crawlés :**
+
+```
+POLÈNE  : Photo éditoriale plein écran SANS texte dessus.
+          Texte de navigation catégorielle SOUS le hero, sur fond blanc.
+          Tagline courte ("L'intemporel reprend son élan") — jamais de sous-titre.
+
+OH MY BAG : Carrousel full-width avec overlay CTA minimal.
+            Wording de collection ("DÉCOUVRIR NOS RAPHIA") — pas de prix dans le hero.
+
+BAGGU   : Carrousel navigable (counter 0/0), pleine largeur.
+          Aucun header texte sur l'image — produits parlent seuls.
+```
+
+**Règle extraite pour Sara Valenti :**
+- Le texte sur le hero est toléré UNIQUEMENT si la zone est naturellement sombre (> §6.8)
+- Préférence : hero photo seule + H1 et CTA SOUS l'image sur fond `sv-cream`
+- Jamais de sous-titre long dans le hero — 3 à 6 mots max ou rien
+
+---
+
+### 7.2 Grille produit — patterns à adopter
+
+**Ce que font Polène et Oh My Bag :**
+
+| Pattern | Polène | Oh My Bag | Sara Valenti actuel |
+|---------|--------|-----------|---------------------|
+| Colonnes desktop | 4 | 4 | 3 (md) / 2 (base) |
+| Ratio image | Portrait 3:4 fixe | Portrait 2:3 | Variable |
+| Infos sous image | Matière / Nom / Couleur / Prix | Nom / "+ de couleurs" / Prix | Nom / Prix / swatches |
+| Hover state | Aucun overlay | Aucun overlay | Aucun overlay ✓ |
+| Fond carte | Blanc cassé | Blanc | sv-cream ✓ |
+| Badge NOUVEAU | Non | Oui ("Nouveautés") | Non ✓ |
+| Badge BEST SELLER | Non | Oui ("Best-sellers") | Non ✓ |
+
+**Actions pour Sara Valenti :**
+- Passer à 4 colonnes sur `xl:` (actuellement `lg:grid-cols-3`)
+- Forcer le ratio portrait sur toutes les images catalogue (`aspect-[3/4]`)
+- Ajouter label matière en `text-xs text-sv-mid` au-dessus du nom produit dans `CarteProduit`
+
+---
+
+### 7.3 Navigation — mega-menu vs navigation plate
+
+**Pattern dominant chez les références premium :**
+
+```
+POLÈNE  : Mega-menu avec visuels de collection au survol
+          "Bestsellers | Sacs → sous-catégories | Savoir-Faire"
+          Regroupement par collections nommées (Cyme, Numéro Neuf...)
+
+OH MY BAG : Mega-menu "Sacs | Accessoires | À propos"
+            Filtres par style dans le menu (breadcrumb hiérarchique)
+            "Retour" sur mobile (navigation arborescente)
+```
+
+**Priorités pour Sara Valenti (post go-prod) :**
+1. Mega-menu desktop avec miniature de chaque gamme au survol
+2. Navigation mobile : drawer avec "Retour" sur chaque niveau
+3. Regrouper par collections nommées dès que 3+ gammes actives
+
+---
+
+### 7.4 Fiche produit — signaux premium observés
+
+**Convergence Polène + Oh My Bag :**
+
+```
+GALERIE    : Minimum 4 angles (3/4 avant, profil, détail matière, lifestyle porté)
+             Dual-view dans la grille (deux photos au scroll ou au hover)
+             Polène : 2000x2800px — haute résolution assumée
+
+PRIX       : Affiché clairement, seul, sans rayure/promo visible (Polène)
+             Prix habituel en premier, prix barré si solde (Oh My Bag)
+             Jamais de countdown timer ou badge "offre limitée"
+
+STOCK      : "En rupture de stock" → CTA "M'alerter" (Polène)
+             Pas de chiffre de stock affiché ("Plus que 2" = pression masse)
+
+CTAs       : Un seul CTA principal par écran : "Ajouter au panier"
+             Favori (coeur) en secondaire, discret
+             Jamais "ACHETER MAINTENANT" — trop e-commerce généraliste
+```
+
+**Signaux à ajouter sur FicheProduit Sara Valenti :**
+- Dual-view dans CarteProduit (2e photo au hover sur desktop)
+- Alertes stock épuisé (formulaire email simple)
+- Label matière cliquable renvoyant vers `/entretien-cuir`
+
+---
+
+### 7.5 Typographie — tendances Awwwards 2025-2026
+
+Analyse des sites primés sur Awwwards (e-commerce mode/luxe) :
+
+```
+SERIF      : Cormorant Garamond, EB Garamond, Caslon — Sara Valenti ✓ (Cormorant)
+             Grande taille (56-80px) sur desktop pour les titres héros
+             Italic pour les collections ("La collection Rita")
+
+SANS-SERIF : DM Sans, GT America, Futura — Sara Valenti ✓ (DM Sans)
+             Uppercase + tracking large pour les labels UI (filtres, boutons)
+             Regular 14px pour les descriptions produit
+
+CONTRASTE  : Jamais deux serif sur la même page (titre + sous-titre)
+             Serif = éditorial uniquement, jamais pour les prix ou les labels
+```
+
+**Pattern à adopter :** Les sites primés combinent un serif fort (grand, italic, poétique) avec un sans-serif neutre minimal. C'est exactement Cormorant + DM Sans — valider que le ratio serif/sans est respecté dans tous les composants.
+
+---
+
+### 7.6 Micro-interactions — ce qui différencie les meilleurs
+
+D'après Awwwards (GSAP, Framer Motion) et crawl des sites premium :
+
+```
+TRANSITIONS PAGE   : Fade ou slide horizontal doux (200-300ms) — pas de flash blanc
+HOVER PRODUIT      : Swap d'image (packshot → lifestyle) — PAS d'overlay "Aperçu rapide"
+SCROLL ANIMATIONS  : Apparition progressive des cards (stagger 50ms) mais JAMAIS
+                     de parallax sur les images produit (dérange le shopping)
+BOUTONS            : State hover = inversion couleur fond/texte (100ms) ou underline
+                     Jamais de scale transform sur un bouton d'achat
+FILTRES            : Instant filtering (sans rechargement) — déjà en place ✓
+SWATCHES           : Changement d'image immédiat au survol/clic — déjà en place ✓
+```
+
+**À implémenter :**
+- Swap d'image au hover sur CarteProduit (2e photo Sanity si disponible)
+- Stagger d'apparition sur la grille catalogue (framer-motion ou CSS animate-in)
+
+---
+
+### 7.7 Social proof — ce que font les références
+
+```
+POLÈNE     : Aucun avis client visible en page produit. Présence Instagram en footer.
+             Stratégie : le produit justifie son prix par le savoir-faire, pas les étoiles.
+
+OH MY BAG  : Section "Vu dans..." (Marie Claire, ELLE, Le Parisien)
+             -10% newsletter first order
+             Notation 4.9/5 avec 341 avis (mise en avant dans le header)
+
+BAGGU      : Posts Instagram intégrés "@BAGGU" dans le footer
+             Pas d'avis inline sur les fiches
+```
+
+**Recommandation Sara Valenti :**
+- Phase 1 (go-prod) : section "Vu dans..." dès qu'une presse est obtenue
+- Phase 2 (J+30) : avis clients collectés via Brevo J+7 et J+14 après livraison
+- Phase 3 (J+90) : notation inline sur fiche produit si ≥ 10 avis collectés
+- Ne jamais afficher 0 avis — attendre le seuil de 10 avant d'activer l'affichage
+
+---
+
+### 7.8 Collections nommées vs catégories génériques
+
+**Pattern Polène et Oh My Bag — critique pour le positionnement premium :**
+
+```
+POLÈNE     : Collections nommées (Cyme, Numéro Neuf, Mokki, Solé Nomade)
+             Navigation par nom de collection, jamais "Sac à main > Taille M"
+
+OH MY BAG  : Collections saisonnières ("RIVIERA", "HÉLIOS", "CÉRÉMONIE", "SANDSTORM")
+             Uppercase, dans le hero, chaque saison = une identité visuelle
+
+LYST       : Tri "Newest | Recommended | Price" — standard marketplace
+             Pas adapté au positionnement éditorial
+```
+
+**Pour Sara Valenti :**
+- Les gammes (Rita, Grazia, Mina) SONT les "collections nommées" — ne jamais les appeler "catégories"
+- Dans la navigation : "Gammes" → "Rita | Grazia | Mina" (pas "Sacs à main | Sacs portés")
+- Préparer des noms de collections saisonnières dès qu'une 2e campagne photo est prévue
+
+---
+
+### 7.9 Ce que Sara Valenti fait déjà bien (conformité avec les meilleurs)
+
+```
+✓ Pas de badge "NOUVEAU" ou "BEST SELLER" dans la grille
+✓ Pas d'overlay "Aperçu rapide" sur les cartes produit
+✓ CTA "Ajouter au panier" seul, sans CTA concurrent
+✓ Fond sv-cream (blanc cassé) — jamais blanc pur
+✓ Pas de prix barré/promo permanente
+✓ Cormorant Garamond + DM Sans — combo validé par Awwwards
+✓ URLs propres (/catalogue/rita-camel) sans paramètres UTM dans le canonical
+✓ Filtres instantanés côté client (UX premium)
+✓ Label matière visible (AnnouncementBar "Cuir naturel italien")
+```
+
+---
+
+### 7.10 Prochaines évolutions recommandées (par priorité UX/conversion)
+
+```
+P1 — Impact fort, effort moyen
+  [ ] Dual-view image au hover dans CarteProduit (swap packshot→lifestyle)
+  [ ] 4e colonne xl: dans la grille catalogue
+  [ ] Aspect-ratio portrait forcé (3:4) sur toutes les images
+
+P2 — Impact moyen, effort moyen
+  [ ] Alerte stock épuisé (email) sur FicheProduit
+  [ ] Label matière cliquable → /entretien-cuir
+  [ ] Stagger d'apparition des cartes catalogue (CSS animation-delay)
+
+P3 — Impact fort, effort élevé
+  [ ] Mega-menu desktop avec miniatures gamme
+  [ ] Section "Vu dans..." dès première presse obtenue
+  [ ] Avis clients inline (activer après 10 avis)
+  [ ] Collections saisonnières nommées (campagne photo 2)
 ```
