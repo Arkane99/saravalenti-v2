@@ -37,7 +37,7 @@ Cet audit supersède AUDIT_SARA_VALENTI.md et AUDIT_TEXTES_SARA_VALENTI.md.
 
 ---
 
-### BLQ-02 — Contradiction prix : meta description "109,90 EUR" vs FAQ "19,90 EUR"
+### [CORRIGÉ] BLQ-02 — Contradiction prix : meta description "109,90 EUR" vs FAQ "19,90 EUR"
 
 **Dimension :** Copywriting / SEO  
 **Fichier :** `app/(site)/[locale]/page.tsx` lignes 16 et 71  
@@ -46,7 +46,7 @@ Cet audit supersède AUDIT_SARA_VALENTI.md et AUDIT_TEXTES_SARA_VALENTI.md.
 
 ---
 
-### BLQ-03 — Catalogue rendu côté client : produits absents du HTML initial
+### [CORRIGÉ] BLQ-03 — Catalogue rendu côté client : produits absents du HTML initial
 
 **Dimension :** SEO critique  
 **Confirmé au crawl :** "Chargement…" visible dans le HTML servi aux bots. Les 27 modèles ne sont pas dans le DOM initial.  
@@ -64,7 +64,7 @@ const produits = await fetchProduits() // pré-renderé SSG
 
 ---
 
-### BLQ-04 — Politique de confidentialité RGPD absente
+### [CORRIGÉ] BLQ-04 — Politique de confidentialité RGPD absente
 
 **Dimension :** Légal  
 **Fichier :** Route manquante `app/(site)/[locale]/confidentialite/page.tsx`  
@@ -77,7 +77,7 @@ const produits = await fetchProduits() // pré-renderé SSG
 
 ---
 
-### BLQ-05 — Mentions légales : trois placeholders RGPD non renseignés
+### [CORRIGÉ] BLQ-05 — Mentions légales : trois placeholders RGPD non renseignés
 
 **Dimension :** Légal  
 **Fichier :** `app/(site)/[locale]/mentions-legales/page.tsx` lignes 25, 26, 49  
@@ -90,7 +90,7 @@ const produits = await fetchProduits() // pré-renderé SSG
 
 ---
 
-### BLQ-06 — CGV : PayPal mentionné mais non disponible
+### [CORRIGÉ] BLQ-06 — CGV : PayPal mentionné mais non disponible
 
 **Dimension :** Légal / E-commerce  
 **Fichier :** `app/(site)/[locale]/cgv/page.tsx` ligne 53  
@@ -99,7 +99,7 @@ const produits = await fetchProduits() // pré-renderé SSG
 
 ---
 
-### BLQ-07 — Page retours : email de contact absent
+### [CORRIGÉ] BLQ-07 — Page retours : email de contact absent
 
 **Dimension :** UX / Légal  
 **Fichier :** `app/(site)/[locale]/retours/page.tsx` ligne 40  
@@ -108,7 +108,7 @@ const produits = await fetchProduits() // pré-renderé SSG
 
 ---
 
-### BLQ-08 — robots.txt : /api/ bloqué — flux marketplaces inaccessibles
+### [CORRIGÉ] BLQ-08 — robots.txt : /api/ bloqué — flux marketplaces inaccessibles
 
 **Dimension :** SEO / Marketplaces  
 **Confirmé au crawl :** `Disallow: /api/`  
@@ -143,7 +143,7 @@ vercel env add NEXT_PUBLIC_SITE_URL production
 
 ---
 
-### BLQ-10 — LCP 9,6 s (CRITIQUE) — image hero sans `priority`
+### [CORRIGÉ] BLQ-10 — LCP 9,6 s (CRITIQUE) — image hero sans `priority`
 
 **Dimension :** Performance  
 **Mesuré :** Lighthouse 13.4.0 juin 2026 — Performance 72/100, LCP 9,6 s.  
@@ -169,7 +169,7 @@ Et dans `next.config.ts` : `images: { formats: ['image/avif', 'image/webp'] }`
 
 ---
 
-### IMP-01 — Checkout : 6 champs sans accents (page transactionnelle critique)
+### [CORRIGÉ] IMP-01 — Checkout : 6 champs sans accents (page transactionnelle critique)
 
 **Dimension :** Copywriting  
 **Fichier :** `app/(site)/[locale]/checkout/page.tsx` lignes 122, 125, 147, 151, 248  
@@ -185,7 +185,7 @@ Et dans `checkout/confirmation/page.tsx` :
 
 ---
 
-### IMP-02 — Tirets cadrantins dans les titres et metas (règle dure violée)
+### [CORRIGÉ] IMP-02 — Tirets cadrantins dans les titres et metas (règle dure violée)
 
 **Dimension :** Copywriting (règle absolue Studio Clave)  
 **Fichier :** `catalogue/[slug]/page.tsx` lignes 57, 76 ; `entretien-cuir/page.tsx` ligne 180  
@@ -201,7 +201,7 @@ Et dans `checkout/confirmation/page.tsx` :
 
 ---
 
-### IMP-03 — "cuir pleine surface" dans la gamme Mina (règle dure violée)
+### [CORRIGÉ] IMP-03 — "cuir pleine surface" dans la gamme Mina (règle dure violée)
 
 **Dimension :** Copywriting  
 **Fichier :** `gamme/[slug]/page.tsx` ligne 135  
@@ -210,7 +210,7 @@ Et dans `checkout/confirmation/page.tsx` :
 
 ---
 
-### IMP-04 — Accents manquants dans d'autres pages visibles
+### [CORRIGÉ] IMP-04 — Accents manquants dans d'autres pages visibles
 
 **Dimension :** Copywriting  
 **Fichiers :** compte/inscription, compte/commandes, FicheProduit, catalogue/[slug]  
@@ -222,7 +222,7 @@ Et dans `checkout/confirmation/page.tsx` :
 
 ---
 
-### IMP-05 — llms.txt absent (GEO — visibilité dans les LLMs)
+### [CORRIGÉ] IMP-05 — llms.txt absent (GEO — visibilité dans les LLMs)
 
 **Dimension :** GEO  
 **Confirmé au crawl :** 404 sur `/llms.txt`  
@@ -251,7 +251,7 @@ Et dans `checkout/confirmation/page.tsx` :
 
 ---
 
-### IMP-06 — Hreflang absent du layout global
+### [CORRIGÉ] IMP-06 — Hreflang absent du layout global
 
 **Dimension :** SEO Multilingue  
 **Fichier :** `app/(site)/[locale]/layout.tsx`  
@@ -272,7 +272,7 @@ alternates: {
 
 ---
 
-### IMP-07 — Grazia : H1, meta title et sous-titre hero mentionnent suède uniquement (13 coloris = suède + grainé)
+### [CORRIGÉ] IMP-07 — Grazia : H1, meta title et sous-titre hero mentionnent suède uniquement (13 coloris = suède + grainé)
 
 **Dimension :** Copywriting / SEO  
 **Fichier :** `gamme/[slug]/page.tsx` lignes 75-76 et 80  
@@ -284,7 +284,7 @@ alternates: {
 
 ---
 
-### IMP-08 — Rita FAQ : couleurs inexistantes ("marron", "miel")
+### [CORRIGÉ] IMP-08 — Rita FAQ : couleurs inexistantes ("marron", "miel")
 
 **Dimension :** Copywriting / Données  
 **Fichier :** `gamme/[slug]/page.tsx` ligne 62  
@@ -293,7 +293,7 @@ alternates: {
 
 ---
 
-### IMP-09 — Grazia FAQ : couleurs inexistantes ("caramel", "gris perle")
+### [CORRIGÉ] IMP-09 — Grazia FAQ : couleurs inexistantes ("caramel", "gris perle")
 
 **Dimension :** Copywriting / Données  
 **Fichier :** `gamme/[slug]/page.tsx` ligne 112  
@@ -302,7 +302,7 @@ alternates: {
 
 ---
 
-### IMP-10 — Schema.org ProductGroup absent sur les pages modèle
+### [CORRIGÉ] IMP-10 — Schema.org ProductGroup absent sur les pages modèle
 
 **Dimension :** SEO / AEO  
 **Fichier :** `catalogue/[slug]/page.tsx` pages modèles (ex: `/catalogue/rita`)  
@@ -353,7 +353,7 @@ alternates: {
 
 ---
 
-### IMP-14 — CSP : script-src 'unsafe-inline' non documenté
+### [CORRIGÉ] IMP-14 — CSP : script-src 'unsafe-inline' non documenté
 
 **Dimension :** Sécurité  
 **Fichier :** `next.config.ts` ligne 7  
@@ -388,7 +388,7 @@ curl https://sara-valenti.vercel.app/sitemap.xml | grep "<url>" | wc -l
 
 ---
 
-### IMP-17 — OG image ratio 4:3 au lieu de 1.91:1
+### [CORRIGÉ] IMP-17 — OG image ratio 4:3 au lieu de 1.91:1
 
 **Dimension :** SEO / Partage social  
 **Fichier :** `layout.tsx:41`  
@@ -410,7 +410,7 @@ curl https://sara-valenti.vercel.app/sitemap.xml | grep "<url>" | wc -l
 
 ---
 
-### MIN-01 — H1 catalogue générique sans mots-clés
+### [CORRIGÉ] MIN-01 — H1 catalogue générique sans mots-clés
 
 **Fichier :** `catalogue/page.tsx`  
 **Constat :** H1 = "Catalogue" + sous-titre. SEO-faible pour la page de catégorie principale.  
@@ -418,7 +418,7 @@ curl https://sara-valenti.vercel.app/sitemap.xml | grep "<url>" | wc -l
 
 ---
 
-### MIN-02 — Pas de WebSite schema avec SearchAction
+### [CORRIGÉ] MIN-02 — Pas de WebSite schema avec SearchAction
 
 **Fichier :** `page.tsx` homepage  
 **Constat :** Schema `Organization` présent mais pas de `WebSite` avec `SearchAction` pour la barre de recherche Google.  
@@ -440,7 +440,7 @@ curl https://sara-valenti.vercel.app/sitemap.xml | grep "<url>" | wc -l
 
 ---
 
-### MIN-04 — Pas de canonical explicite par page dynamique
+### [CORRIGÉ] MIN-04 — Pas de canonical explicite par page dynamique
 
 **Fichier :** Pages catalogue et gamme  
 **Constat :** Next.js génère les canonicals depuis `metadataBase` mais les pages dynamiques ne définissent pas `alternates.canonical` explicitement. En cas de paramètres UTM dans l'URL, le canonical peut pointer vers l'URL avec paramètres.  
@@ -451,7 +451,7 @@ alternates: { canonical: `https://www.saravalenti.fr/catalogue/${slug}` }
 
 ---
 
-### MIN-05 — BreadcrumbList absent sur les pages gamme
+### [CORRIGÉ] MIN-05 — BreadcrumbList absent sur les pages gamme
 
 **Fichier :** `gamme/[slug]/page.tsx`  
 **Constat :** Les fiches couleur ont un `BreadcrumbList` 4 niveaux (Phase 5g). Les pages gamme `/gamme/rita` n'en ont pas.  
